@@ -1,7 +1,4 @@
-#Wed Feb 01 16:20:41 CET 2017
-base.0=/home/codecool-palko/codecoolBP2016/Android/advanced-module-neightbro-taxi/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_fc44934cda24ae9766cbe9de60894e1deb290294
-renamed.1=classes2.dex
+#Wed Feb 01 20:30:49 CET 2017
+base.0=/home/codecool-palko/codecoolBP2016/Android/advanced-module-neightbro-taxi/app/build/intermediates/transforms/dex/debug/folders/1000/1f/main
 renamed.0=classes.dex
-file.1=/home/codecool-palko/codecoolBP2016/Android/advanced-module-neightbro-taxi/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_cda70857a37daa761aaa19bb3a8e7d39ea2765fc/classes.dex
-base.1=/home/codecool-palko/codecoolBP2016/Android/advanced-module-neightbro-taxi/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_cda70857a37daa761aaa19bb3a8e7d39ea2765fc
-file.0=/home/codecool-palko/codecoolBP2016/Android/advanced-module-neightbro-taxi/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_fc44934cda24ae9766cbe9de60894e1deb290294/classes.dex
+file.0=/home/codecool-palko/codecoolBP2016/Android/advanced-module-neightbro-taxi/app/build/intermediates/transforms/dex/debug/folders/1000/1f/main/classes.dex

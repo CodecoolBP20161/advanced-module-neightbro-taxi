@@ -1,5 +1,6 @@
 # Built application files
 /build
+app/build/
 
 # Gradle generated files
 .gradle
