@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<instant-run
+    abi="x86"
+    api-level="23"
+    density="xxxhdpi"
+    format="8"
+    plugin-version="2.2.3"
+    timestamp="1697728276955"
+    token="8318905421385607246"
+    verifier="FULL_BUILD_REQUESTED" >
+
+    <task
+        name="javac"
+        duration="4639" />
+    <task
+        name="instant-run-dex"
+        duration="0" />
+    <task
+        name="instant-run-transform"
+        duration="278" />
+    <task
+        name="verifier"
+        duration="8" />
+
+    <artifact
+        location="/home/codecool-palko/codecoolBP2016/Android/advanced-module-neightbro-taxi/app/build/outputs/apk/app-debug.apk"
+        type="MAIN" />
+
+    <build
+        timestamp="1697728276955"
+        verifier="FULL_BUILD_REQUESTED" >
+        <artifact
+            location="/home/codecool-palko/codecoolBP2016/Android/advanced-module-neightbro-taxi/app/build/outputs/apk/app-debug.apk"
+            type="MAIN" />
+    </build>
+
+</instant-run>
