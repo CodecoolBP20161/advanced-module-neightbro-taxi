@@ -7,6 +7,7 @@ import javax.persistence.*;
 import java.util.Set;
 import java.util.UUID;
 
+
 @Entity
 @Table(name = "role")
 public class Role {
