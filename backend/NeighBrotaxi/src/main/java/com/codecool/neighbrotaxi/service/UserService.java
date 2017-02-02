@@ -5,5 +5,5 @@ import com.codecool.neighbrotaxi.model.User;
 
 public interface UserService {
     void save(User user);
-    void findByEmail(String email);
+    User findByEmail(String email);
 }
