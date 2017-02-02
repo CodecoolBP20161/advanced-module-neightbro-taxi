@@ -23,20 +23,10 @@ public class User {
         this.id = UUID.randomUUID().toString();
     }
 
-    public User() {
-    }
-
     public String getId() {
         return id;
     }
 
-    public User(String name, String email, String password, String passwordConfirm, Set<Role> roles) {
-        this.name = name;
-        this.email = email;
-        this.password = password;
-        this.passwordConfirm = passwordConfirm;
-        this.roles = roles;
-    }
 
     public void setId(String id) {
         this.id = id;
