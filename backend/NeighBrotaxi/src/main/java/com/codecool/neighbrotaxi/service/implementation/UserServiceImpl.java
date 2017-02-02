@@ -4,8 +4,6 @@ import com.codecool.neighbrotaxi.model.User;
 import com.codecool.neighbrotaxi.repository.RoleRepository;
 import com.codecool.neighbrotaxi.repository.UserRepository;
 import com.codecool.neighbrotaxi.service.UserService;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -25,6 +23,10 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private BCryptPasswordEncoder bCryptPasswordEncoder;
 
+    /**
+     * Saving user object into the database with the UserRepository's save method.
+     * @param user The object of the User class. This is the user we want to save into the database.
+     */
     @Override
     public void save(User user) {
         user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
@@ -33,6 +35,11 @@ public class UserServiceImpl implements UserService {
         userRepository.save(user);
     }
 
+    /**
+     * This method finds a user by their email address, using the UserRepository's findByEmail method.
+     * @param email The email of the user we are looking for.
+     * @return An object of the User class, with the valid fields queried from the database.
+     */
     @Override
     public User findByEmail(String email) {
         logger.debug("Find user by this email: " + email);
