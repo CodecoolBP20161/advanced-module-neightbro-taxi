@@ -1,0 +1,34 @@
+[
+    {
+        "merged": "/home/codecool-palko/codecoolBP2016/Android/advanced-module-neightbro-taxi/app/build/intermediates/res/merged/debug/layout-v21/notification_template_custom_big.xml",
+        "source": "/home/codecool-palko/codecoolBP2016/Android/advanced-module-neightbro-taxi/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.1/res/layout-v21/notification_template_custom_big.xml"
+    },
+    {
+        "merged": "/home/codecool-palko/codecoolBP2016/Android/advanced-module-neightbro-taxi/app/build/intermediates/res/merged/debug/layout-v21/notification_template_icon_group.xml",
+        "source": "/home/codecool-palko/codecoolBP2016/Android/advanced-module-neightbro-taxi/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.1/res/layout-v21/notification_template_icon_group.xml"
+    },
+    {
+        "merged": "/home/codecool-palko/codecoolBP2016/Android/advanced-module-neightbro-taxi/ANDROID/app/build/intermediates/res/merged/debug/layout-v21/notification_action.xml",
+        "source": "/home/codecool-palko/codecoolBP2016/Android/advanced-module-neightbro-taxi/ANDROID/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.1/res/layout-v21/notification_action.xml"
+    },
+    {
+        "merged": "/home/codecool-palko/codecoolBP2016/Android/advanced-module-neightbro-taxi/ANDROID/app/build/intermediates/res/merged/debug/layout-v21/notification_template_custom_big.xml",
+        "source": "/home/codecool-palko/codecoolBP2016/Android/advanced-module-neightbro-taxi/ANDROID/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.1/res/layout-v21/notification_template_custom_big.xml"
+    },
+    {
+        "merged": "/home/codecool-palko/codecoolBP2016/Android/advanced-module-neightbro-taxi/ANDROID/app/build/intermediates/res/merged/debug/layout-v21/notification_template_icon_group.xml",
+        "source": "/home/codecool-palko/codecoolBP2016/Android/advanced-module-neightbro-taxi/ANDROID/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.1/res/layout-v21/notification_template_icon_group.xml"
+    },
+    {
+        "merged": "/home/codecool-palko/codecoolBP2016/Android/advanced-module-neightbro-taxi/app/build/intermediates/res/merged/debug/layout-v21/notification_action_tombstone.xml",
+        "source": "/home/codecool-palko/codecoolBP2016/Android/advanced-module-neightbro-taxi/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.1/res/layout-v21/notification_action_tombstone.xml"
+    },
+    {
+        "merged": "/home/codecool-palko/codecoolBP2016/Android/advanced-module-neightbro-taxi/app/build/intermediates/res/merged/debug/layout-v21/notification_action.xml",
+        "source": "/home/codecool-palko/codecoolBP2016/Android/advanced-module-neightbro-taxi/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.1/res/layout-v21/notification_action.xml"
+    },
+    {
+        "merged": "/home/codecool-palko/codecoolBP2016/Android/advanced-module-neightbro-taxi/ANDROID/app/build/intermediates/res/merged/debug/layout-v21/notification_action_tombstone.xml",
+        "source": "/home/codecool-palko/codecoolBP2016/Android/advanced-module-neightbro-taxi/ANDROID/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.1/res/layout-v21/notification_action_tombstone.xml"
+    }
+]

@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/home/codecool-palko/codecoolBP2016/Android/advanced-module-neightbro-taxi/app/build/intermediates/res/merged/debug/drawable-v23/abc_control_background_material.xml",
+        "source": "/home/codecool-palko/codecoolBP2016/Android/advanced-module-neightbro-taxi/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.1/res/drawable-v23/abc_control_background_material.xml"
+    },
+    {
+        "merged": "/home/codecool-palko/codecoolBP2016/Android/advanced-module-neightbro-taxi/ANDROID/app/build/intermediates/res/merged/debug/drawable-v23/abc_control_background_material.xml",
+        "source": "/home/codecool-palko/codecoolBP2016/Android/advanced-module-neightbro-taxi/ANDROID/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.1/res/drawable-v23/abc_control_background_material.xml"
+    }
+]
