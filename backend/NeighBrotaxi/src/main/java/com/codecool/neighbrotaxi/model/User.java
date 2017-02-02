@@ -8,7 +8,7 @@ import java.util.UUID;
  * Created by cave on 2017.02.02..
  */
 @Entity
-@Table(name = "user")
+@Table(name = "`user`")
 public class User {
     @Id
     private String id;
@@ -16,6 +16,8 @@ public class User {
     private String email;
     private String password;
     private String passwordConfirm;
+    @ManyToMany
+    @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<Role> roles;
 
 
