@@ -5,7 +5,10 @@
     <string name="hint_password1">Choose a password!</string>
     <string name="hint_password2">Then, type it again!</string>
     <string name="btn_sign_up">Sign Up</string>
-    <string name="err_msg_name">Don\'t be shy!</string>
-    <string name="err_msg_email">Don\'t cheating!</string>
-    <string name="err_msg_password">C\'mon, fill it!</string>
+    <string name="err_name">Don\'t be shy! Give me your name!</string>
+    <string name="err_email">Don\'t cheat! Give me a valid address!</string>
+    <string name="err_pw_empty">C\'mon, fill it!</string>
+    <string name="err_pw_short">It isn\'t enough for me!</string>
+    <string name="err_pw_long">It\'s too much for me!</string>
+    <string name="err_pw_same">Just type it again! \n(Second password must same with first!)</string>
 </resources>
