@@ -60,4 +60,22 @@ public class UserValidatorTest extends AbstractTest {
         verify(errors).rejectValue("email", "Duplicate.user.email", "Email already in database");
     }
 
+    @Test
+    public void validate_PassLength_Short() {
+        user.setPassword("har");
+        user.setPasswordConfirm("har");
+        userValidator.validate(user, errors);
+
+        verify(errors).rejectValue("password", "Size.userForm.password", "The size of the password is incorrect");
+    }
+
+    @Test
+    public void validate_PassLength_Long() {
+        user.setPassword("harrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr");
+        user.setPasswordConfirm("harrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr");
+        userValidator.validate(user, errors);
+
+        verify(errors).rejectValue("password", "Size.userForm.password", "The size of the password is incorrect");
+    }
+
 }
