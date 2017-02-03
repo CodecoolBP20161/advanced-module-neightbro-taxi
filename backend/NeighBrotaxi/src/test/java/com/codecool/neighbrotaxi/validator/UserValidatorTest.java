@@ -78,4 +78,28 @@ public class UserValidatorTest extends AbstractTest {
         verify(errors).rejectValue("password", "Size.userForm.password", "The size of the password is incorrect");
     }
 
+    @Test
+    public void validate_PassLength_ShortAndEmailExists() {
+        when(userService.findByEmail(anyString())).thenReturn(new User());
+        user.setPassword("harr");
+        user.setPasswordConfirm("harr");
+        userValidator.validate(user, errors);
+
+        verify(errors).rejectValue("password", "Size.userForm.password", "The size of the password is incorrect");
+        verify(errors).rejectValue("email", "Duplicate.user.email", "Email already in database");
+    }
+
+
+    @Test
+    public void validate_PassLength_LongAndEmailExistsAndNotAMatch() {
+        when(userService.findByEmail(anyString())).thenReturn(new User());
+        user.setPassword("harrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr");
+        user.setPasswordConfirm("harrrrrrrrr");
+        userValidator.validate(user, errors);
+
+        verify(errors).rejectValue("password", "Size.userForm.password", "The size of the password is incorrect");
+        verify(errors).rejectValue("email", "Duplicate.user.email", "Email already in database");
+        verify(errors).rejectValue("passwordConfirm", "Diff.userForm.passwordConfirm", "The passwords do not match");
+
+    }
 }
