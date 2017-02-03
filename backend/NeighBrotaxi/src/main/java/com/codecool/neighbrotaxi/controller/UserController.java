@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.validation.Valid;
+
 
 @RestController
 public class UserController {
@@ -27,7 +29,7 @@ public class UserController {
      * @return An object. If every input value is valid: returns an object of the saved user, else: returns a list of errors.
      */
     @RequestMapping(value = "/registration", method = RequestMethod.POST)
-    public Object registration(@RequestBody User user, BindingResult bindingResult){
+    public Object registration(@RequestBody @Valid User user, BindingResult bindingResult){
         userValidator.validate(user, bindingResult);
 
         if (bindingResult.hasErrors()) {

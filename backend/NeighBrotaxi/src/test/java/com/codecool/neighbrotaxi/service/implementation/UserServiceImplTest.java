@@ -38,7 +38,7 @@ public class UserServiceImplTest extends AbstractTest {
     public void setUp() throws Exception {
         userRepository.deleteAll();
         user = new User();
-        user.setEmail("email");
+        user.setEmail("email@email.com");
         user.setPassword("password");
         user.setName("name");
     }
@@ -47,7 +47,7 @@ public class UserServiceImplTest extends AbstractTest {
     public void findByEmail() throws Exception {
         userRepository.save(user);
 
-        User user = userService.findByEmail("email");
+        User user = userService.findByEmail("email@email.com");
 
         assertEquals(this.user.getId(), user.getId());
     }
