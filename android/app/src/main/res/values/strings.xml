@@ -1,10 +1,11 @@
 <resources>
-<string name="app_name">NeightbroTaxi</string>
-<string name="hint_name">Full Name</string>
-<string name="hint_email">Email</string>
-<string name="hint_password">Password</string>
-<string name="btn_sign_up">Sign Up</string>
-<string name="err_msg_name">Enter your full name</string>
-<string name="err_msg_email">Enter valid email address</string>
-<string name="err_msg_password">Enter the password</string>
+    <string name="app_name">NeightbroTaxi</string>
+    <string name="hint_name">What\'s your full name?</string>
+    <string name="hint_email">Email address?</string>
+    <string name="hint_password1">Choose a password!</string>
+    <string name="hint_password2">Then, type it again!</string>
+    <string name="btn_sign_up">Sign Up</string>
+    <string name="err_msg_name">Don\'t be shy!</string>
+    <string name="err_msg_email">Don\'t cheating!</string>
+    <string name="err_msg_password">C\'mon, fill it!</string>
 </resources>

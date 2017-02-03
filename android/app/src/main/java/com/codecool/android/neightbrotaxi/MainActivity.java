@@ -39,15 +39,9 @@ public class MainActivity extends AppCompatActivity {
         inputPassword2 = (EditText) findViewById(R.id.input_password2);
         btnSignUp = (Button) findViewById(R.id.btn_signup);
 
-//        inputName.addTextChangedListener(new MyTextWatcher(inputName));
-//        inputEmail.addTextChangedListener(new MyTextWatcher(inputEmail));
-//        inputPassword1.addTextChangedListener(new MyTextWatcher(inputPassword1));
-//        inputPassword2.addTextChangedListener(new MyTextWatcher(inputPassword2));
-
         btnSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                submitForm();
                 Toast.makeText(MainActivity.this, "OK", Toast.LENGTH_SHORT).show();
             }
         });

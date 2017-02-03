@@ -4,3 +4,10 @@
     <color name="colorPrimaryDark">#000629</color>
     <color name="colorAccent">#ff6600</color>
 </resources>
+
+<!--Primary: Yellow500 - #FFEB3B
+Secondary: Grey50 - #FAFAFA
+Success: Lime500 - #CDDC39
+Warning: Orange500 - #FF9800
+Danger: Red500 - #F44336
+Background: BlueGrey500 - #37474F-->
