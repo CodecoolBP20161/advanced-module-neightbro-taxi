@@ -52,12 +52,21 @@ public class UserValidatorTest extends AbstractTest {
     }
 
     @Test
-    public void validate_EmailFieldNotValid_EmailAlreadyInUse() {
+    public void validate_EmailFieldNotValid_EmailAlreadyInUse() throws Exception {
         when(userService.findByEmail(anyString())).thenReturn(new User());
 
         userValidator.validate(user, errors);
 
         verify(errors).rejectValue("email", "Duplicate.user.email", "Email already in database");
+    }
+
+    @Test
+    public void validate_PasswordsDoNotMatch() throws Exception {
+        user.setPasswordConfirm("password1");
+
+        userValidator.validate(user, errors);
+
+        verify(errors).rejectValue("passwordConfirm", "Diff.userForm.passwordConfirm", "The passwords do not match");
     }
 
 }
