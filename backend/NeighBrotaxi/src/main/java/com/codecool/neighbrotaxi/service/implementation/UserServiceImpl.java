@@ -45,4 +45,9 @@ public class UserServiceImpl implements UserService {
         logger.debug("Find user by this email: " + email);
         return userRepository.findByEmail(email);
     }
+
+    @Override
+    public User findOne(String id) {
+        return userRepository.findOne(id);
+    }
 }
