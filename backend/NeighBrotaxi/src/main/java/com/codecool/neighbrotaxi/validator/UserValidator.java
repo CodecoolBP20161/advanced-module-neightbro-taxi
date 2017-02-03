@@ -42,18 +42,18 @@ public class UserValidator implements Validator {
 
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "email", "NotEmpty");
         if (userService.findByEmail(user.getEmail()) != null) {
-            errors.rejectValue("email", "Duplicate.userForm.email");
+            errors.rejectValue("email", "Duplicate.user.email", "Email already in database");
             logger.warn("Email already in database: " + user.getEmail());
         }
 
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "password", "NotEmpty");
         if (user.getPassword().length() < 8 || user.getPassword().length() > 32) {
-            errors.rejectValue("password", "Size.userForm.password");
+            errors.rejectValue("password", "Size.userForm.password", "The size of the password is incorrect");
             logger.warn("Password too long or too short: " + user.getPassword());
         }
 
         if (!user.getPasswordConfirm().equals(user.getPassword())) {
-            errors.rejectValue("passwordConfirm", "Diff.userForm.passwordConfirm");
+            errors.rejectValue("passwordConfirm", "Diff.userForm.passwordConfirm", "The passwords do not match");
             logger.warn("The passwords do not match" );
         }
     }
