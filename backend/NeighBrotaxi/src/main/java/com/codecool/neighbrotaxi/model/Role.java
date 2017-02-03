@@ -1,9 +1,10 @@
 package com.codecool.neighbrotaxi.model;
 
 
-import com.codecool.neighbrotaxi.enums.RoleEnum;
-
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.Table;
 import java.util.Set;
 import java.util.UUID;
 
@@ -13,8 +14,7 @@ import java.util.UUID;
 public class Role {
     @Id
     private String id;
-    @Enumerated(EnumType.STRING)
-    private RoleEnum name;
+    private String name;
     @ManyToMany(mappedBy = "roles")
     private Set<User> users;
 
@@ -27,19 +27,19 @@ public class Role {
         return id;
     }
 
-    public RoleEnum getName() {
-        return name;
-    }
-
-    public void setName(RoleEnum name) {
-        this.name = name;
-    }
-
     public Set<User> getUsers() {
         return users;
     }
 
     public void setUsers(Set<User> users) {
         this.users = users;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

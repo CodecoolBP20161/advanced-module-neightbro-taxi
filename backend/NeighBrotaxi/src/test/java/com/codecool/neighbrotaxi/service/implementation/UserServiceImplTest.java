@@ -81,10 +81,10 @@ public class UserServiceImplTest extends AbstractTest {
     @Test
     public void save_RolesSetted() throws Exception {
         Role role = new Role();
-        role.setName(RoleEnum.USER);
+        role.setName(RoleEnum.USER.name());
         roleRepository.save(role);
         role = new Role();
-        role.setName(RoleEnum.ADMIN);
+        role.setName(RoleEnum.ADMIN.name());
         roleRepository.save(role);
 
         userService.save(user);
