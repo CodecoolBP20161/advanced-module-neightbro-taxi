@@ -3,6 +3,7 @@ package com.codecool.neighbrotaxi.controller;
 import com.codecool.neighbrotaxi.AbstractTest;
 import com.codecool.neighbrotaxi.model.User;
 import com.codecool.neighbrotaxi.service.UserService;
+import com.codecool.neighbrotaxi.validator.UserValidator;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +24,7 @@ import static org.mockito.Mockito.when;
 @Transactional
 @MockBean(UserService.class)
 @MockBean(BindingResult.class)
+@MockBean(UserValidator.class)
 public class UserControllerTest extends AbstractTest {
     @Autowired
     private UserService userService;
@@ -34,6 +36,9 @@ public class UserControllerTest extends AbstractTest {
 
     @Autowired
     private BindingResult bindingResult;
+
+    @Autowired
+    private UserValidator userValidator;
 
     @Before
     public void setUp() throws Exception {
@@ -72,5 +77,13 @@ public class UserControllerTest extends AbstractTest {
         User returnedUser = (User) userController.registration(user, bindingResult);
 
         assertEquals(user, returnedUser);
+    }
+
+    @Test
+    public void registration_CallValidate() throws Exception {
+
+        userController.registration(user, bindingResult);
+
+        verify(userValidator).validate(user, bindingResult);
     }
 }
