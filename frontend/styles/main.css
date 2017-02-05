@@ -1,0 +1,126 @@
+body {
+    font-family: "Varela Round";
+    text-align: center;
+    background: #37474F;
+    margin: 0 auto;
+
+}
+
+h1 {
+    color: #FFEB3B;
+    margin-top: 50px;
+    font-size: 70px;
+}
+
+#text {
+    color: darkgray;
+    margin: 0 auto;
+    margin-top: -40px;
+    font-family: "Varela Round";
+    text-align: center;
+    width: 360px;
+    font-size: 14px;
+}
+
+.actions {
+    display: inline-block;
+    font-family: "Varela Round";
+    font-size: 18px;
+    background-color: #FFEB3B;
+    color: #37474F;
+    height: 40px;
+    width: 230px;
+    outline: 0 !important;
+    margin: 0 auto;
+    float: left;
+    box-shadow: none;
+    appearance: none;
+    border: none;
+    text-shadow: -1px 2px gold;
+}
+
+#log:hover {
+    background-color: gold;
+    text-shadow: -1px 2px #FFEB3B;
+}
+
+#regbutton {
+    border-radius: 5px;
+}
+
+#regbutton:hover {
+    background-color: gold;
+    text-shadow: -1px 2px goldenrod;
+
+    color: white;
+}
+
+#reg:hover {
+    background-color: gold;
+    text-shadow: -1px 2px #FFEB3B;
+}
+
+.formbox {
+    text-align: center;
+    height: 230px;
+    width: 428px;
+    margin: 0 auto;
+    background-color: #FAFAFA;
+    border-radius: 3px;
+    margin-top: 0px;;
+}
+
+.regformbox {
+    text-align: center;
+    height: 260px;
+    width: 428px;
+    margin: 0 auto;
+    background-color: #FAFAFA;
+    border-radius: 3px;
+    margin-top: 0px;;
+}
+
+.formbox p {
+    color: darkgray;
+    font-size: 12px;
+    padding: 30px 30px 0px 30px;
+    margin-top: -50px;
+}
+
+.formbox button {
+    font-family: "Varela Round";
+    font-size: 16px;
+    background-color: #FFEB3B;
+    color: #37474F;
+    height: 40px;
+    width: 200px;
+    outline: 0 !important;
+    margin: 0 auto;
+    margin-top: 15px;
+    border: none;
+    text-shadow: -1px 2px gold;
+}
+
+input[type=text] {
+    width: 80%;
+    padding: 8px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: #FAFAFA;
+    color: #37474F;
+    border-bottom: 1px solid gold;
+    outline: 0 !important;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: goldenrod;
+    opacity: 0.5;
+    font-size: 16px;
+}
+
+.navbutton {
+    display: inline-block;
+    margin-left: 10px;
+    padding: 0px;
+}
