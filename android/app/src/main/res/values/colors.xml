@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#000f64</color>
-    <color name="colorPrimaryDark">#000629</color>
-    <color name="colorAccent">#ff6600</color>
+    <color name="colorPrimary">#FFEB3B</color>
+    <color name="colorSecondary">#37474F</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorAccent">#0b0b0b</color>
+    <color name="colorBackground">#FFEB3B</color>
 </resources>
 
 <!--Primary: Yellow500 - #FFEB3B

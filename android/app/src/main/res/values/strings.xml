@@ -8,7 +8,7 @@
     <string name="err_name">Don\'t be shy! Give me your name!</string>
     <string name="err_email">Don\'t cheat! Give me a valid address!</string>
     <string name="err_pw_empty">C\'mon, fill it!</string>
-    <string name="err_pw_short">It isn\'t enough for me!</string>
-    <string name="err_pw_long">It\'s too much for me!</string>
+    <string name="err_pw_short">It isn\'t enough for me!\n(8–16 characters)</string>
+    <string name="err_pw_long">It\'s too much for me!\n(8–16 characters)</string>
     <string name="err_pw_same">Just type it again! \n(Second password must same with first!)</string>
 </resources>
