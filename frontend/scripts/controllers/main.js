@@ -2,12 +2,13 @@
 
 angular.module('neighbroTaxi')
 
-    .controller('mainCtrl', function ($scope, dataService, $http) {
-
+    .controller('mainCtrl', function ($scope, $http) {
+        /*
         dataService.getUsers(function (response) {
             var users = response.data;
             $scope.users = users;
         });
+        */
 
         $scope.newuser = {};
 
@@ -21,7 +22,7 @@ angular.module('neighbroTaxi')
                 console.log(":(");
             });
 
-            $scope.users.push($scope.newuser);
+            //$scope.users.push($scope.newuser);
         }
 
         $scope.resetForm = function (newuser) {
