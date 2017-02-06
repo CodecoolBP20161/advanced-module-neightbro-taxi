@@ -1,11 +1,15 @@
 package com.codecool.neighbrotaxi.repository;
 
-import org.springframework.stereotype.Repository;
+import com.codecool.neighbrotaxi.model.User;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
- * Created by cave on 2017.02.02..
+ * Interface for handling user table.
  */
-@Repository
-public interface UserRepository {
-    // TODO: search after restfulrepo
+@RepositoryRestResource(collectionResourceRel = "users", path = "users")
+@Transactional
+public interface UserRepository extends JpaRepository<User, String> {
+    User findByEmail(String email);
 }

@@ -1,12 +1,13 @@
 package com.codecool.neighbrotaxi.service;
 
 import com.codecool.neighbrotaxi.model.User;
-import org.springframework.stereotype.Service;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-/**
- * Created by cave on 2017.02.02..
- */
+
 public interface UserService {
+    Logger logger = LoggerFactory.getLogger(UserService.class);
     void save(User user);
-    void findByEmail(String email);
+    User findByEmail(String email);
+    User findOne(String id);
 }
