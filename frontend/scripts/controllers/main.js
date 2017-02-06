@@ -14,7 +14,7 @@ angular.module('neighbroTaxi')
         $scope.addUser = function () {
             console.log($scope.newuser);
 
-            $http.post('mock/users.json', $scope.newuser).
+            $http.post('http://localhost:9000/registration', $scope.newuser).
                 success(function (data) {
                 console.log(":)");
             }).error(function (data) {
