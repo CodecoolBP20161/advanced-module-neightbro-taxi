@@ -52,9 +52,11 @@ public class UserValidator implements Validator {
             logger.warn("Password too long or too short: " + user.getPassword());
         }
 
-        if (!user.getPasswordConfirm().equals(user.getPassword())) {
-            errors.rejectValue("passwordConfirm", "Diff.userForm.passwordConfirm", "The passwords do not match");
-            logger.warn("The passwords do not match" );
+        if (user.getPasswordConfirm() != null) {
+            if (!user.getPasswordConfirm().equals(user.getPassword())) {
+                errors.rejectValue("passwordConfirm", "Diff.userForm.passwordConfirm", "The passwords do not match");
+                logger.warn("The passwords do not match" );
+            }
         }
     }
 }
