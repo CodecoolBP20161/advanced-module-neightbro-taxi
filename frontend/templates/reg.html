@@ -3,11 +3,11 @@
         <input name="name" ng-model = newuser.name type="text" placeholder="Name"/>
         <input name=email" ng-model = newuser.email type="text" placeholder="Email"/>
         <input name="password" ng-model = newuser.password type="text" placeholder="Password"/>
-        <input name="passwordconfig" ng-model = newuser.passwordconfig type="text" placeholder="Confirm Password"/>
+        <input name="passwordConfirm" ng-model = newuser.passwordConfirm type="text" placeholder="Confirm Password"/>
         <button id="regbutton" ng-click="addUser(); resetForm()">DONE</button>
     </form>
 
     <pre> {{ newuser | json }}</pre>
 
-    <label ng-repeat = "user in users">{{ user }}</label>
+    <!--<label ng-repeat = "user in users">{{ user }}</label>-->
 </div>
