@@ -2,6 +2,6 @@ package com.codecool.neighbrotaxi.service;
 
 
 public interface SecurityService {
-    String findLoggedInEmail();
-    void autoLogin(String email, String password);
+    public String findLoggedInUsername();
+    public void autoLogin(String username, String password);
 }
