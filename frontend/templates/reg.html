@@ -3,13 +3,14 @@
         <div>
             <input name="name" id="name" required="required" ng-model = newuser.name ng-class="{'errormessage':!validForm.name.$pristine}" type="text" placeholder="Name"/>
         </div>
-        <input name="email" id="email" required="required" ng-model = newuser.email type="text" ng-class="{'errormessage':!validForm.email.$valid && !validForm.name.$pristine}" placeholder="Email"/>
+        <input name="email" id="email" required="required" ng-model = newuser.email type="email" ng-class="{'errormessage':!validForm.email.$valid && !validForm.name.$pristine}" placeholder="Email"/>
+        <div class="errormessage" ng-show="validForm.email.$error.email"><p>invalid email address</p></div>
 
         <input name="password" class ="password" required="required" id="password" ng-model = newuser.password ng-minlength="8" ng-class="{'errormessage':!validForm.password.$valid && !validForm.name.$pristine}" type="text" placeholder="Password"/>
         <br/>
         <div class="errormessage" ng-show="validForm.password.$error.minlength"><p>min. 8 character</p></div>
 
-        <input name="passwordConfirm" class ="password" required="required" id="passwordConfirm" ng-model = passwordConfirm ng-minlength="8" ng-class="{'errormessage':!validForm.passwordConfirm.$valid && !validForm.name.$pristine}" type="text" placeholder="Confirm Password"/>
+        <input name="passwordConfirm" class ="password" required="required" id="passwordConfirm" ng-model = newuser.passwordConfirm ng-minlength="8" ng-class="{'errormessage':!validForm.passwordConfirm.$valid && !validForm.name.$pristine}" type="text" placeholder="Confirm Password"/>
 
         <button id="regbutton" type="submit">DONE</button>
     </form>
