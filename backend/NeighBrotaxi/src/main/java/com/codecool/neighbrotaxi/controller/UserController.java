@@ -35,6 +35,7 @@ public class UserController {
         }
 
         userService.save(user);
-        return userService.findOne(user.getId());
+        user.setPasswordConfirm(null);
+        return user;
     }
 }
