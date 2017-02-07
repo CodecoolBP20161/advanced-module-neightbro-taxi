@@ -4,6 +4,7 @@ import com.codecool.neighbrotaxi.model.User;
 import com.codecool.neighbrotaxi.service.UserService;
 import com.codecool.neighbrotaxi.validator.UserValidator;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,6 +12,7 @@ import javax.validation.Valid;
 
 
 @RestController
+@CrossOrigin
 public class UserController {
     @Autowired
     private UserValidator userValidator;
@@ -25,7 +27,6 @@ public class UserController {
      * @param bindingResult The method will store the errors in this object.
      * @return An object. If every input value is valid: returns an object of the saved user, else: returns a list of errors.
      */
-    @CrossOrigin
     @RequestMapping(value = "/registration", method = RequestMethod.POST)
     public Object registration(@RequestBody @Valid User user, BindingResult bindingResult){
         userValidator.validate(user, bindingResult);
@@ -37,5 +38,17 @@ public class UserController {
         userService.save(user);
         user.setPasswordConfirm(null);
         return user;
+    }
+
+
+    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    public String login(String error, String logout) {
+        if (error != null)
+            return "Your username and password is invalid.";
+
+        if (logout != null)
+            return "You have been logged out successfully.";
+
+        return "Successfully logged in!";
     }
 }
