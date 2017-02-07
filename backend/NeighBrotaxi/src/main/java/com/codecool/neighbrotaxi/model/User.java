@@ -1,5 +1,7 @@
 package com.codecool.neighbrotaxi.model;
 
+import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.Type;
 import org.hibernate.validator.constraints.Email;
 
 import javax.persistence.*;
@@ -11,7 +13,10 @@ import java.util.UUID;
 @Table(name = "`user`")
 public class User {
     @Id
-    private String id;
+    @GeneratedValue(generator = "uuid-gen")
+    @GenericGenerator(name = "uuid-gen", strategy = "uuid2")
+    @Type(type = "pg-uuid")
+    private UUID id;
     private String name;
     @Email
     private String email;
@@ -22,17 +27,11 @@ public class User {
     @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<Role> roles;
 
-
-    {
-        this.id = UUID.randomUUID().toString();
-    }
-
-    public String getId() {
+    public UUID getId() {
         return id;
     }
 
-
-    public void setId(String id) {
+    public void setId(UUID id) {
         this.id = id;
     }
 
