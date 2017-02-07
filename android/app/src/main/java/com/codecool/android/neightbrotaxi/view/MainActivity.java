@@ -1,5 +1,8 @@
 package com.codecool.android.neightbrotaxi.view;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -14,10 +17,13 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.codecool.android.neightbrotaxi.R;
+import com.codecool.android.neightbrotaxi.controller.APIController;
+
+import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final String TAG = MainActivity.class.getSimpleName()+">>>>";
+    private static final String TAG = MainActivity.class.getSimpleName()+"<>";
 
     private Toolbar toolbar;
     private EditText inputName, inputEmail, inputPassword1, inputPassword2;
@@ -29,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Log.i(TAG, "ACTIVITY CREATED!");
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitleTextColor(getColor(R.color.colorPrimary));
@@ -72,7 +80,37 @@ public class MainActivity extends AppCompatActivity {
         if (!validatePasswordSame()) {
             return;
         }
-        Toast.makeText(getApplicationContext(), "Thanks for registration!", Toast.LENGTH_SHORT).show();
+
+        APIController apiController = new APIController();
+
+        if (apiController.isNetworkAvailable(MainActivity.this)) {
+            String json = apiController.getUserJson(
+                    inputName.getText().toString(),
+                    inputEmail.getText().toString(),
+                    inputPassword1.getText().toString(),
+                    inputPassword2.getText().toString()
+            );
+            Log.d(TAG, "JSON CREATED: "+json);
+            try {
+                apiController.post(json);
+            } catch (IOException e) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this)
+                        .setTitle("Application Error!")
+                        .setMessage("Something went wrong, please try again or report this bug!")
+                        .setPositiveButton("Okay", null);
+                builder.create().show();
+                Log.e(TAG, "ERROR: "+String.valueOf(e));
+            }
+            Toast.makeText(getApplicationContext(), "Thanks for registration!", Toast.LENGTH_SHORT).show();
+        }
+        else {
+            AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this)
+                    .setTitle("Connection Error!")
+                    .setMessage("Please, make sure you have a right internet access!")
+                    .setNeutralButton("Okay", null);
+            builder.create().show();
+        }
+
     }
 
     private boolean validateName() {
