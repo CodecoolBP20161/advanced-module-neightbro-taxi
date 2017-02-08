@@ -20,6 +20,7 @@ public class User {
     private String name;
     @Email
     private String email;
+    private String username;
     private String password;
     @Transient
     private String passwordConfirm;
@@ -73,5 +74,13 @@ public class User {
 
     public void setRoles(Set<Role> roles) {
         this.roles = roles;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 }

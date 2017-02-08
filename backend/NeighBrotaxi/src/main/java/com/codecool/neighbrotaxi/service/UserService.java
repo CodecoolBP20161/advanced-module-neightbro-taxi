@@ -8,8 +8,8 @@ import java.util.UUID;
 
 
 public interface UserService {
-    Logger logger = LoggerFactory.getLogger(UserService.class);
     void save(User user);
+    User findByUsername(String username);
     User findByEmail(String email);
     User findOne(UUID id);
 }

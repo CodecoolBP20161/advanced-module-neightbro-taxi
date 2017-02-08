@@ -1,5 +1,7 @@
 package com.codecool.neighbrotaxi.service.implementation;
 
+import com.codecool.neighbrotaxi.enums.RoleEnum;
+import com.codecool.neighbrotaxi.model.Role;
 import com.codecool.neighbrotaxi.model.User;
 import com.codecool.neighbrotaxi.repository.RoleRepository;
 import com.codecool.neighbrotaxi.repository.UserRepository;
@@ -9,6 +11,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
+import java.util.Set;
 import java.util.UUID;
 
 
@@ -31,19 +34,20 @@ public class UserServiceImpl implements UserService {
     @Override
     public void save(User user) {
         user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
-        user.setRoles(new HashSet<>(roleRepository.findAll()));
-        logger.debug("Setted up user object: " + user.toString());
+        Set<Role> roles = new HashSet<>();
+        roles.add(roleRepository.findByName(RoleEnum.USER.name()));
+        user.setRoles(roles);
         userRepository.save(user);
     }
 
-    /**
-     * This method finds a user by their email address, using the UserRepository's findByEmail method.
-     * @param email The email of the user we are looking for.
-     * @return An object of the User class, with the valid fields queried from the database.
-     */
+
+    @Override
+    public User findByUsername(String username) {
+        return userRepository.findByUsername(username);
+    }
+
     @Override
     public User findByEmail(String email) {
-        logger.debug("Find user by this email: " + email);
         return userRepository.findByEmail(email);
     }
 
