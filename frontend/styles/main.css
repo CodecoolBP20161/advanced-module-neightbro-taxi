@@ -1,3 +1,8 @@
+@font-face {
+    font-family: "Varela Round";
+    src:url("../fonts/VarelaRound-Regular.otf") format("truetype");
+}
+
 body {
     font-family: "Varela Round";
     text-align: center;
