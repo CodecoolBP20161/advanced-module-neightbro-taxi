@@ -11,6 +11,7 @@ angular.module('neighbroTaxi')
         */
 
         $scope.newuser = {};
+        $scope.errorConfirm = false;
 
         $scope.addUser = function (valid) {
 
@@ -23,15 +24,20 @@ angular.module('neighbroTaxi')
                 }).error(function (data) {
                     console.log(":(");
                 });
+
+                $scope.validForm.$setPristine();
+
                 $scope.showLogin = true;
                 $scope.showReg = false;
             }
-        }
-
-        $scope.resetForm = function (newuser) {
             $scope.newuser = null;
-            $scope.myForm.$setPristine();
-        };
+        }
+        //
+        // $scope.resetForm = function (newuser) {
+        //     $scope.newuser = null;
+        //     $scope.myForm.$setPristine();
+        // };
+
 
         /*$scope.addUser = function () {
             $scope.users.push({name: name, email: email, password: password, passwordconfig: passwordconfig});
