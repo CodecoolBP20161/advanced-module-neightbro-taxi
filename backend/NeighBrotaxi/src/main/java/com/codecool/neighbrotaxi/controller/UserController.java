@@ -3,13 +3,12 @@ package com.codecool.neighbrotaxi.controller;
 import com.codecool.neighbrotaxi.model.User;
 import com.codecool.neighbrotaxi.service.SecurityService;
 import com.codecool.neighbrotaxi.service.UserService;
-import com.codecool.neighbrotaxi.validator.UserValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.*;
-
-import javax.validation.Valid;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 
 @Controller
@@ -36,10 +35,5 @@ public class UserController {
     @RequestMapping(value = {"/", "/welcome"}, method = RequestMethod.GET)
     @ResponseBody public String welcome() {
         return "Successfully logged in!";
-    }
-
-    @RequestMapping(value = "/logged-in-user", method = RequestMethod.GET)
-    @ResponseBody public User loggedInUser(){
-        return userService.findByUsername(securityService.findLoggedInUsername());
     }
 }

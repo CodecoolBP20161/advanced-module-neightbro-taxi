@@ -3,7 +3,6 @@ package com.codecool.neighbrotaxi.service.implementation;
 import com.codecool.neighbrotaxi.model.Role;
 import com.codecool.neighbrotaxi.model.User;
 import com.codecool.neighbrotaxi.repository.UserRepository;
-import com.codecool.neighbrotaxi.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
