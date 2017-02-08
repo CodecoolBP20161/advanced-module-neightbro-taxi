@@ -1,6 +1,5 @@
 package com.codecool.neighbrotaxi.controller;
 
-import com.codecool.neighbrotaxi.model.User;
 import com.codecool.neighbrotaxi.service.SecurityService;
 import com.codecool.neighbrotaxi.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,5 +1,6 @@
 package com.codecool.neighbrotaxi.configuration;
 
+import com.codecool.neighbrotaxi.enums.RoleEnum;
 import com.codecool.neighbrotaxi.service.implementation.CustomUsernamePasswordAuthenticationFilter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -25,12 +26,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .csrf().disable()
                 .authorizeRequests()
                 .antMatchers("/resources/**", "/registration").permitAll()
-                .antMatchers("/users/**", "/user-roles/**").hasAuthority("admin")
+                .antMatchers("/users/**", "/user-roles/**").hasAuthority(RoleEnum.ADMIN.name())
                 .anyRequest().authenticated()
                 .and()
                 .addFilterAt(new CustomUsernamePasswordAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class)
                 .formLogin()
-                .loginProcessingUrl("/login")
+                .loginPage("/login")
                 .permitAll()
                 .and()
                 .logout()
