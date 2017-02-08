@@ -9,6 +9,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
+import java.util.UUID;
 
 
 @Service
@@ -47,7 +48,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User findOne(String id) {
+    public User findOne(UUID id) {
         return userRepository.findOne(id);
     }
 }

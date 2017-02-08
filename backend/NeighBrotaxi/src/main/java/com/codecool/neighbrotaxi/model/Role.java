@@ -1,10 +1,10 @@
 package com.codecool.neighbrotaxi.model;
 
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
-import javax.persistence.Table;
+import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.Type;
+
+import javax.persistence.*;
 import java.util.Set;
 import java.util.UUID;
 
@@ -13,18 +13,28 @@ import java.util.UUID;
 @Table(name = "role")
 public class Role {
     @Id
-    private String id;
+    @GeneratedValue(generator = "uuid-gen")
+    @GenericGenerator(name = "uuid-gen", strategy = "uuid2")
+    @Type(type = "pg-uuid")
+    private UUID id;
     private String name;
     @ManyToMany(mappedBy = "roles")
     private Set<User> users;
 
-    {
-        this.id = UUID.randomUUID().toString();
+    public UUID getId() {
+        return id;
     }
 
+    public void setId(UUID id) {
+        this.id = id;
+    }
 
-    public String getId() {
-        return id;
+    public Set<User> getUsers() {
+        return users;
+    }
+
+    public void setUsers(Set<User> users) {
+        this.users = users;
     }
 
     public String getName() {
