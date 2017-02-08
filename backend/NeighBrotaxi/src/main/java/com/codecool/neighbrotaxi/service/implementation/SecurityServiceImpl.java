@@ -1,6 +1,5 @@
 package com.codecool.neighbrotaxi.service.implementation;
 
-import com.codecool.neighbrotaxi.model.User;
 import com.codecool.neighbrotaxi.service.SecurityService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

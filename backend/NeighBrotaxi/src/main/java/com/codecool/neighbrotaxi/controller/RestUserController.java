@@ -3,7 +3,6 @@ package com.codecool.neighbrotaxi.controller;
 import com.codecool.neighbrotaxi.model.User;
 import com.codecool.neighbrotaxi.service.SecurityService;
 import com.codecool.neighbrotaxi.service.UserService;
-import com.codecool.neighbrotaxi.service.implementation.UserDetailsService;
 import com.codecool.neighbrotaxi.validator.UserValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.BindingResult;
@@ -44,5 +43,12 @@ public class RestUserController {
         userService.save(user);
         user.setPasswordConfirm(null);
         return user;
+    }
+
+
+
+    @RequestMapping(value = "/logged-in-user", method = RequestMethod.GET)
+    public User loggedInUser(){
+        return userService.findByUsername(securityService.findLoggedInUsername());
     }
 }
