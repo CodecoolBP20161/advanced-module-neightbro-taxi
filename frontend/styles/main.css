@@ -1,3 +1,8 @@
+@font-face {
+    font-family: "Varela Round";
+    src:url("../fonts/VarelaRound-Regular.otf") format("truetype");
+}
+
 body {
     font-family: "Varela Round";
     text-align: center;
@@ -20,6 +25,14 @@ h1 {
     text-align: center;
     width: 360px;
     font-size: 14px;
+}
+
+.password {
+    -webkit-text-security:disc !important;
+    -moz-text-security:disc !imporant;
+    -o-text-security: disc !imporant;
+    text-security:disc !important;
+    -webkit-text-fill-color: goldenrod;
 }
 
 .actions {
@@ -101,16 +114,41 @@ h1 {
     text-shadow: -1px 2px gold;
 }
 
+p.errormessage{
+    color: #FF9800;
+    font-size: 16px;
+}
+
 input[type=text] {
     width: 80%;
     padding: 8px 20px;
     margin: 8px 0;
     box-sizing: border-box;
     border: none;
-    background-color: #FAFAFA;
+    background-color: transparent;
     color: #37474F;
     border-bottom: 1px solid gold;
     outline: 0 !important;
+}
+
+input[type=email] {
+    width: 80%;
+    padding: 8px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: transparent;
+    color: #37474F;
+    border-bottom: 1px solid gold;
+    outline: 0 !important;
+}
+
+.errormessage p {
+    text-transform: uppercase;
+    color: #FF9800;
+    float: right;
+    margin-right: 25px;
+    padding: 11px;
 }
 
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
