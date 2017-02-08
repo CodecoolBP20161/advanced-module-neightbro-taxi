@@ -11,24 +11,33 @@ angular.module('neighbroTaxi')
         */
 
         $scope.newuser = {};
+        $scope.errorConfirm = false;
 
-        $scope.addUser = function () {
-            console.log($scope.newuser);
+        $scope.addUser = function (valid) {
 
-            $http.post('http://localhost:9000/registration', $scope.newuser).
+            if(valid){
+                console.log($scope.newuser);
+
+                $http.post('http://localhost:9000/registration', $scope.newuser).
                 success(function (data) {
-                console.log(":)");
-            }).error(function (data) {
-                console.log(":(");
-            });
+                    console.log("Success");
+                }).error(function (data) {
+                    console.log(":(");
+                });
 
-            //$scope.users.push($scope.newuser);
-        }
+                $scope.validForm.$setPristine();
 
-        $scope.resetForm = function (newuser) {
+                $scope.showLogin = true;
+                $scope.showReg = false;
+            }
             $scope.newuser = null;
-            $scope.myForm.$setPristine();
-        };
+        }
+        //
+        // $scope.resetForm = function (newuser) {
+        //     $scope.newuser = null;
+        //     $scope.myForm.$setPristine();
+        // };
+
 
         /*$scope.addUser = function () {
             $scope.users.push({name: name, email: email, password: password, passwordconfig: passwordconfig});
