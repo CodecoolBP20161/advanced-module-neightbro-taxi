@@ -126,6 +126,18 @@ input[type=text] {
     outline: 0 !important;
 }
 
+input[type=email] {
+    width: 80%;
+    padding: 8px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: transparent;
+    color: #37474F;
+    border-bottom: 1px solid gold;
+    outline: 0 !important;
+}
+
 .errormessage p {
     text-transform: uppercase;
     color: #FF9800;
