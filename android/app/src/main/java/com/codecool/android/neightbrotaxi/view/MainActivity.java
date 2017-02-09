@@ -1,5 +1,6 @@
 package com.codecool.android.neightbrotaxi.view;
 
+import android.app.AlertDialog;
 import android.os.Bundle;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -12,25 +13,27 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import com.codecool.android.neightbrotaxi.R;
+import com.codecool.android.neightbrotaxi.controller.APIController;
+import com.codecool.android.neightbrotaxi.model.AlertUserError;
+
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final String TAG = MainActivity.class.getSimpleName()+">>>>";
+    private static final String TAG = MainActivity.class.getSimpleName()+"<>";
 
-    private Toolbar toolbar;
     private EditText inputName, inputEmail, inputPassword1, inputPassword2;
     private TextInputLayout inputLayoutName, inputLayoutEmail,
             inputLayoutPassword1, inputLayoutPassword2;
-    private Button btnSignUp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Log.i(TAG, "ACTIVITY CREATED!");
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitleTextColor(getColor(R.color.colorPrimary));
         setSupportActionBar(toolbar);
 
@@ -42,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
         inputEmail = (EditText) findViewById(R.id.input_email);
         inputPassword1 = (EditText) findViewById(R.id.input_password1);
         inputPassword2 = (EditText) findViewById(R.id.input_password2);
-        btnSignUp = (Button) findViewById(R.id.btn_signup);
+        Button btnSignUp = (Button) findViewById(R.id.btn_signup);
 
         inputName.addTextChangedListener(new MyTextWatcher(inputName));
         inputEmail.addTextChangedListener(new MyTextWatcher(inputEmail));
@@ -72,7 +75,21 @@ public class MainActivity extends AppCompatActivity {
         if (!validatePasswordSame()) {
             return;
         }
-        Toast.makeText(getApplicationContext(), "Thanks for registration!", Toast.LENGTH_SHORT).show();
+
+        if (APIController.isNetworkAvailable(MainActivity.this)) {
+            new APIController.PostTask(
+                    "registration",
+                    inputName.getText().toString(),
+                    inputEmail.getText().toString(),
+                    inputPassword1.getText().toString(),
+                    inputPassword2.getText().toString()
+            ).execute();
+            Toast.makeText(getApplicationContext(), "Waiting for authentication!", Toast.LENGTH_SHORT).show();
+        }
+        else {
+            AlertUserError.connection(MainActivity.this);
+        }
+
     }
 
     private boolean validateName() {
