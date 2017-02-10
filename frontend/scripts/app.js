@@ -1,3 +1,3 @@
 'use strict';
 
-angular.module('neighbroTaxi', []);
+angular.module('neighbroTaxi', ['ngRoute']);
