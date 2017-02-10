@@ -43,33 +43,33 @@ public class UITestOnMainActivity {
 
     @Test
     public void validateEmptyEmail() {
-        validateCorrectInputs(4);
+        fillCorrectInputs(4);
         checkNullInputError(R.id.input_email, R.id.input_layout_email, R.string.err_email);
     }
 
     @Test
     public void validateInvalidEmail() {
-        validateCorrectInputs(4);
+        fillCorrectInputs(4);
         checkStringInputError(
                 "INVALID", R.id.input_email, R.id.input_layout_email, R.string.err_email);
     }
 
     @Test
     public void validateEmptyPassword() {
-        validateCorrectInputs(3);
+        fillCorrectInputs(3);
         checkNullInputError(R.id.input_password1, R.id.input_layout_password1, R.string.err_pw_empty);
     }
 
     @Test
     public void validateShortPassword(){
-        validateCorrectInputs(3);
+        fillCorrectInputs(3);
         checkStringInputError(
                 "PASS", R.id.input_password1, R.id.input_layout_password1, R.string.err_pw_short);
     }
 
     @Test
     public void validateLongPassword(){
-        validateCorrectInputs(3);
+        fillCorrectInputs(3);
         checkStringInputError(
                 "THIS_STRING_TOO_LONG",
                 R.id.input_password1, R.id.input_layout_password1, R.string.err_pw_long);
@@ -77,25 +77,25 @@ public class UITestOnMainActivity {
 
     @Test
     public void validateEmptyPasswordConfirm() {
-        validateCorrectInputs(2);
+        fillCorrectInputs(2);
         checkNullInputError(R.id.input_password2, R.id.input_layout_password2, R.string.err_pw_same);
     }
 
     @Test
     public void correctInputsValues() {
         if (APIController.isNetworkAvailable(ACTIVITY_TEST_RULE.getActivity())) {
-            validateCorrectInputs(1);
+            fillCorrectInputs(1);
             onView(withText("Waiting for authentication!"))
                     .inRoot(withDecorView(not(ACTIVITY_TEST_RULE.getActivity().getWindow().getDecorView())))
                     .check(matches(isDisplayed()));
         }
         else {
-            validateCorrectInputs(1);
+            fillCorrectInputs(1);
             onView(withText("Connection Error!")).check(matches(isDisplayed()));
         }
     }
 
-    private void validateCorrectInputs(int option) {
+    private void fillCorrectInputs(int option) {
         switch (option) {
             case 1:
                 onView(withId(R.id.input_password2)).perform(typeText("password"), closeSoftKeyboard());
