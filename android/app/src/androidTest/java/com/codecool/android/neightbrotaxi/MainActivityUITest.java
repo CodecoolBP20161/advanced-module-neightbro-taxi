@@ -7,7 +7,6 @@ import android.support.test.runner.AndroidJUnit4;
 import android.view.View;
 import com.codecool.android.neightbrotaxi.view.MainActivity;
 
-import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -28,34 +27,25 @@ import static android.support.test.espresso.matcher.ViewMatchers.withId;
 public class MainActivityUITest {
 
     @Rule
-    public ActivityTestRule<MainActivity> mRule =
+    public  ActivityTestRule<MainActivity> ACTIVITY_TEST_RULE =
             new ActivityTestRule<>(MainActivity.class);
 
     @Test
     public void validateEmptyName() {
-        onView(withId(R.id.input_name)).perform(clearText());
-        onView(withId(R.id.btn_signup)).perform(click());
-        onView(withId(R.id.input_layout_name))
-                .check(matches(simulateEmptyInputError(mRule.getActivity().getString(R.string.err_name))));
+        checkInputError(R.id.input_name, R.id.input_layout_name, R.string.err_name);
     }
 
     @Test
     public void validateEmptyEmail() {
         onView(withId(R.id.input_name)).perform(typeText("Test User"), closeSoftKeyboard());
-        onView(withId(R.id.input_email)).perform(clearText());
-        onView(withId(R.id.btn_signup)).perform(click());
-        onView(withId(R.id.input_layout_email))
-                .check(matches(simulateEmptyInputError(mRule.getActivity().getString(R.string.err_email))));
+        checkInputError(R.id.input_email, R.id.input_layout_email, R.string.err_email);
     }
 
     @Test
     public void validateEmptyPassword() {
         onView(withId(R.id.input_name)).perform(typeText("Test User"), closeSoftKeyboard());
         onView(withId(R.id.input_email)).perform(typeText("test@email.com"), closeSoftKeyboard());
-        onView(withId(R.id.input_password1)).perform(clearText());
-        onView(withId(R.id.btn_signup)).perform(click());
-        onView(withId(R.id.input_layout_password1))
-                .check(matches(simulateEmptyInputError(mRule.getActivity().getString(R.string.err_pw_empty))));
+        checkInputError(R.id.input_password1, R.id.input_layout_password1, R.string.err_pw_empty);
     }
 
     @Test
@@ -63,10 +53,15 @@ public class MainActivityUITest {
         onView(withId(R.id.input_name)).perform(typeText("Test User"), closeSoftKeyboard());
         onView(withId(R.id.input_email)).perform(typeText("test@email.com"), closeSoftKeyboard());
         onView(withId(R.id.input_password1)).perform(typeText("password"), closeSoftKeyboard());
-        onView(withId(R.id.input_password2)).perform(clearText());
+        checkInputError(R.id.input_password2, R.id.input_layout_password2, R.string.err_pw_same);
+    }
+
+    private void checkInputError(int inputName, int inputLayoutName, int errName) {
+        onView(withId(inputName)).perform(clearText());
         onView(withId(R.id.btn_signup)).perform(click());
-        onView(withId(R.id.input_layout_password2))
-                .check(matches(simulateEmptyInputError(mRule.getActivity().getString(R.string.err_pw_same))));
+        onView(withId(inputLayoutName))
+                .check(matches(simulateEmptyInputError(
+                        ACTIVITY_TEST_RULE.getActivity().getString(errName))));
     }
 
     public static Matcher<View> simulateEmptyInputError(final String string) {
