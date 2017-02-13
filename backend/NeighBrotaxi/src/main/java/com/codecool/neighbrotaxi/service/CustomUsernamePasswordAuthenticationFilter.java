@@ -1,4 +1,4 @@
-package com.codecool.neighbrotaxi.service.implementation;
+package com.codecool.neighbrotaxi.service;
 
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
@@ -58,40 +58,4 @@ public class CustomUsernamePasswordAuthenticationFilter extends UsernamePassword
             return password;
         }
     }
-
-
-//    @Override
-//    protected String obtainUsername(HttpServletRequest request) {
-//        AuthReq authReq = getObjectFromJson(request);
-//        System.out.println("username - " + authReq.getUsername());
-//        return authReq.getUsername();
-//    }
-
-//    @Override
-//    protected String obtainPassword(HttpServletRequest request) {
-//        AuthReq authReq = getObjectFromJson(request);
-//        System.out.println(authReq.getPassword());
-//        System.out.println(authReq.getPassword());
-//        return authReq.getPassword();
-//    }
-
-//    private AuthReq getObjectFromJson(HttpServletRequest request) {
-//        try {
-//            BufferedReader reader = request.getReader();
-//            StringBuffer sb = new StringBuffer();
-//            String line;
-//            while ((line = reader.readLine()) != null) {
-//                sb.append(line);
-//            }
-//            String parsedReq = sb.toString();
-//            if (parsedReq != null) {
-//                ObjectMapper mapper = new ObjectMapper();
-//                AuthReq authReq = mapper.readValue(parsedReq, AuthReq.class);
-//                return authReq;
-//            }
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//        return null;
-//    }
 }

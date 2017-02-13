@@ -1,10 +1,9 @@
 package com.codecool.neighbrotaxi.configuration;
 
 import com.codecool.neighbrotaxi.enums.RoleEnum;
-import com.codecool.neighbrotaxi.service.implementation.CustomUsernamePasswordAuthenticationFilter;
+import com.codecool.neighbrotaxi.service.CustomUsernamePasswordAuthenticationFilter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
@@ -37,7 +36,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .logout()
                 .permitAll()
                 .and()
-                .httpBasic().and()
                 .csrf().disable();
     }
 }
