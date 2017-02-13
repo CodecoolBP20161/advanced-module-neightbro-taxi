@@ -26,6 +26,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers("/resources/**", "/registration").permitAll()
                 .antMatchers("/users/**", "/user-roles/**").hasAuthority(RoleEnum.ADMIN.name())
+                .antMatchers("/admin/**").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .addFilterAt(new CustomUsernamePasswordAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class)

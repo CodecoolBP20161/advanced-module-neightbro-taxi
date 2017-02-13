@@ -12,7 +12,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
 import java.util.Set;
-import java.util.UUID;
 
 
 @Service
@@ -58,7 +57,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User findOne(UUID id) {
+    public User findOne(Integer id) {
         return userRepository.findOne(id);
     }
 }
