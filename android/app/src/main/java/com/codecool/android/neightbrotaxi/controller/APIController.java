@@ -7,9 +7,6 @@ import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.util.Log;
 
-import com.codecool.android.neightbrotaxi.model.AlertUserError;
-import com.codecool.android.neightbrotaxi.view.MainActivity;
-
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -24,8 +21,9 @@ import okhttp3.Response;
 
 public class APIController {
     private static final String TAG = APIController.class.getSimpleName()+"<>";
+
     private static OkHttpClient client = new OkHttpClient();
-    private static String API_URL = "http://localhost:9000/";
+    private static String API_URL = "http://192.168.161.172:9000/";
     private static MediaType JSON = MediaType.parse("application/json; charset=utf-8");
 
     public static class PostTask extends AsyncTask <String, Void, String> {
@@ -50,7 +48,7 @@ public class APIController {
             }
         }
 
-        private String post(String url, String json) throws IOException {
+        String post(String url, String json) throws IOException {
             RequestBody body = RequestBody.create(JSON, json);
             Request request = new Request.Builder()
                     .url(url)
@@ -65,11 +63,11 @@ public class APIController {
         }
     }
 
-    public static class GetTask extends AsyncTask <String, Void, String> {
+    static class GetTask extends AsyncTask <String, Void, String> {
 
         String method;
 
-        public GetTask(String ... strings) {
+        GetTask(String... strings) {
             this.method = strings[0];
         }
 
@@ -98,7 +96,7 @@ public class APIController {
         }
     }
 
-    private static String UserDataJson(String... strings) {
+    static String UserDataJson(String... strings) {
         JSONObject json = new JSONObject();
         try {
             json.put("name", strings[0]);
@@ -106,11 +104,11 @@ public class APIController {
             json.put("password", strings[2]);
             json.put("passwordConfirm", strings[3]);
             Log.i(TAG, "JSON CREATED: "+json);
-            return json.toString();
-        } catch (JSONException e) {
-            Log.e(TAG, "UserDataJson caught exception: "+e);
-            return null;
         }
+        catch (JSONException | ArrayIndexOutOfBoundsException e) {
+            Log.e(TAG, "UserDataJson caught exception: "+e);
+        }
+        return json.toString();
     }
 
     public static boolean isNetworkAvailable(Activity activity) {

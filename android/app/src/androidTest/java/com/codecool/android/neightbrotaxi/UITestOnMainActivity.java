@@ -83,14 +83,13 @@ public class UITestOnMainActivity {
 
     @Test
     public void correctInputsValues() {
+        fillCorrectInputs(1);
         if (APIController.isNetworkAvailable(ACTIVITY_TEST_RULE.getActivity())) {
-            fillCorrectInputs(1);
             onView(withText("Waiting for authentication!"))
                     .inRoot(withDecorView(not(ACTIVITY_TEST_RULE.getActivity().getWindow().getDecorView())))
                     .check(matches(isDisplayed()));
         }
         else {
-            fillCorrectInputs(1);
             onView(withText("Connection Error!")).check(matches(isDisplayed()));
         }
     }
