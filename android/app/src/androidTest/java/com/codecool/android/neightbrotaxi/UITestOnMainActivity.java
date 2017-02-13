@@ -38,13 +38,13 @@ public class UITestOnMainActivity {
 
     @Test
     public void validateEmptyName() {
-        checkNullInputError(R.id.input_name, R.id.input_layout_name, R.string.err_name);
+        checkNullInputError(R.id.input_name, R.id.input_layout_name, R.string.err_name_empty);
     }
 
     @Test
     public void validateEmptyEmail() {
         fillCorrectInputs(4);
-        checkNullInputError(R.id.input_email, R.id.input_layout_email, R.string.err_email);
+        checkNullInputError(R.id.input_email, R.id.input_layout_email, R.string.err_email_empty);
     }
 
     @Test

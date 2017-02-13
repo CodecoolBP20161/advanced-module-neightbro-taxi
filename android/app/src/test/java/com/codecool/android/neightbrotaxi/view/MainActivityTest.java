@@ -32,7 +32,7 @@ public class MainActivityTest {
     @Ignore
     @Test
     public void validateName() throws Exception {
-        String errorMsg = mActivity.getString(R.string.err_name);
+        String errorMsg = mActivity.getString(R.string.err_name_empty);
 
         EditText inputName = (EditText) mActivity.findViewById(R.id.input_name);
 
