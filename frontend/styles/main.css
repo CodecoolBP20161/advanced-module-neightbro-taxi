@@ -4,11 +4,17 @@
 }
 
 body {
-    font-family: "Varela Round";
+    font-family: Helvetica;
     text-align: center;
     background: #37474F;
     margin: 0 auto;
 
+}
+
+#logo {
+    margin-top: 30px;
+    width: auto;
+    height: 150px;
 }
 
 h1 {
@@ -20,8 +26,8 @@ h1 {
 #text {
     color: darkgray;
     margin: 0 auto;
-    margin-top: -40px;
-    font-family: "Varela Round";
+    margin-top: -10px;
+    font-family: Helvetica;
     text-align: center;
     width: 360px;
     font-size: 14px;
@@ -37,7 +43,6 @@ h1 {
 
 .actions {
     display: inline-block;
-    font-family: "Varela Round";
     font-size: 18px;
     background-color: #FFEB3B;
     color: #37474F;
@@ -80,7 +85,7 @@ h1 {
     margin: 0 auto;
     background-color: #FAFAFA;
     border-radius: 3px;
-    margin-top: 0px;;
+    margin-top: -10px;;
 }
 
 .regformbox {
@@ -101,7 +106,8 @@ h1 {
 }
 
 .formbox button {
-    font-family: "Varela Round";
+    font-family: Helvetica;
+    font-weight: bold;
     font-size: 16px;
     background-color: #FFEB3B;
     color: #37474F;
