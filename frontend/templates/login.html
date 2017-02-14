@@ -1,5 +1,7 @@
-<div name="myForm" ng-submit ="submitMyForm()">
-    <input ng-model = "user.email" type="text" placeholder="Email"/>
-    <input ng-model = "user.password" type="text" placeholder="Password"/>
-    <button ng-click = "addUser()">DONE</button>
+<div ng-controller = 'loginCtrl'>
+    <form ng-submit ="submitUser(loginForm.$valid)" name="loginForm"  novalidate="novalidate">
+        <input ng-model = "user.username" type="email" required="required" placeholder="Email"/>
+        <input ng-model = "user.password" type="text" required="required" placeholder="Password"/>
+        <button id="regbutton" type="submit">Submit</button>
+    </form>
 </div>
