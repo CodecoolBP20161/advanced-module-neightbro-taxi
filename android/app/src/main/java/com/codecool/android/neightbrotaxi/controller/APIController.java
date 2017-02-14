@@ -7,6 +7,9 @@ import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.util.Log;
 
+import com.codecool.android.neightbrotaxi.model.AlertUser;
+import com.codecool.android.neightbrotaxi.view.ResponseView;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -17,10 +20,9 @@ import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;
-import okhttp3.Response;
 
 /**
- * Responsible for connection between app and the server, by OkHttpClient
+ * Responsible for connectionError between app and the server, by OkHttpClient
  * @see APIController#client
  */
 public class APIController {
@@ -31,7 +33,7 @@ public class APIController {
     private static final OkHttpClient client = new OkHttpClient();
     private static final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
     // Temporary address! (The final waiting for deploying.)
-    private static String API_URL = "http://192.168.161.172:9000/";
+    private static String API_URL = "http://192.168.0.33:9000/";
 
     /**
      * This is async.
@@ -41,17 +43,20 @@ public class APIController {
 
         String json;
         String serverRequest;
+        Activity mActivity;
 
-        /** This one like to wish  a string list.
+        /** This one like to wish an Activity and a string list.
+         * @param activity get from current context
          * @param strings First is every case will be a
          * @see #serverRequest
          * Second is json parts.
          */
-        public PostTask(String ... strings) {
+        public PostTask(Activity activity, String... strings) {
+            mActivity = activity;
             // JUST: /registration
-            this.serverRequest = strings[0];
+            serverRequest = strings[0];
             strings = Arrays.copyOfRange(strings, 1, strings.length);
-            this.json = UserDataJson(strings);
+            json = UserDataJson(strings);
         }
 
         /**
@@ -64,9 +69,10 @@ public class APIController {
         @Override
         protected String doInBackground(String... urls) {
             try {
-                Log.d(TAG, "URL WITH METHOD: "+API_URL+ serverRequest);
-                return post(API_URL+ serverRequest, json);
-            } catch (Exception e) {
+                Log.i(TAG, "URL WITH SERVER REQUEST: " + API_URL + serverRequest);
+                return post(API_URL + serverRequest, json);
+            }
+            catch (Exception e) {
                 Log.e(TAG, "PostTask caught exception: "+e);
                 return null;
             }
@@ -85,17 +91,31 @@ public class APIController {
                     .url(url)
                     .post(body)
                     .build();
-            Response response = client.newCall(request).execute();
+            okhttp3.Response response = client.newCall(request).execute();
             return response.body().string();
         }
 
         /**
-         * Used by OS.
-         * @param getResponse and logged it
+         * Used by OS. Managing responses:
+         * @see ResponseView
+         * @param getResponse get from system
          */
-        //TODO: Process the different response!
+        @Override
         protected void onPostExecute(String getResponse) {
-            Log.i(TAG, "PostTask onPostExecute message: "+getResponse);
+            Log.d(TAG, "PostTask onPostExecute message: "+getResponse);
+
+            if (getResponse != null) {
+                try {
+                    new ResponseView(mActivity, getResponse);
+                }
+                catch (JSONException e) {
+                    e.printStackTrace();
+                    Log.e(TAG, String.valueOf(e));
+                }
+            }
+            else {
+                new AlertUser(mActivity).serverError();
+            }
         }
     }
 
@@ -104,10 +124,10 @@ public class APIController {
      */
     static class GetTask extends AsyncTask <String, Void, String> {
 
-        String method;
+        String serverRequest;
 
         GetTask(String... strings) {
-            this.method = strings[0];
+            this.serverRequest = strings[0];
         }
 
         /**
@@ -120,8 +140,8 @@ public class APIController {
         @Override
         protected String doInBackground(String... urls) {
             try {
-                Log.d(TAG, "URL WITH METHOD: "+API_URL+method);
-                return get(API_URL+method);
+                Log.d(TAG, "URL WITH SERVER REQUEST: "+API_URL+serverRequest);
+                return get(API_URL+serverRequest);
             } catch (Exception e) {
                 Log.e(TAG, "GetTask caught exception: "+e);
                 return null;
@@ -131,14 +151,14 @@ public class APIController {
         /**
          * Make a get request with:
          * @param url string web addresses
-         * @return response from the server
+         * @return response from the serverError
          * @throws IOException, when something went wrong.
          */
         private String get(String url) throws IOException {
             Request request = new Request.Builder()
                     .url(url)
                     .build();
-            Response response = client.newCall(request).execute();
+            okhttp3.Response response = client.newCall(request).execute();
             return response.body().string();
         }
 
@@ -147,6 +167,7 @@ public class APIController {
          * @param getResponse and logged it
          */
         //TODO: Process the different response!
+        @Override
         protected void onPostExecute(String getResponse) {
             Log.i(TAG, "GetTask onPostExecute message: "+getResponse);
         }
@@ -165,7 +186,7 @@ public class APIController {
             json.put("email", strings[1]);
             json.put("password", strings[2]);
             json.put("passwordConfirm", strings[3]);
-            Log.i(TAG, "JSON CREATED: "+json);
+            Log.d(TAG, "JSON CREATED: "+json);
         }
         catch (JSONException | ArrayIndexOutOfBoundsException e) {
             Log.e(TAG, "UserDataJson caught exception: "+e);
@@ -174,7 +195,7 @@ public class APIController {
     }
 
     /**
-     * Checking network status and connection ability.
+     * Checking network status and connectionError ability.
      * @param activity get from the current (alive) android Activity.
      * @return boolean result
      */
