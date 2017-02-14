@@ -1,6 +1,7 @@
 package com.codecool.android.neightbrotaxi;
 
 import android.support.design.widget.TextInputLayout;
+import android.support.test.espresso.NoMatchingViewException;
 import android.support.test.espresso.matcher.BoundedMatcher;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
@@ -9,24 +10,24 @@ import android.view.View;
 import com.codecool.android.neightbrotaxi.controller.APIController;
 import com.codecool.android.neightbrotaxi.view.MainActivity;
 
+import org.hamcrest.Description;
+import org.hamcrest.Matcher;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.hamcrest.Description;
-import org.hamcrest.Matcher;
 
-import static android.support.test.espresso.action.ViewActions.closeSoftKeyboard;
-import static android.support.test.espresso.matcher.RootMatchers.withDecorView;
-import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
-import static android.support.test.espresso.matcher.ViewMatchers.withText;
-import static org.hamcrest.Matchers.is;
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.action.ViewActions.clearText;
 import static android.support.test.espresso.action.ViewActions.click;
+import static android.support.test.espresso.action.ViewActions.closeSoftKeyboard;
 import static android.support.test.espresso.action.ViewActions.typeText;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
 import static android.support.test.espresso.core.deps.guava.base.Preconditions.checkNotNull;
+import static android.support.test.espresso.matcher.RootMatchers.withDecorView;
+import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
+import static android.support.test.espresso.matcher.ViewMatchers.withText;
+import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.not;
 
 @RunWith(AndroidJUnit4.class)
@@ -85,9 +86,15 @@ public class UITestOnMainActivity {
     public void correctInputsValues() {
         fillCorrectInputs(1);
         if (APIController.isNetworkAvailable(ACTIVITY_TEST_RULE.getActivity())) {
-            onView(withText("Waiting for authentication!"))
-                    .inRoot(withDecorView(not(ACTIVITY_TEST_RULE.getActivity().getWindow().getDecorView())))
-                    .check(matches(isDisplayed()));
+            try {
+                onView(withText("Waiting for authentication!"))
+                        .inRoot(withDecorView(not(ACTIVITY_TEST_RULE.getActivity().getWindow().getDecorView())))
+                        .check(matches(isDisplayed()));
+            }
+            catch (NoMatchingViewException e) {
+//                onView(withText("Server Error!")).check(matches(isDisplayed()));
+                onView(withText("Already Registered!")).check(matches(isDisplayed()));
+            }
         }
         else {
             onView(withText("Connection Error!")).check(matches(isDisplayed()));
@@ -101,7 +108,7 @@ public class UITestOnMainActivity {
             case 2:
                 onView(withId(R.id.input_password1)).perform(typeText("password"), closeSoftKeyboard());
             case 3:
-                onView(withId(R.id.input_email)).perform(typeText("test@email.com"), closeSoftKeyboard());
+                onView(withId(R.id.input_email)).perform(typeText("tt@ike.st"), closeSoftKeyboard());
             case 4:
                 onView(withId(R.id.input_name)).perform(typeText("Test User"), closeSoftKeyboard());
                 break;
