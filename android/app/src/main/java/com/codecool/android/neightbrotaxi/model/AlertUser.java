@@ -35,7 +35,7 @@ public class AlertUser {
     public void serverError() {
         buildDialog(
                 "Server Error!",
-                "The serverError doesn't available now! Please try again a few moments or make contact " +
+                "The server doesn't available now! Please try again a few moments or make contact " +
                         "to the support team. Thank you! ",
                 "Okay.");
     }
