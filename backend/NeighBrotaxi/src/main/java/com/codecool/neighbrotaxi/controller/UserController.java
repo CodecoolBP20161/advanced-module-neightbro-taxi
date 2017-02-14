@@ -36,18 +36,18 @@ public class UserController {
         return null;
     }
 
-    @RequestMapping(value = "/user-login", method = RequestMethod.POST)
-    @ResponseBody public String userLogin(@RequestBody User user){
-        MultiValueMap<String, String> params = new LinkedMultiValueMap<String, String>();
-        params.add("username", user.getUsername());
-        params.add("password", user.getPassword());
-        UriComponents uriComponents = UriComponentsBuilder.fromHttpUrl("http://localhost:9000/login").queryParams(params).build();
-        try {
-            return userService.login(uriComponents.getQuery());
-        } catch (UnirestException e) {
-            return e.getMessage();
-        }
-    }
+//    @RequestMapping(value = "/user-login", method = RequestMethod.POST)
+//    @ResponseBody public String userLogin(@RequestBody User user){
+//        MultiValueMap<String, String> params = new LinkedMultiValueMap<String, String>();
+//        params.add("username", user.getUsername());
+//        params.add("password", user.getPassword());
+//        UriComponents uriComponents = UriComponentsBuilder.fromHttpUrl("http://localhost:9000/login").queryParams(params).build();
+//        try {
+//            return userService.login(uriComponents.getQuery());
+//        } catch (UnirestException e) {
+//            return e.getMessage();
+//        }
+//    }
 
     @RequestMapping(value = {"/", "/welcome"}, method = RequestMethod.GET)
     @ResponseBody public String welcome() {

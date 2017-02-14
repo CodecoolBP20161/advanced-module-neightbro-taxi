@@ -48,14 +48,14 @@ public class UserServiceImpl implements UserService {
         userRepository.save(user);
     }
 
-    @Override
-    public String login(String urlParams) throws UnirestException {
-        return Unirest.post("http://localhost:9000/login")
-                .header("content-type", "application/x-www-form-urlencoded")
-                .header("cache-control", "no-cache")
-                .body(urlParams)
-                .asString().toString();
-    }
+//    @Override
+//    public String login(String urlParams) throws UnirestException {
+//        return Unirest.post("http://localhost:9000/login")
+//                .header("content-type", "application/x-www-form-urlencoded")
+//                .header("cache-control", "no-cache")
+//                .body(urlParams)
+//                .asString().toString();
+//    }
 
 
     @Override

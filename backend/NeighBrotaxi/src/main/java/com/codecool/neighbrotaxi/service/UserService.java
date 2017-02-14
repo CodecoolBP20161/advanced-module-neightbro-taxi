@@ -13,5 +13,5 @@ public interface UserService {
     User findByUsername(String username);
     User findByEmail(String email);
     User findOne(UUID id);
-    String login(String urlParams) throws UnirestException;
+//    String login(String urlParams) throws UnirestException;
 }
