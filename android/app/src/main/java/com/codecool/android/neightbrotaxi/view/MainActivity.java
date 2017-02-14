@@ -15,7 +15,7 @@ import android.widget.Toast;
 
 import com.codecool.android.neightbrotaxi.R;
 import com.codecool.android.neightbrotaxi.controller.APIController;
-import com.codecool.android.neightbrotaxi.model.AlertUserError;
+import com.codecool.android.neightbrotaxi.model.AlertUser;
 
 
 /**
@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * Check the validator boolean result.
-     * If the network connection is OK,
+     * If the network connectionError is OK,
      * Send user inputs to the correct URL.
      * Finally notify user, what happens.
      */
@@ -105,6 +105,7 @@ public class MainActivity extends AppCompatActivity {
 
         if (APIController.isNetworkAvailable(MainActivity.this)) {
             new APIController.PostTask(
+                    MainActivity.this,
                     "registration",
                     inputName.getText().toString(),
                     inputEmail.getText().toString(),
@@ -113,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
             ).execute();
             Toast.makeText(getApplicationContext(), "Waiting for authentication!", Toast.LENGTH_SHORT).show();
         } else {
-            AlertUserError.connection(MainActivity.this);
+           new AlertUser(MainActivity.this).connectionError();
         }
 
     }
