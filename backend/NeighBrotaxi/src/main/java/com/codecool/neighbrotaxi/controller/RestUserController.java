@@ -45,8 +45,6 @@ public class RestUserController {
         return user;
     }
 
-
-
     @RequestMapping(value = "/logged-in-user", method = RequestMethod.GET)
     public User loggedInUser(){
         return userService.findByUsername(securityService.findLoggedInUsername());
