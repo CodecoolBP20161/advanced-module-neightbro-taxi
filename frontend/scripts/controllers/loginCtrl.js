@@ -14,11 +14,11 @@ angular.module('neighbroTaxi')
             console.log('NOTFASZT');
             console.log($scope.user);
 
-            $http.post('http://localhost:9000/login', $scope.user).
+            $http.post('http://localhost:9000/user-login', $scope.user).
             success(function (data) {
-                console.log("Success");
+                console.log(data);
             }).error(function (data) {
-                console.log(":(");
+                console.log(data);
             });
 
             responseService.getResponse(function (response) {

@@ -23,7 +23,7 @@ public class WebConfig extends WebMvcConfigurerAdapter {
     }
 
     @Bean
-    public CorsFilter corsFilter(){
+    public CorsFilter simpleCorsFilter(){
         return new CorsFilter();
     }
 }

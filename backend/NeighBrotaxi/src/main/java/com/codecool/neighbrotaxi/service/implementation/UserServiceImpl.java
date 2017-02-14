@@ -6,6 +6,8 @@ import com.codecool.neighbrotaxi.model.User;
 import com.codecool.neighbrotaxi.repository.RoleRepository;
 import com.codecool.neighbrotaxi.repository.UserRepository;
 import com.codecool.neighbrotaxi.service.UserService;
+import com.mashape.unirest.http.Unirest;
+import com.mashape.unirest.http.exceptions.UnirestException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -44,6 +46,15 @@ public class UserServiceImpl implements UserService {
         roles.add(roleRepository.findByName(RoleEnum.USER.name()));
         user.setRoles(roles);
         userRepository.save(user);
+    }
+
+    @Override
+    public String login(String urlParams) throws UnirestException {
+        return Unirest.post("http://localhost:9000/login")
+                .header("content-type", "application/x-www-form-urlencoded")
+                .header("cache-control", "no-cache")
+                .body(urlParams)
+                .asString().toString();
     }
 
 
