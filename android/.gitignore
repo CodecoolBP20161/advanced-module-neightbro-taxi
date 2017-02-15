@@ -1,0 +1,14 @@
+# Built application files
+/build
+app/build/
+
+# Gradle generated files
+.gradle
+
+# Local configuration file (sdk path, etc)
+local.properties
+
+# User-specific configurations
+.idea/
+*.iml
+/app/proguard-rules.pro

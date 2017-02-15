@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">NeightbroTaxi</string>
+    <string name="hint_name">What\'s your full name?</string>
+    <string name="hint_email">Email address?</string>
+    <string name="hint_password1">Choose a password!</string>
+    <string name="hint_password2">Then, type it again!</string>
+    <string name="btn_sign_up">Sign Up</string>
+    <string name="err_name_empty">Don\'t be shy! Give me your name!</string>
+    <string name="err_email">Don\'t cheat! Give me a valid address!</string>
+    <string name="err_email_empty">So how should I write a letter for you?</string>
+    <string name="err_pw_empty">C\'mon, fill it!</string>
+    <string name="err_pw_short">It isn\'t enough for me!\n(8–16 characters)</string>
+    <string name="err_pw_long">It\'s too much for me!\n(8–16 characters)</string>
+    <string name="err_pw_same">Just type it again! \n(Second password must same with first!)</string>
+</resources>
