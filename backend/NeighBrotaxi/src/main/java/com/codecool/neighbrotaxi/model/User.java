@@ -13,10 +13,8 @@ import java.util.UUID;
 @Table(name = "`user`")
 public class User {
     @Id
-    @GeneratedValue(generator = "uuid-gen")
-    @GenericGenerator(name = "uuid-gen", strategy = "uuid2")
-    @Type(type = "pg-uuid")
-    private UUID id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer id;
     private String name;
     @Email
     private String email;
@@ -27,11 +25,11 @@ public class User {
     @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<Role> roles;
 
-    public UUID getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(UUID id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

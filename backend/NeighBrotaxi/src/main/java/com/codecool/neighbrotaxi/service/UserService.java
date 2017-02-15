@@ -11,5 +11,5 @@ public interface UserService {
     Logger logger = LoggerFactory.getLogger(UserService.class);
     void save(User user);
     User findByEmail(String email);
-    User findOne(UUID id);
+    User findOne(Integer id);
 }

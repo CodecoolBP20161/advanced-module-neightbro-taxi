@@ -13,19 +13,17 @@ import java.util.UUID;
 @Table(name = "role")
 public class Role {
     @Id
-    @GeneratedValue(generator = "uuid-gen")
-    @GenericGenerator(name = "uuid-gen", strategy = "uuid2")
-    @Type(type = "pg-uuid")
-    private UUID id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer id;
     private String name;
     @ManyToMany(mappedBy = "roles")
     private Set<User> users;
 
-    public UUID getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(UUID id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
