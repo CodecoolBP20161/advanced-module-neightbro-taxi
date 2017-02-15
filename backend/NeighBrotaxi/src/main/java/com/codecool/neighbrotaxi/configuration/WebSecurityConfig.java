@@ -1,7 +1,7 @@
 package com.codecool.neighbrotaxi.configuration;
 
 import com.codecool.neighbrotaxi.enums.RoleEnum;
-import com.codecool.neighbrotaxi.service.implementation.CustomUsernamePasswordAuthenticationFilter;
+import com.codecool.neighbrotaxi.service.CustomUsernamePasswordAuthenticationFilter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
