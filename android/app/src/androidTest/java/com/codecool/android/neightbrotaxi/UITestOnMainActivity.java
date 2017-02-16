@@ -1,5 +1,7 @@
 package com.codecool.android.neightbrotaxi;
 
+import android.content.Context;
+import android.net.wifi.WifiManager;
 import android.support.design.widget.TextInputLayout;
 import android.support.test.espresso.NoMatchingViewException;
 import android.support.test.espresso.matcher.BoundedMatcher;
@@ -12,6 +14,7 @@ import com.codecool.android.neightbrotaxi.view.MainActivity;
 
 import org.hamcrest.Description;
 import org.hamcrest.Matcher;
+import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -29,6 +32,7 @@ import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.not;
+import static org.junit.Assert.assertFalse;
 
 @RunWith(AndroidJUnit4.class)
 public class UITestOnMainActivity {
@@ -36,6 +40,15 @@ public class UITestOnMainActivity {
     @Rule
     public  ActivityTestRule<MainActivity> ACTIVITY_TEST_RULE =
             new ActivityTestRule<>(MainActivity.class);
+    private MainActivity TEST_ACTIVITY;
+    private WifiManager DeviceWifiManager;
+
+    @Before
+    public void setUp() throws Exception {
+        TEST_ACTIVITY = ACTIVITY_TEST_RULE.getActivity();
+        DeviceWifiManager = (WifiManager)
+                TEST_ACTIVITY.getSystemService(Context.WIFI_SERVICE);
+    }
 
     @Test
     public void validateEmptyName() {
@@ -82,18 +95,34 @@ public class UITestOnMainActivity {
         checkNullInputError(R.id.input_password2, R.id.input_layout_password2, R.string.err_pw_same);
     }
 
+    // D/APIController<>: PostTask onPostExecute message: could not execute query
+    //{"timestamp":1487181234442,"status":500,"error":"Internal Server Error"
+    // TODO: Test separately the common cases!
+    @Test
+    public void CorrectInputsNoWifi() {
+        DeviceWifiManager.setWifiEnabled(false);
+
+        Boolean signal = APIController.isNetworkAvailable(TEST_ACTIVITY);
+        assertFalse(signal);
+
+        DeviceWifiManager.setWifiEnabled(true);
+    }
     @Test
     public void correctInputsValues() {
         fillCorrectInputs(1);
-        if (APIController.isNetworkAvailable(ACTIVITY_TEST_RULE.getActivity())) {
+        if (APIController.isNetworkAvailable(TEST_ACTIVITY)) {
             try {
                 onView(withText("Waiting for authentication!"))
-                        .inRoot(withDecorView(not(ACTIVITY_TEST_RULE.getActivity().getWindow().getDecorView())))
+                        .inRoot(withDecorView(not(TEST_ACTIVITY.getWindow().getDecorView())))
                         .check(matches(isDisplayed()));
             }
             catch (NoMatchingViewException e) {
-//                onView(withText("Server Error!")).check(matches(isDisplayed()));
-                onView(withText("Already Registered!")).check(matches(isDisplayed()));
+                try {
+                    onView(withText("Server Error!")).check(matches(isDisplayed()));
+                }
+                catch (NoMatchingViewException err) {
+                    onView(withText("Already Registered!")).check(matches(isDisplayed()));
+                }
             }
         }
         else {
@@ -133,7 +162,7 @@ public class UITestOnMainActivity {
         onView(withId(R.id.btn_signup)).perform(click());
         onView(withId(inputLayoutName))
                 .check(matches(simulateEmptyInputError(
-                        ACTIVITY_TEST_RULE.getActivity().getString(errName))));
+                        TEST_ACTIVITY.getString(errName))));
     }
 
     public static Matcher<View> simulateEmptyInputError(final String string) {
