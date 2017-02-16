@@ -31,10 +31,6 @@ public class MainActivity extends AppCompatActivity {
     private EditText inputName, inputEmail, inputPassword1, inputPassword2;
     private TextInputLayout inputLayoutName, inputLayoutEmail,
             inputLayoutPassword1, inputLayoutPassword2;
-    /**
-     * ATTENTION: This was auto-generated to implement the App Indexing API.
-     * See https://g.co/AppIndexing/AndroidStudio for more information.
-     */
 
     /**
      * Set the layout for this activity, what appear on the screen.
@@ -77,8 +73,6 @@ public class MainActivity extends AppCompatActivity {
                 submitForm();
             }
         });
-        // ATTENTION: This was auto-generated to implement the App Indexing API.
-        // See https://g.co/AppIndexing/AndroidStudio for more information.
     }
 
     /**
@@ -122,7 +116,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Check is empty.
      *
-     * @return the result as boolean
+     * @return as boolean
      */
     private boolean validateName() {
         if (inputName.getText().toString().trim().isEmpty()) {
@@ -138,7 +132,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Check empty and validity.
      *
-     * @return the result as boolean
+     * @return as boolean
      */
     private boolean validateEmail() {
         String email = inputEmail.getText().toString().trim();
@@ -166,7 +160,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Check empty and length.
      *
-     * @return the result as boolean
+     * @return as boolean
      */
     private boolean validateFirstPassword() {
         String pw1 = inputPassword1.getText().toString().trim();
@@ -192,7 +186,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Check equals.
      *
-     * @return the result as boolean
+     * @return as boolean
      */
     private boolean validatePasswordSame() {
         String pw1 = inputPassword1.getText().toString().trim();
@@ -253,5 +247,46 @@ public class MainActivity extends AppCompatActivity {
                     break;
             }
         }
+    }
+
+    /**
+     *
+     * Activity lifecycle logging.
+     *
+     */
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.i(TAG, "ACTIVITY STARTED!");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.i(TAG, "ACTIVITY RESUMED!");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.i(TAG, "ACTIVITY PAUSED!");
+        inputName.setText("");
+        inputEmail.setText("");
+        inputPassword1.setText("");
+        inputPassword2.setText("");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.i(TAG, "ACTIVITY STOPPED!");
+    }
+
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.i(TAG, "ACTIVITY DESTROYED!");
     }
 }
