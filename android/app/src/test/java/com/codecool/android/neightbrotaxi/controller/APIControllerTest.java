@@ -1,7 +1,7 @@
 package com.codecool.android.neightbrotaxi.controller;
 
 import com.codecool.android.neightbrotaxi.BuildConfig;
-import com.codecool.android.neightbrotaxi.view.MainActivity;
+import com.codecool.android.neightbrotaxi.view.AuthenticatorActivity;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -19,11 +19,11 @@ import static org.junit.Assert.assertTrue;
 @Config(constants = BuildConfig.class, sdk = 25)
 public class APIControllerTest  {
 
-    private MainActivity mActivity;
+    private AuthenticatorActivity mActivity;
 
     @Before
     public void setUp() throws Exception {
-        mActivity = Robolectric.setupActivity(MainActivity.class);
+        mActivity = Robolectric.setupActivity(AuthenticatorActivity.class);
         ShadowLog.stream = System.out;
     }
 

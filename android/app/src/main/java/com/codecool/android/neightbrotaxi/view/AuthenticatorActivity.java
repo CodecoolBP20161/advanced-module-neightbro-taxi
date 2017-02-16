@@ -22,12 +22,12 @@ import com.codecool.android.neightbrotaxi.model.AlertUser;
  * This responsible for the first screen when the user launch the app.
  * Manage the activity, what ensure a registration interface.
  */
-public class MainActivity extends AppCompatActivity {
+public class AuthenticatorActivity extends AppCompatActivity {
 
     /**
      * Create TAG for logging and views for the inputs and their layouts.
      */
-    private static final String TAG = MainActivity.class.getSimpleName() + "<>";
+    private static final String TAG = AuthenticatorActivity.class.getSimpleName() + "<>";
     private EditText inputName, inputEmail, inputPassword1, inputPassword2;
     private TextInputLayout inputLayoutName, inputLayoutEmail,
             inputLayoutPassword1, inputLayoutPassword2;
@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_authenticator);
 
         Log.i(TAG, "ACTIVITY CREATED!");
 
@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
         inputEmail = (EditText) findViewById(R.id.input_email);
         inputPassword1 = (EditText) findViewById(R.id.input_password1);
         inputPassword2 = (EditText) findViewById(R.id.input_password2);
-        Button btnSignUp = (Button) findViewById(R.id.btn_signup);
+        Button btnSubmit = (Button) findViewById(R.id.btn_submit);
 
         // Every input view get a TextWatcher.
         inputName.addTextChangedListener(new MyTextWatcher(inputName));
@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
         inputPassword2.addTextChangedListener(new MyTextWatcher(inputPassword2));
 
         // When user touch on the button run the submitForm.
-        btnSignUp.setOnClickListener(new View.OnClickListener() {
+        btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 submitForm();
@@ -97,9 +97,9 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
-        if (APIController.isNetworkAvailable(MainActivity.this)) {
+        if (APIController.isNetworkAvailable(AuthenticatorActivity.this)) {
             new APIController.PostTask(
-                    MainActivity.this,
+                    AuthenticatorActivity.this,
                     "registration",
                     inputName.getText().toString(),
                     inputEmail.getText().toString(),
@@ -108,7 +108,7 @@ public class MainActivity extends AppCompatActivity {
             ).execute();
             Toast.makeText(getApplicationContext(), "Waiting for authentication!", Toast.LENGTH_SHORT).show();
         } else {
-           new AlertUser(MainActivity.this).connectionError();
+           new AlertUser(AuthenticatorActivity.this).connectionError();
         }
 
     }

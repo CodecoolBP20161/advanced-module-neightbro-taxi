@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:allowBackup="true">
-        <activity android:name=".view.MainActivity">
+        <activity android:name=".view.AuthenticatorActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

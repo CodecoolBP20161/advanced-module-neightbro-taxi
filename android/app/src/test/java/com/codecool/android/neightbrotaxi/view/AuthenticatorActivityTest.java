@@ -19,14 +19,14 @@ import static org.junit.Assert.assertEquals;
 
 @RunWith(RobolectricTestRunner.class)
 @Config(constants = BuildConfig.class, sdk = 25)
-public class MainActivityTest {
+public class AuthenticatorActivityTest {
 
     private Activity mActivity;
 
     @Before
     public void setUp() throws Exception {
-        mActivity = Robolectric.setupActivity(MainActivity.class);
-        mActivity.setContentView(R.layout.activity_main);
+        mActivity = Robolectric.setupActivity(AuthenticatorActivity.class);
+        mActivity.setContentView(R.layout.activity_authenticator);
     }
 
     @Ignore
@@ -41,7 +41,7 @@ public class MainActivityTest {
 
         inputName.setText(null);
 
-//        inputName.addTextChangedListener(new MainActivity.MyTextWatcher(inputName));
+//        inputName.addTextChangedListener(new AuthenticatorActivity.MyTextWatcher(inputName));
 
         assertEquals(errorMsg, inputLayoutName.getError());
     }
