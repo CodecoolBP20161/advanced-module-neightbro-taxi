@@ -3,7 +3,6 @@ package com.codecool.android.neightbrotaxi.view;
 import android.os.Bundle;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
@@ -45,9 +44,9 @@ public class AuthenticatorActivity extends AppCompatActivity {
         Log.i(TAG, "ACTIVITY CREATED!");
 
         // Set to the right color for the toolbar.
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitleTextColor(getColor(R.color.colorPrimary));
-        setSupportActionBar(toolbar);
+//        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+//        toolbar.setTitleTextColor(getColor(R.color.colorPrimary));
+//        setSupportActionBar(toolbar);
 
         // Find the views in the layout.
         inputLayoutName = (TextInputLayout) findViewById(R.id.input_layout_name);
@@ -271,10 +270,10 @@ public class AuthenticatorActivity extends AppCompatActivity {
     protected void onPause() {
         super.onPause();
         Log.i(TAG, "ACTIVITY PAUSED!");
-        inputName.setText("");
-        inputEmail.setText("");
-        inputPassword1.setText("");
-        inputPassword2.setText("");
+//        inputName.setText("");
+//        inputEmail.setText("");
+//        inputPassword1.setText("");
+//        inputPassword2.setText("");
     }
 
     @Override
