@@ -6,7 +6,7 @@
 angular.module('neighbroTaxi')
     .directive('loginMenu', function () {
         return {
-            templateUrl: 'templates/login_menu.html',
+            templateUrl: 'templates/loginMenu.html',
             controller: 'mainCtrl',
             replace : true,
             restrict: 'E'

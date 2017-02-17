@@ -12,10 +12,10 @@ angular.module('neighbroTaxi')
             templateUrl: 'home.html'
         })
         .when('/login', {
-            templateUrl: 'login.html'
+            templateUrl: 'loginFrame.html'
         })
         .when('/registration', {
-            templateUrl: 'registration.html'
+            templateUrl: 'registrationFrame.html'
         })
         .otherwise({
             redirectTo: '/'

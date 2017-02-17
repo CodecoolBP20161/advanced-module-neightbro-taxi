@@ -7,7 +7,7 @@ angular.module('neighbroTaxi')
     .directive('centralLogo', function () {
         return {
             restrict: 'E',
-            templateUrl: 'templates/central_logo.html',
+            templateUrl: 'templates/centralLogo.html',
             replace : true,
             controller: 'mainCtrl'
         }
