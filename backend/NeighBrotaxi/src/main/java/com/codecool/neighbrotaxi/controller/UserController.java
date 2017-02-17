@@ -18,8 +18,6 @@ import java.util.Objects;
 
 @Controller
 public class UserController {
-    @Autowired
-    private SecurityService securityService;
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     @ResponseBody public String login(String logout) {
@@ -32,4 +30,5 @@ public class UserController {
     @ResponseBody public String welcome() {
         return "Successfully logged in!";
     }
+
 }

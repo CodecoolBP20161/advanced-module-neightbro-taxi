@@ -5,10 +5,13 @@ import com.codecool.neighbrotaxi.service.SecurityService;
 import com.codecool.neighbrotaxi.service.UserService;
 import com.codecool.neighbrotaxi.validator.UserValidator;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
+import java.util.Objects;
 
 
 @RestController
@@ -45,7 +48,12 @@ public class RestUserController {
         return user;
     }
 
-
+    @RequestMapping(value = "/user-login", method = RequestMethod.POST)
+    public User userLogin(@RequestBody User user, HttpServletRequest request) {
+        userService.login(request, user);
+        if (Objects.equals(securityService.findLoggedInUsername(), "")) return null;
+        return userService.findByUsername(securityService.findLoggedInUsername());
+    }
 
     @RequestMapping(value = "/logged-in-user", method = RequestMethod.GET)
     public User loggedInUser(){
