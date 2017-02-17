@@ -40,8 +40,8 @@ h4 {
 
 .password {
     -webkit-text-security:disc !important;
-    -moz-text-security:disc !imporant;
-    -o-text-security: disc !imporant;
+    -moz-text-security:disc !important;
+    -o-text-security: disc !important;
     text-security:disc !important;
     -webkit-text-fill-color: goldenrod;
 }
@@ -85,12 +85,12 @@ h4 {
 
 .formbox {
     text-align: center;
-    height: 230px;
+    height: 200px;
     width: 428px;
     margin: 0 auto;
     background-color: #FAFAFA;
     border-radius: 3px;
-    margin-top: -10px;;
+    margin-top: -10px;
 }
 
 .regformbox {
@@ -100,7 +100,7 @@ h4 {
     margin: 0 auto;
     background-color: #FAFAFA;
     border-radius: 3px;
-    margin-top: 0px;;
+    margin-top: 0px;
 }
 
 .formbox p {

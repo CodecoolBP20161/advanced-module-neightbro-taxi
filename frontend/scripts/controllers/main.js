@@ -1,3 +1,5 @@
+
+// THIS FILE WILL BE THE MAIN CTRL ONCE. IF NOT, IT WILL DIE
 'use strict';
 
 angular.module('neighbroTaxi')
@@ -9,29 +11,29 @@ angular.module('neighbroTaxi')
             $scope.users = users;
         });
         */
-
-        $scope.newuser = {};
-        $scope.errorConfirm = false;
-
-        $scope.addUser = function (valid) {
-
-            if(valid){
-                console.log($scope.newuser);
-
-                $http.post('http://localhost:9000/registration', $scope.newuser).
-                success(function (data) {
-                    console.log("Success");
-                }).error(function (data) {
-                    console.log(":(");
-                });
-
-                $scope.validForm.$setPristine();
-
-                $scope.showLogin = true;
-                $scope.showReg = false;
-            }
-            $scope.newuser = null;
-        }
+        //
+        // $scope.newuser = {};
+        // $scope.errorConfirm = false;
+        //
+        // $scope.addUser = function (valid) {
+        //
+        //     if(valid){
+        //         console.log($scope.newuser);
+        //
+        //         $http.post('http://localhost:9000/registration', $scope.newuser).
+        //         success(function (data) {
+        //             console.log("Success");
+        //         }).error(function (data) {
+        //             console.log(":(");
+        //         });
+        //
+        //         $scope.validForm.$setPristine();
+        //
+        //         $scope.showLogin = true;
+        //         $scope.showReg = false;
+        //     }
+        //     $scope.newuser = null;
+        // }
         //
         // $scope.resetForm = function (newuser) {
         //     $scope.newuser = null;
