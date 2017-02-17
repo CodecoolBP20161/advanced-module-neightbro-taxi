@@ -13,6 +13,10 @@ angular.module('neighbroTaxi')
         $scope.newuser = {};
         $scope.errorConfirm = false;
 
+        $scope.go = function ( path ) {
+            $location.path( path );
+        };
+
         $scope.addUser = function (valid) {
 
             if(valid){
