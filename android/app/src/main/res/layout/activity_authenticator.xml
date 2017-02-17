@@ -1,20 +1,21 @@
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/bg">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:layout_scrollFlags="scroll|enterAlways"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+        <!--<android.support.v7.widget.Toolbar-->
+            <!--android:id="@+id/toolbar"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="?attr/actionBarSize"-->
+            <!--android:background="?attr/colorPrimary"-->
+            <!--app:layout_scrollFlags="scroll|enterAlways"-->
+            <!--app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />-->
     </android.support.design.widget.AppBarLayout>
 
     <LinearLayout
@@ -24,14 +25,15 @@
         android:orientation="vertical"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
-        android:paddingTop="60dp"
-        android:background="@color/colorPrimary">
+        android:paddingTop="60dp">
+
 
 
         <android.support.design.widget.TextInputLayout
             android:id="@+id/input_layout_name"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:theme="@style/TextLabel">
 
             <EditText
                 android:id="@+id/input_name"
@@ -44,7 +46,8 @@
         <android.support.design.widget.TextInputLayout
             android:id="@+id/input_layout_email"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:theme="@style/TextLabel">
 
             <EditText
                 android:id="@+id/input_email"
@@ -57,7 +60,8 @@
         <android.support.design.widget.TextInputLayout
             android:id="@+id/input_layout_password1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:theme="@style/TextLabel">
 
             <EditText
                 android:id="@+id/input_password1"
@@ -70,7 +74,8 @@
         <android.support.design.widget.TextInputLayout
             android:id="@+id/input_layout_password2"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:theme="@style/TextLabel">
 
             <EditText
                 android:id="@+id/input_password2"
@@ -84,9 +89,17 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="@string/btn_submit"
-            android:background="@color/colorSecondary"
+            android:background="@drawable/btn_bg"
             android:layout_marginTop="40dp"
             android:textColor="@color/colorPrimary"/>
+
+        <Button android:id="@+id/btn_option"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_login"
+                android:background="@drawable/btn_bg"
+                android:layout_marginTop="40dp"
+                android:textColor="@color/colorPrimary"/>
 
     </LinearLayout>
 
