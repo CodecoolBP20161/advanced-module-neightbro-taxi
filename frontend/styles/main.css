@@ -6,7 +6,7 @@
 body {
     font-family: Helvetica;
     text-align: center;
-    background: #37474F;
+    background-image: url(../img/bg_blur.png);
     margin: 0 auto;
 
 }
@@ -21,6 +21,11 @@ h1 {
     color: #FFEB3B;
     margin-top: 50px;
     font-size: 70px;
+}
+
+h4 {
+    color: #FFEB3B;
+    font-size: 1.5em;
 }
 
 #text {

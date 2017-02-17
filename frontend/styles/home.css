@@ -1,0 +1,53 @@
+.vertical-box {
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 10%;
+    width: 30%;
+}
+
+#navbar {
+    height: 10%;
+    width: 100%;
+    padding-top: 1%;
+    padding-left: 1%;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+#small-logo {
+    float: left;
+    height: 80%;
+    width: auto;
+}
+
+#welcome {
+    float: right;
+    font-family: Helvetica;
+    font-size: 16px;
+    color: #FFEB3B;
+    text-transform: uppercase;
+    margin-top: 8%;
+}
+
+#logout {
+    float: right;
+    font-family: Helvetica;
+    text-transform: uppercase;
+    font-size: 16px;
+    background-color: rgba(255, 235, 59, 0);
+    text-align: center;
+    color: #FFEB3B;
+    height: 70%;
+    width: auto;
+    outline: 0 !important;
+    margin: 0 auto;
+    margin-top: 15px;
+    border: solid #FFEB3B 2px;
+    border-radius: 5px;
+    margin-right: 4%;
+    margin-left: 8%;
+    padding-right: 8%;
+    padding-left: 8%;
+}
