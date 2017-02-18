@@ -23,16 +23,27 @@ h1 {
     font-size: 70px;
 }
 
+h2 {
+    color: #FFEB3B;
+    margin-top: 0;
+    font-size: 30px;
+}
+
 h3 {
     color: #FFEB3B;
     margin-top: 5%;
-    font-size: 30px;
+    margin-bottom: 4px;
+    font-size: 22px;
     text-transform: uppercase;
+    letter-spacing: 4px;
+
 }
 
 h4 {
     color: #FFEB3B;
-    font-size: 1.5em;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
 }
 
 #text {

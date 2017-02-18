@@ -8,7 +8,7 @@ angular.module('neighbroTaxi')
             redirectTo: '/login'
             // templateUrl: 'home.html'
         })
-        .when('/home', {
+        .when('/profile', {
             templateUrl: 'home.html'
         })
         .when('/login', {
