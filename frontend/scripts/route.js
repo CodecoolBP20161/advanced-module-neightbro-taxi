@@ -15,7 +15,7 @@ angular.module('neighbroTaxi')
             templateUrl: 'loginFrame.html'
         })
         .when('/registration', {
-            templateUrl: 'registrationFrame.html'
+            templateUrl: 'loginFrame.html'
         })
         .otherwise({
             redirectTo: '/'

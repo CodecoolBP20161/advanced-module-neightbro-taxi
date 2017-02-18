@@ -4,7 +4,7 @@
 'use strict';
 
 angular.module('neighbroTaxi')
-    .directive( 'goClick', function ( $location ) {
+    .directive( 'goClick', function ( $location) {
         return function ( scope, element, attrs ) {
             var path;
 

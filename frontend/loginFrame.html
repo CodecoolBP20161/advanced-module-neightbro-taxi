@@ -3,8 +3,8 @@
     <div class="form">
         <div class="formbox">
             <login-menu></login-menu>
-
-            <div class="formbox"><login></login></div>
+            <div class="formbox"  ng-show="showIfUrl('#/login')"><login></login></div>
+            <div  class="regformbox" ng-show="showIfUrl('#/registration')"><reg></reg></div>
         </div>
     </div>
 </div>

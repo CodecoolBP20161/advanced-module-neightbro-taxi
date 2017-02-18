@@ -23,6 +23,13 @@ h1 {
     font-size: 70px;
 }
 
+h3 {
+    color: #FFEB3B;
+    margin-top: 5%;
+    font-size: 30px;
+    text-transform: uppercase;
+}
+
 h4 {
     color: #FFEB3B;
     font-size: 1.5em;
