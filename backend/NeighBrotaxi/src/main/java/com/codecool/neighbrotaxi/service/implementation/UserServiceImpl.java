@@ -47,8 +47,30 @@ public class UserServiceImpl implements UserService {
         return userRepository.findByEmail(email);
     }
 
+    /**
+     * Find one user by their ID.
+     * @param id Query the row where the id is the same as this given one.
+     * @return A User object, with the valid fields queried from the database.
+     */
     @Override
     public User findOne(Integer id) {
         return userRepository.findOne(id);
+    }
+
+    /**
+     * The method updates the columns of the corresponding user (based on ID) with the given fields.
+     * Updates every columns, except the 'password' and 'id' ones!
+     * @param user A user object parsed from a JSON string. The database entry will be updated based on this object.
+     */
+    @Override
+    public void update(User user) {
+        User userInDb = findOne(user.getId());
+        userInDb.setName(user.getName());
+        userInDb.setEmail(user.getEmail());
+        userInDb.setRoles(user.getRoles());
+
+        userRepository.save(userInDb);
+        // TODO: modify all properties (username too)
+        // But first of all we need the login user story beacuse there are more properties for the user!
     }
 }

@@ -12,4 +12,5 @@ public interface UserService {
     void save(User user);
     User findByEmail(String email);
     User findOne(Integer id);
+    void update(User user);
 }

@@ -99,4 +99,24 @@ public class UserServiceImplTest extends AbstractTest {
 
         assertNotNull(userRepository.findOne(user.getId()));
     }
+
+    @Test
+    public void update_UserUpdatedInDB() throws Exception {
+        userService.save(user);
+        user.setEmail("modifiedEmail@email.com");
+
+        userService.update(user);
+
+        assertEquals("modifiedEmail@email.com", userRepository.findOne(user.getId()).getEmail());
+    }
+
+    @Test
+    public void update_NotAddNewRow() throws Exception {
+        userService.save(user);
+        user.setEmail("modifiedEmail@email.com");
+
+        userService.update(user);
+
+        assertEquals(1, userRepository.findAll().size());
+    }
 }
