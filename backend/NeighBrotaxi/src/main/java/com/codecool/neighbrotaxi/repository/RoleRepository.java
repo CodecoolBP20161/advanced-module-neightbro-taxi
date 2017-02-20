@@ -12,6 +12,6 @@ import java.util.UUID;
  */
 @RepositoryRestResource(collectionResourceRel = "userRoles", path = "user-roles")
 @Transactional
-public interface RoleRepository extends JpaRepository<Role, UUID>{
+public interface RoleRepository extends JpaRepository<Role, Integer>{
     Role findByName(String name);
 }

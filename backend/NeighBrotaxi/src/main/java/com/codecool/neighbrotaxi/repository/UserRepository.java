@@ -12,7 +12,7 @@ import java.util.UUID;
  */
 @RepositoryRestResource(collectionResourceRel = "users", path = "users")
 @Transactional
-public interface UserRepository extends JpaRepository<User, UUID> {
+public interface UserRepository extends JpaRepository<User, Integer> {
     User findByEmail(String email);
     User findByUsername(String userName);
 }
