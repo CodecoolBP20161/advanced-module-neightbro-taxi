@@ -1,12 +1,9 @@
 package com.codecool.neighbrotaxi.model;
 
-import org.hibernate.annotations.GenericGenerator;
-import org.hibernate.annotations.Type;
 import org.hibernate.validator.constraints.Email;
 
 import javax.persistence.*;
 import java.util.Set;
-import java.util.UUID;
 
 
 @Entity

@@ -7,7 +7,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
 import org.springframework.context.annotation.ScopedProxyMode;
 
-import java.beans.Transient;
 import java.util.ArrayList;
 
 @Configuration
@@ -18,8 +17,8 @@ public class SessionStorageConfig {
     SessionStorage sessionStorage(){
 
         User user = new User();
-        user.setName("anonymus");
-        user.setEmail("anonymus@anonymus.com");
+        user.setName("anonymous");
+        user.setEmail("anonymous@anonymous.com");
 
         SessionStorage sessionStorage = new SessionStorage();
         sessionStorage.setErrorMessages(new ArrayList<>());

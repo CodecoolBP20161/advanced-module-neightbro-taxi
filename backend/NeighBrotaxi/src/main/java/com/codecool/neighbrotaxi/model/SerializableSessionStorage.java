@@ -2,7 +2,6 @@ package com.codecool.neighbrotaxi.model;
 
 import org.springframework.stereotype.Component;
 
-import javax.annotation.Resource;
 import java.util.List;
 
 @Component

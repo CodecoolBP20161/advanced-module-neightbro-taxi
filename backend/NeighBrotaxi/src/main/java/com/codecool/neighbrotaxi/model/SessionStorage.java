@@ -1,11 +1,7 @@
 package com.codecool.neighbrotaxi.model;
 
-import org.springframework.context.annotation.Scope;
-import org.springframework.data.annotation.Transient;
 import org.springframework.stereotype.Component;
 
-import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.List;
 
 @Component
