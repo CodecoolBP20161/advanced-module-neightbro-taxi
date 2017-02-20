@@ -32,7 +32,7 @@ public class UserControllerTest extends AbstractTest {
     private User user;
 
     @Autowired
-    private UserController userController;
+    private RestUserController restUserController;
 
     @Autowired
     private BindingResult bindingResult;
@@ -55,7 +55,7 @@ public class UserControllerTest extends AbstractTest {
         when(bindingResult.hasErrors()).thenReturn(true);
         when(bindingResult.getAllErrors()).thenReturn(listOfErrors);
 
-        Object object = userController.registration(user, bindingResult);
+        Object object = restUserController.registration(user, bindingResult);
 
         assertEquals(listOfErrors, object);
     }
@@ -64,7 +64,7 @@ public class UserControllerTest extends AbstractTest {
     public void registration_HasNoErrorsInBindingResult_CallSaveUser() throws Exception {
         when(bindingResult.hasErrors()).thenReturn(false);
 
-        User returnedUser = (User) userController.registration(user, bindingResult);
+        User returnedUser = (User) restUserController.registration(user, bindingResult);
 
         verify(userService).save(user);
     }
@@ -74,7 +74,7 @@ public class UserControllerTest extends AbstractTest {
         when(bindingResult.hasErrors()).thenReturn(false);
         when(userService.findOne(user.getId())).thenReturn(user);
 
-        User returnedUser = (User) userController.registration(user, bindingResult);
+        User returnedUser = (User) restUserController.registration(user, bindingResult);
 
         assertEquals(user, returnedUser);
     }
@@ -82,7 +82,7 @@ public class UserControllerTest extends AbstractTest {
     @Test
     public void registration_CallValidate() throws Exception {
 
-        userController.registration(user, bindingResult);
+        restUserController.registration(user, bindingResult);
 
         verify(userValidator).validate(user, bindingResult);
     }

@@ -1,6 +1,7 @@
 package com.codecool.neighbrotaxi.model;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Type;
 
@@ -17,6 +18,7 @@ public class Role {
     private Integer id;
     private String name;
     @ManyToMany(mappedBy = "roles")
+    @JsonIgnore
     private Set<User> users;
 
     public Integer getId() {
