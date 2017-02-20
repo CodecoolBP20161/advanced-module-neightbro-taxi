@@ -1,5 +1,7 @@
 package com.codecool.neighbrotaxi.controller;
 
+import com.codecool.neighbrotaxi.model.SerializableSessionStorage;
+import com.codecool.neighbrotaxi.model.SessionStorage;
 import com.codecool.neighbrotaxi.model.User;
 import com.codecool.neighbrotaxi.service.SecurityService;
 import com.codecool.neighbrotaxi.service.UserService;
@@ -26,6 +28,9 @@ public class RestUserController {
     @Autowired
     private SecurityService securityService;
 
+    @Autowired
+    private SessionStorage sessionStorage;
+
 
     /**
      * Route for user registration POST request. Using the userValidator for checking valid input.
@@ -49,10 +54,18 @@ public class RestUserController {
     }
 
     @RequestMapping(value = "/user-login", method = RequestMethod.POST)
-    public User userLogin(@RequestBody User user, HttpServletRequest request) {
+    public SerializableSessionStorage userLogin(@RequestBody User user, HttpServletRequest request) {
         userService.login(request, user);
-        if (Objects.equals(securityService.findLoggedInUsername(), "")) return null;
-        return userService.findByUsername(securityService.findLoggedInUsername());
+        sessionStorage.clearAllErrorMessages();
+        sessionStorage.clearAllInfoMessages();
+
+        if (Objects.equals(securityService.findLoggedInUsername(), "")) {
+            sessionStorage.addErrorMessage("Invalid email or password!");
+        } else {
+            sessionStorage.setLoggedInUser(userService.findByUsername(securityService.findLoggedInUsername()));
+            sessionStorage.addInfoMessage("Successfully logged in!");
+        }
+        return new SerializableSessionStorage(sessionStorage);
     }
 
     @RequestMapping(value = "/logged-in-user", method = RequestMethod.GET)
