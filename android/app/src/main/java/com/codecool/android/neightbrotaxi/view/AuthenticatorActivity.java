@@ -3,7 +3,6 @@ package com.codecool.android.neightbrotaxi.view;
 import android.os.Bundle;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
@@ -22,19 +21,17 @@ import com.codecool.android.neightbrotaxi.model.AlertUser;
  * This responsible for the first screen when the user launch the app.
  * Manage the activity, what ensure a registration interface.
  */
-public class MainActivity extends AppCompatActivity {
+public class AuthenticatorActivity extends AppCompatActivity {
 
     /**
      * Create TAG for logging and views for the inputs and their layouts.
      */
-    private static final String TAG = MainActivity.class.getSimpleName() + "<>";
+    private static final String TAG = AuthenticatorActivity.class.getSimpleName() + "<>";
     private EditText inputName, inputEmail, inputPassword1, inputPassword2;
     private TextInputLayout inputLayoutName, inputLayoutEmail,
             inputLayoutPassword1, inputLayoutPassword2;
-    /**
-     * ATTENTION: This was auto-generated to implement the App Indexing API.
-     * See https://g.co/AppIndexing/AndroidStudio for more information.
-     */
+    private Button btnSubmit, btnOption;
+
 
     /**
      * Set the layout for this activity, what appear on the screen.
@@ -44,25 +41,28 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_authenticator);
 
         Log.i(TAG, "ACTIVITY CREATED!");
 
         // Set to the right color for the toolbar.
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitleTextColor(getColor(R.color.colorPrimary));
-        setSupportActionBar(toolbar);
+//        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+//        toolbar.setTitleTextColor(getColor(R.color.colorPrimary));
+//        setSupportActionBar(toolbar);
 
         // Find the views in the layout.
-        inputLayoutName = (TextInputLayout) findViewById(R.id.input_layout_name);
-        inputLayoutEmail = (TextInputLayout) findViewById(R.id.input_layout_email);
-        inputLayoutPassword1 = (TextInputLayout) findViewById(R.id.input_layout_password1);
-        inputLayoutPassword2 = (TextInputLayout) findViewById(R.id.input_layout_password2);
         inputName = (EditText) findViewById(R.id.input_name);
         inputEmail = (EditText) findViewById(R.id.input_email);
         inputPassword1 = (EditText) findViewById(R.id.input_password1);
         inputPassword2 = (EditText) findViewById(R.id.input_password2);
-        Button btnSignUp = (Button) findViewById(R.id.btn_signup);
+
+        inputLayoutName = (TextInputLayout) findViewById(R.id.input_layout_name);
+        inputLayoutEmail = (TextInputLayout) findViewById(R.id.input_layout_email);
+        inputLayoutPassword1 = (TextInputLayout) findViewById(R.id.input_layout_password1);
+        inputLayoutPassword2 = (TextInputLayout) findViewById(R.id.input_layout_password2);
+
+        btnSubmit = (Button) findViewById(R.id.btn_submit);
+        btnOption = (Button) findViewById(R.id.btn_option);
 
         // Every input view get a TextWatcher.
         inputName.addTextChangedListener(new MyTextWatcher(inputName));
@@ -71,14 +71,31 @@ public class MainActivity extends AppCompatActivity {
         inputPassword2.addTextChangedListener(new MyTextWatcher(inputPassword2));
 
         // When user touch on the button run the submitForm.
-        btnSignUp.setOnClickListener(new View.OnClickListener() {
+        btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 submitForm();
             }
         });
-        // ATTENTION: This was auto-generated to implement the App Indexing API.
-        // See https://g.co/AppIndexing/AndroidStudio for more information.
+        btnOption.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                formToggle();
+            }
+        });
+    }
+
+    private void formToggle() {
+        if(inputLayoutName.getVisibility() == View.INVISIBLE) {
+            inputLayoutName.setVisibility(View.VISIBLE);
+            inputLayoutPassword2.setVisibility(View.VISIBLE);
+            btnOption.setText(R.string.btn_login);
+        }
+        else {
+            inputLayoutName.setVisibility(View.INVISIBLE);
+            inputLayoutPassword2.setVisibility(View.INVISIBLE);
+            btnOption.setText(R.string.btn_reg);
+        }
     }
 
     /**
@@ -88,41 +105,65 @@ public class MainActivity extends AppCompatActivity {
      * Finally notify user, what happens.
      */
     private void submitForm() {
-        if (!validateName()) {
-            return;
-        }
+        if (btnOption.getText().toString() == getText(R.string.btn_login)) {
+            if (!validateName()) {
+                return;
+            }
 
-        if (!validateEmail()) {
-            return;
-        }
+            if (!validateEmail()) {
+                return;
+            }
 
-        if (!validateFirstPassword()) {
-            return;
-        }
-        if (!validatePasswordSame()) {
-            return;
-        }
+            if (!validateFirstPassword()) {
+                return;
+            }
+            if (!validatePasswordSame()) {
+                return;
+            }
 
-        if (APIController.isNetworkAvailable(MainActivity.this)) {
-            new APIController.PostTask(
-                    MainActivity.this,
-                    "registration",
-                    inputName.getText().toString(),
-                    inputEmail.getText().toString(),
-                    inputPassword1.getText().toString(),
-                    inputPassword2.getText().toString()
-            ).execute();
-            Toast.makeText(getApplicationContext(), "Waiting for authentication!", Toast.LENGTH_SHORT).show();
-        } else {
-           new AlertUser(MainActivity.this).connectionError();
+            if (APIController.isNetworkAvailable(AuthenticatorActivity.this)) {
+                new APIController.PostTask(
+                        AuthenticatorActivity.this,
+                        "registration",
+                        inputName.getText().toString(),
+                        inputEmail.getText().toString(),
+                        inputPassword1.getText().toString(),
+                        inputPassword2.getText().toString()
+                ).execute();
+                Toast.makeText(getApplicationContext(), "Waiting for authentication!", Toast.LENGTH_SHORT).show();
+            }
+            else {
+                new AlertUser(AuthenticatorActivity.this).connectionError();
+            }
         }
+        else {
+            if (!validateEmail()) {
+                return;
+            }
 
+            if (!validateFirstPassword()) {
+                return;
+            }
+
+            if (APIController.isNetworkAvailable(AuthenticatorActivity.this)) {
+                new APIController.PostTask(
+                        AuthenticatorActivity.this,
+                        "login",
+                        inputEmail.getText().toString(),
+                        inputPassword1.getText().toString()
+                ).execute();
+                Toast.makeText(getApplicationContext(), "Waiting for authentication!", Toast.LENGTH_SHORT).show();
+            }
+            else {
+                new AlertUser(AuthenticatorActivity.this).connectionError();
+            }
+        }
     }
 
     /**
      * Check is empty.
      *
-     * @return the result as boolean
+     * @return as boolean
      */
     private boolean validateName() {
         if (inputName.getText().toString().trim().isEmpty()) {
@@ -138,7 +179,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Check empty and validity.
      *
-     * @return the result as boolean
+     * @return as boolean
      */
     private boolean validateEmail() {
         String email = inputEmail.getText().toString().trim();
@@ -166,7 +207,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Check empty and length.
      *
-     * @return the result as boolean
+     * @return as boolean
      */
     private boolean validateFirstPassword() {
         String pw1 = inputPassword1.getText().toString().trim();
@@ -192,7 +233,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Check equals.
      *
-     * @return the result as boolean
+     * @return as boolean
      */
     private boolean validatePasswordSame() {
         String pw1 = inputPassword1.getText().toString().trim();
@@ -253,5 +294,46 @@ public class MainActivity extends AppCompatActivity {
                     break;
             }
         }
+    }
+
+    /**
+     *
+     * Activity lifecycle logging.
+     *
+     */
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.i(TAG, "ACTIVITY STARTED!");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.i(TAG, "ACTIVITY RESUMED!");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.i(TAG, "ACTIVITY PAUSED!");
+//        inputName.setText("");
+//        inputEmail.setText("");
+//        inputPassword1.setText("");
+//        inputPassword2.setText("");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.i(TAG, "ACTIVITY STOPPED!");
+    }
+
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.i(TAG, "ACTIVITY DESTROYED!");
     }
 }

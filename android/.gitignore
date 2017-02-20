@@ -12,3 +12,6 @@ local.properties
 .idea/
 *.iml
 /app/proguard-rules.pro
+
+# Dev note things added
+app/src/test/java/com/codecool/android/neightbrotaxi/controller/devNote
