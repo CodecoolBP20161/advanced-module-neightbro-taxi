@@ -62,6 +62,7 @@ public class RestUserController {
             userService.login(request, user);
         } catch (AuthenticationException e) {
             sessionStorage.addErrorMessage("Invalid username or password!");
+            return new SerializableSessionStorage(sessionStorage);
         }
 
         if (!Objects.equals(sessionStorage.getLoggedInUser().getName(), "anonymous")) {
@@ -74,16 +75,17 @@ public class RestUserController {
     }
 
     @RequestMapping(value = "/logged-in-user", method = RequestMethod.GET)
-    public SerializableSessionStorage loggedInUser(){
+    public Object loggedInUser(){
         sessionStorage.clearAllErrorMessages();
         sessionStorage.clearAllInfoMessages();
 
         if (Objects.equals(sessionStorage.getLoggedInUser().getName(), "anonymous")) {
             sessionStorage.addErrorMessage("Nobody is logged in!");
+            return new SerializableSessionStorage(sessionStorage);
         } else {
             sessionStorage.setLoggedInUser(userService.findByUsername(sessionStorage.getLoggedInUser().getUsername()));
         }
 
-        return new SerializableSessionStorage(sessionStorage);
+        return sessionStorage.getLoggedInUser();
     }
 }
