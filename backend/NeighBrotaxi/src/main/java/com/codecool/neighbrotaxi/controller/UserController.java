@@ -1,35 +1,29 @@
 package com.codecool.neighbrotaxi.controller;
 
-import com.codecool.neighbrotaxi.model.User;
-import com.codecool.neighbrotaxi.service.SecurityService;
-import com.codecool.neighbrotaxi.service.UserService;
-import com.codecool.neighbrotaxi.service.implementation.UserDetailsService;
+import com.codecool.neighbrotaxi.model.SerializableSessionStorage;
+import com.codecool.neighbrotaxi.model.SessionStorage;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.web.ErrorAttributes;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
-
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
-import javax.validation.Valid;
-import java.util.Objects;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 
 @Controller
 public class UserController {
     @Autowired
-    private SecurityService securityService;
+    private SessionStorage sessionStorage;
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
-    @ResponseBody public String login(String logout) {
-        if (logout != null) return "You have been logged out successfully.";
+    @ResponseBody public SerializableSessionStorage login(String logout) {
+        if (logout != null) {
+            sessionStorage.clearAllErrorMessages();
+            sessionStorage.clearAllInfoMessages();
+            sessionStorage.addInfoMessage("You have been logged out successfully.");
+            return new SerializableSessionStorage(sessionStorage);
+        }
 
         return null;
     }
 
-    @RequestMapping(value = {"/", "/welcome"}, method = RequestMethod.GET)
-    @ResponseBody public String welcome() {
-        return "Successfully logged in!";
-    }
 }

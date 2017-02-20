@@ -8,17 +8,16 @@ angular.module('neighbroTaxi')
     $scope.answer;
 
     $scope.submitUser = function (valid) {
-        console.log('FASZT');
 
         if(valid) {
-            console.log('NOTFASZT');
             console.log($scope.user);
 
-            $http.post('http://localhost:9000/login', $scope.user).
+            $http.post('http://localhost:9000/user-login', $scope.user).
             success(function (data) {
-                console.log("Success");
+                console.log(data.username);
+                console.log(data.email);
             }).error(function (data) {
-                console.log(":(");
+                console.log("fail");
             });
 
             responseService.getResponse(function (response) {

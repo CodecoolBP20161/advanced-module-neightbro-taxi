@@ -1,14 +1,19 @@
 package com.codecool.neighbrotaxi.controller;
 
+import com.codecool.neighbrotaxi.model.SerializableSessionStorage;
+import com.codecool.neighbrotaxi.model.SessionStorage;
 import com.codecool.neighbrotaxi.model.User;
 import com.codecool.neighbrotaxi.service.SecurityService;
 import com.codecool.neighbrotaxi.service.UserService;
 import com.codecool.neighbrotaxi.validator.UserValidator;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.AuthenticationException;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
+import java.util.Objects;
 
 
 @RestController
@@ -22,6 +27,9 @@ public class RestUserController {
 
     @Autowired
     private SecurityService securityService;
+
+    @Autowired
+    private SessionStorage sessionStorage;
 
 
     /**
@@ -45,10 +53,39 @@ public class RestUserController {
         return user;
     }
 
+    @RequestMapping(value = "/user-login", method = RequestMethod.POST)
+    public SerializableSessionStorage userLogin(@RequestBody User user, HttpServletRequest request) {
+        sessionStorage.clearAllErrorMessages();
+        sessionStorage.clearAllInfoMessages();
 
+        try {
+            userService.login(request, user);
+        } catch (AuthenticationException e) {
+            sessionStorage.addErrorMessage("Invalid username or password!");
+            return new SerializableSessionStorage(sessionStorage);
+        }
+
+        if (!Objects.equals(sessionStorage.getLoggedInUser().getName(), "anonymous")) {
+            sessionStorage.addErrorMessage("A user is already logged-in in this session!");
+        } else {
+            sessionStorage.setLoggedInUser(userService.findByUsername(securityService.findLoggedInUsername()));
+            sessionStorage.addInfoMessage("Successfully logged in!");
+        }
+        return new SerializableSessionStorage(sessionStorage);
+    }
 
     @RequestMapping(value = "/logged-in-user", method = RequestMethod.GET)
-    public User loggedInUser(){
-        return userService.findByUsername(securityService.findLoggedInUsername());
+    public Object loggedInUser(){
+        sessionStorage.clearAllErrorMessages();
+        sessionStorage.clearAllInfoMessages();
+
+        if (Objects.equals(sessionStorage.getLoggedInUser().getName(), "anonymous")) {
+            sessionStorage.addErrorMessage("Nobody is logged in!");
+            return new SerializableSessionStorage(sessionStorage);
+        } else {
+            sessionStorage.setLoggedInUser(userService.findByUsername(sessionStorage.getLoggedInUser().getUsername()));
+        }
+
+        return sessionStorage.getLoggedInUser();
     }
 }
