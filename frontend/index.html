@@ -5,21 +5,33 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/home.css" type = "text/css"/>
     <link rel="stylesheet" href="styles/main.css" type = "text/css"/>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script></head>
 
-<body>
+<body ng-controller="mainCtrl">
+<navbar ng-show="showNavbar()"></navbar>
 <div ng-view></div>
 
 <script src="scripts/app.js"></script>
 <script src="scripts/route.js"></script>
 <script src="scripts/controllers/main.js"></script>
 <script src="scripts/controllers/loginCtrl.js"></script>
+<script src="scripts/controllers/registrationCtrl.js"></script>
 <script src="scripts/controllers/menuCtrl.js"></script>
+<script src="scripts/controllers/profileCtrl.js"></script>
 <script src="scripts/services/data.js"></script>
-<script src="scripts/directives/login.js"></script>
-<script src="scripts/directives/reg.js"></script>
+<script src="scripts/directives/elementDirectives/login.js"></script>
+<script src="scripts/directives/elementDirectives/registration.js"></script>
+<script src="scripts/directives/elementDirectives/navbar.js"></script>
+<script src="scripts/directives/elementDirectives/centralLogo.js"></script>
+<script src="scripts/directives/elementDirectives/loginMenu.js"></script>
+<script src="scripts/directives/elementDirectives/profile.js"></script>
+<script src="scripts/directives/elementDirectives/ratingStars.js"></script>
+<script src="scripts/directives/goClick.js"></script>
+
 
 
 </body>

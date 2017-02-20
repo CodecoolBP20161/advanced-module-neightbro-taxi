@@ -6,13 +6,19 @@
 body {
     font-family: Helvetica;
     text-align: center;
-    background: #37474F;
+    background-image: url(../img/bg.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #37474F;
     margin: 0 auto;
-
+    owerflow: hidden;
 }
 
 #logo {
-    margin-top: 30px;
+    margin-top: 50px;
+    margin-bottom: 15px;
     width: auto;
     height: 150px;
 }
@@ -21,6 +27,29 @@ h1 {
     color: #FFEB3B;
     margin-top: 50px;
     font-size: 70px;
+}
+
+h2 {
+    color: #FFEB3B;
+    margin-top: 0;
+    font-size: 30px;
+}
+
+h3 {
+    color: #FFEB3B;
+    margin-top: 5%;
+    margin-bottom: 4px;
+    font-size: 22px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+
+}
+
+h4 {
+    color: #FFEB3B;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
 }
 
 #text {
@@ -35,8 +64,8 @@ h1 {
 
 .password {
     -webkit-text-security:disc !important;
-    -moz-text-security:disc !imporant;
-    -o-text-security: disc !imporant;
+    -moz-text-security:disc !important;
+    -o-text-security: disc !important;
     text-security:disc !important;
     -webkit-text-fill-color: goldenrod;
 }
@@ -80,12 +109,12 @@ h1 {
 
 .formbox {
     text-align: center;
-    height: 230px;
+    height: 180px;
     width: 428px;
     margin: 0 auto;
     background-color: #FAFAFA;
     border-radius: 3px;
-    margin-top: -10px;;
+    margin-top: 0px;
 }
 
 .regformbox {
@@ -95,7 +124,7 @@ h1 {
     margin: 0 auto;
     background-color: #FAFAFA;
     border-radius: 3px;
-    margin-top: 0px;;
+    margin-top: 0px;
 }
 
 .formbox p {
@@ -165,6 +194,6 @@ input[type=email] {
 
 .navbutton {
     display: inline-block;
-    margin-left: 10px;
+    margin-left: 0px;
     padding: 0px;
 }

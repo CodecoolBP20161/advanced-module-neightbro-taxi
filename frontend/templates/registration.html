@@ -1,0 +1,27 @@
+<div ng-controller = 'registrationCtrl'>
+    <form ng-submit = "addUser(validForm.$valid)" name="validForm" novalidate="novalidate">
+        <div>
+            <input name="name" id="name" required="required" ng-model = newuser.name ng-class="{'errormessage':!validForm.name.$pristine}" type="text" placeholder="Name"/>
+        </div>
+        <input name="email" id="email" required="required" ng-model = newuser.email type="email" ng-class="{'errormessage':!validForm.email.$valid && !validForm.name.$pristine}" placeholder="Email"/>
+        <div class="errormessage" ng-show="validForm.email.$error.email"><p>invalid email address</p></div>
+
+        <input name="password" class ="password" required="required" id="password" ng-model = newuser.password ng-minlength="8" ng-class="{'errormessage':!validForm.password.$valid && !validForm.name.$pristine}" type="text" placeholder="Password"/>
+        <br/>
+        <div class="errormessage" ng-show="validForm.password.$error.minlength"><p>min. 8 character</p></div>
+
+        <input name="passwordConfirm" class ="password" required="required" id="passwordConfirm" ng-model = newuser.passwordConfirm type="text" placeholder="Confirm Password"/>
+        <div class="errormessage" ng-show="errorConfirm"><p>invalid password</p></div>
+
+        <button id="regbutton" type="submit">DONE</button>
+    </form>
+
+    <br/>
+    <br/>
+    <p class="errormessage" ng-show="validForm.$error.required && validForm.$submitted">All fields are required!</p>
+    <!--<pre>Field valid? {{ validForm.name.$valid }}</pre>-->
+    <!--<pre>Form pristine? {{ validForm.$pristine }}</pre>-->
+    <!--<pre> {{ validForm | json }}</pre>-->
+
+    <!--<label ng-repeat = "user in users">{{ user }}</label>-->
+</div>

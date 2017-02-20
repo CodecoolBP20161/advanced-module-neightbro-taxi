@@ -7,6 +7,7 @@ angular.module('neighbroTaxi')
     $scope.user = {};
     $scope.answer;
 
+
     $scope.submitUser = function (valid) {
 
         if(valid) {
