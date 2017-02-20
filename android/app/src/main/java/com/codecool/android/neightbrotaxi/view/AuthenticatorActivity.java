@@ -30,6 +30,8 @@ public class AuthenticatorActivity extends AppCompatActivity {
     private EditText inputName, inputEmail, inputPassword1, inputPassword2;
     private TextInputLayout inputLayoutName, inputLayoutEmail,
             inputLayoutPassword1, inputLayoutPassword2;
+    private Button btnSubmit, btnOption;
+
 
     /**
      * Set the layout for this activity, what appear on the screen.
@@ -49,15 +51,18 @@ public class AuthenticatorActivity extends AppCompatActivity {
 //        setSupportActionBar(toolbar);
 
         // Find the views in the layout.
-        inputLayoutName = (TextInputLayout) findViewById(R.id.input_layout_name);
-        inputLayoutEmail = (TextInputLayout) findViewById(R.id.input_layout_email);
-        inputLayoutPassword1 = (TextInputLayout) findViewById(R.id.input_layout_password1);
-        inputLayoutPassword2 = (TextInputLayout) findViewById(R.id.input_layout_password2);
         inputName = (EditText) findViewById(R.id.input_name);
         inputEmail = (EditText) findViewById(R.id.input_email);
         inputPassword1 = (EditText) findViewById(R.id.input_password1);
         inputPassword2 = (EditText) findViewById(R.id.input_password2);
-        Button btnSubmit = (Button) findViewById(R.id.btn_submit);
+
+        inputLayoutName = (TextInputLayout) findViewById(R.id.input_layout_name);
+        inputLayoutEmail = (TextInputLayout) findViewById(R.id.input_layout_email);
+        inputLayoutPassword1 = (TextInputLayout) findViewById(R.id.input_layout_password1);
+        inputLayoutPassword2 = (TextInputLayout) findViewById(R.id.input_layout_password2);
+
+        btnSubmit = (Button) findViewById(R.id.btn_submit);
+        btnOption = (Button) findViewById(R.id.btn_option);
 
         // Every input view get a TextWatcher.
         inputName.addTextChangedListener(new MyTextWatcher(inputName));
@@ -72,6 +77,25 @@ public class AuthenticatorActivity extends AppCompatActivity {
                 submitForm();
             }
         });
+        btnOption.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                formToggle();
+            }
+        });
+    }
+
+    private void formToggle() {
+        if(inputLayoutName.getVisibility() == View.INVISIBLE) {
+            inputLayoutName.setVisibility(View.VISIBLE);
+            inputLayoutPassword2.setVisibility(View.VISIBLE);
+            btnOption.setText(R.string.btn_login);
+        }
+        else {
+            inputLayoutName.setVisibility(View.INVISIBLE);
+            inputLayoutPassword2.setVisibility(View.INVISIBLE);
+            btnOption.setText(R.string.btn_reg);
+        }
     }
 
     /**
@@ -81,35 +105,59 @@ public class AuthenticatorActivity extends AppCompatActivity {
      * Finally notify user, what happens.
      */
     private void submitForm() {
-        if (!validateName()) {
-            return;
-        }
+        if (btnOption.getText().toString() == getText(R.string.btn_login)) {
+            if (!validateName()) {
+                return;
+            }
 
-        if (!validateEmail()) {
-            return;
-        }
+            if (!validateEmail()) {
+                return;
+            }
 
-        if (!validateFirstPassword()) {
-            return;
-        }
-        if (!validatePasswordSame()) {
-            return;
-        }
+            if (!validateFirstPassword()) {
+                return;
+            }
+            if (!validatePasswordSame()) {
+                return;
+            }
 
-        if (APIController.isNetworkAvailable(AuthenticatorActivity.this)) {
-            new APIController.PostTask(
-                    AuthenticatorActivity.this,
-                    "registration",
-                    inputName.getText().toString(),
-                    inputEmail.getText().toString(),
-                    inputPassword1.getText().toString(),
-                    inputPassword2.getText().toString()
-            ).execute();
-            Toast.makeText(getApplicationContext(), "Waiting for authentication!", Toast.LENGTH_SHORT).show();
-        } else {
-           new AlertUser(AuthenticatorActivity.this).connectionError();
+            if (APIController.isNetworkAvailable(AuthenticatorActivity.this)) {
+                new APIController.PostTask(
+                        AuthenticatorActivity.this,
+                        "registration",
+                        inputName.getText().toString(),
+                        inputEmail.getText().toString(),
+                        inputPassword1.getText().toString(),
+                        inputPassword2.getText().toString()
+                ).execute();
+                Toast.makeText(getApplicationContext(), "Waiting for authentication!", Toast.LENGTH_SHORT).show();
+            }
+            else {
+                new AlertUser(AuthenticatorActivity.this).connectionError();
+            }
         }
+        else {
+            if (!validateEmail()) {
+                return;
+            }
 
+            if (!validateFirstPassword()) {
+                return;
+            }
+
+            if (APIController.isNetworkAvailable(AuthenticatorActivity.this)) {
+                new APIController.PostTask(
+                        AuthenticatorActivity.this,
+                        "login",
+                        inputEmail.getText().toString(),
+                        inputPassword1.getText().toString()
+                ).execute();
+                Toast.makeText(getApplicationContext(), "Waiting for authentication!", Toast.LENGTH_SHORT).show();
+            }
+            else {
+                new AlertUser(AuthenticatorActivity.this).connectionError();
+            }
+        }
     }
 
     /**

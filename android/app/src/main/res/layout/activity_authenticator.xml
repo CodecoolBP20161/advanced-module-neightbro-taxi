@@ -4,10 +4,10 @@
     android:layout_height="match_parent"
     android:background="@drawable/bg">
 
-    <android.support.design.widget.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+    <!--<android.support.design.widget.AppBarLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">-->
 
         <!--<android.support.v7.widget.Toolbar-->
             <!--android:id="@+id/toolbar"-->
@@ -16,7 +16,7 @@
             <!--android:background="?attr/colorPrimary"-->
             <!--app:layout_scrollFlags="scroll|enterAlways"-->
             <!--app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />-->
-    </android.support.design.widget.AppBarLayout>
+    <!--</android.support.design.widget.AppBarLayout>-->
 
     <LinearLayout
         android:layout_width="fill_parent"
@@ -27,13 +27,12 @@
         android:paddingRight="20dp"
         android:paddingTop="60dp">
 
-
-
         <android.support.design.widget.TextInputLayout
             android:id="@+id/input_layout_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:theme="@style/TextLabel">
+            android:theme="@style/TextLabel"
+            android:visibility="invisible">
 
             <EditText
                 android:id="@+id/input_name"
@@ -75,7 +74,8 @@
             android:id="@+id/input_layout_password2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:theme="@style/TextLabel">
+            android:theme="@style/TextLabel"
+            android:visibility="invisible">
 
             <EditText
                 android:id="@+id/input_password2"
@@ -96,7 +96,7 @@
         <Button android:id="@+id/btn_option"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/btn_login"
+                android:text="@string/btn_reg"
                 android:background="@drawable/btn_bg"
                 android:layout_marginTop="40dp"
                 android:textColor="@color/colorPrimary"/>
