@@ -23,7 +23,7 @@ public class ResponseView {
      * @throws JSONException when converting went wrong
      */
     public ResponseView(Activity activity, String response) throws JSONException {
-
+        Log.d(TAG, "ResponseView response: "+response);
         try {
             JSONArray responseJson = new JSONArray(response);
             JSONObject content = (JSONObject) responseJson.get(0);
@@ -34,9 +34,17 @@ public class ResponseView {
             }
         }
         catch (JSONException e) {
-            if(new JSONObject(response).has("id")) {
+//            Intent intent = new Intent(activity, UserActivity.class);
+            if (response.equals("")) {
+                Log.i(TAG, "USER LOGGED IN!");
+                Toast.makeText(activity, "AUTHENTICATION DONE!", Toast.LENGTH_SHORT).show();
+//                startActivity(intent);
+                return;
+            }
+            if (new JSONObject(response).has("id")) {
                 Log.i(TAG, "USER REGISTERED!");
                 Toast.makeText(activity, "REGISTRATION DONE!", Toast.LENGTH_SHORT).show();
+//                startActivity(intent);
             }
         }
     }

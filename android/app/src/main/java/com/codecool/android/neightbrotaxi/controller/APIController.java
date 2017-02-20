@@ -32,7 +32,7 @@ public class APIController {
     private static final OkHttpClient client = new OkHttpClient();
     private static final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
     // Temporary address! (The final waiting for deploying.)
-    private static String API_URL = "http://192.168.0.33:9000/";
+    private static String API_URL = "http://192.168.0.106:9000/";
 
 
     /**
@@ -53,7 +53,6 @@ public class APIController {
          */
         public PostTask(Activity activity, String request, String... strings) {
             mActivity = activity;
-            // JUST: /registration
             serverRequest = request;
             json = UserDataJson(strings);
         }
@@ -102,7 +101,6 @@ public class APIController {
         @Override
         protected void onPostExecute(String getResponse) {
             Log.d(TAG, "PostTask onPostExecute message: "+getResponse);
-//            serverResponse = getResponse;
             if (getResponse != null) {
                 try {
                     new ResponseView(mActivity, getResponse);
@@ -129,7 +127,6 @@ public class APIController {
 
         GetTask(Activity activity, String request) {
             mActivity = activity;
-            // JUST: /user
             serverRequest = request;
         }
 
@@ -191,11 +188,20 @@ public class APIController {
     static String UserDataJson(String... strings) {
         JSONObject json = new JSONObject();
         try {
-            json.put("name", strings[0]);
-            json.put("email", strings[1]);
-            json.put("password", strings[2]);
-            json.put("passwordConfirm", strings[3]);
-            Log.d(TAG, "JSON CREATED: "+json);
+            if (strings.length == 4) {
+                json.put("name", strings[0]);
+                json.put("email", strings[1]);
+                json.put("password", strings[2]);
+                json.put("passwordConfirm", strings[3]);
+                Log.d(TAG, "JSON CREATED: " + json);
+            }
+            if (strings.length == 2) {
+                json.put("username", strings[0]);
+                json.put("password", strings[1]);
+            }
+//            else {
+//                throw new IllegalArgumentException("Can't create json with user data!");
+//            }
         }
         catch (JSONException | ArrayIndexOutOfBoundsException e) {
             Log.e(TAG, "UserDataJson caught exception: "+e);
