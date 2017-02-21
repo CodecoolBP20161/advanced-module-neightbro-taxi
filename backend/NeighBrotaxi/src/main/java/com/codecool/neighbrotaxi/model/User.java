@@ -1,12 +1,9 @@
 package com.codecool.neighbrotaxi.model;
 
-import org.hibernate.annotations.GenericGenerator;
-import org.hibernate.annotations.Type;
 import org.hibernate.validator.constraints.Email;
 
 import javax.persistence.*;
 import java.util.Set;
-import java.util.UUID;
 
 
 @Entity
@@ -24,6 +21,9 @@ public class User {
     @ManyToMany
     @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<Role> roles;
+    @ManyToMany
+    @JoinTable(name = "user_car", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "car_id"))
+    private Set<Car> cars;
 
     public Integer getId() {
         return id;
