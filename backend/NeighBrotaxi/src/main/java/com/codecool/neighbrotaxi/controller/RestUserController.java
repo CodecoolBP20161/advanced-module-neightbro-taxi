@@ -66,7 +66,7 @@ public class RestUserController {
         }
 
         if (!Objects.equals(sessionStorage.getLoggedInUser().getName(), "anonymous")) {
-            sessionStorage.addErrorMessage("A user is already logged-in in this session!");
+            sessionStorage.addErrorMessage("Already logged in.");
         } else {
             sessionStorage.setLoggedInUser(userService.findByUsername(securityService.findLoggedInUsername()));
             sessionStorage.addInfoMessage("Successfully logged in!");
