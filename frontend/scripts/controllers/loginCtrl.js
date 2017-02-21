@@ -2,11 +2,9 @@
 
 angular.module('neighbroTaxi')
 
-.controller('loginCtrl', function ($scope, $http, responseService, $location) {
+.controller('loginCtrl', function ($scope, $http, $location) {
 
     $scope.user = {};
-    $scope.answer;
-
 
     $scope.submitUser = function (valid) {
 
@@ -15,24 +13,36 @@ angular.module('neighbroTaxi')
 
             $http.post('http://localhost:9000/user-login', $scope.user).
             success(function (data) {
-                console.log(data.username);
-                console.log(data.email);
+                console.log(data);
+
+                if(data.errorMessages.length == 0){
+                    console.log(data.infoMessages[0]);
+                    console.log("Hello " + data.loggedInUser.name);
+                    $location.path("/profile");
+
+                    $http.get('http://localhost:9000/logged-in-user')
+                        .success(function (response) {
+                            $scope.inUser = response;
+                            var inUser = $scope.inUser;
+                            console.log(inUser);
+                        }).error(function (response) {
+                            console.log(response);
+                    });
+
+                }else{
+                    console.log(data.errorMessages[0]);
+                }
             }).error(function (data) {
                 console.log("fail");
             });
 
-            responseService.getResponse(function (response) {
-                var answer = response.data;
-                $scope.answer = answer;
-            });
+            // responseService.getResponse(function (response) {
+            //     var answer = response.data;
+            //     $scope.answer = answer;
+            // });
+            //
+            // console.log($scope.answer);
 
-            if($scope.answer == null) {
-                console.log("PASSWORD prob");
-            } else if ($scope.answer = "Successfully logged in!"){
-                $location.path( "#/home" );
-            } else {
-                console.log("WUT");
-            };
         }
     }
 })
