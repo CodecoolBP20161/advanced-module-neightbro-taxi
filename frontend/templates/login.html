@@ -1,9 +1,16 @@
 <div ng-controller = 'loginCtrl'>
     <form ng-submit ="submitUser(loginForm.$valid)" name="loginForm"  novalidate="novalidate">
-        <input ng-model = "user.username" type="email" required="required" placeholder="Email"/>
-        <input ng-model = "user.password" type="text" required="required" placeholder="Password"/>
-        <button id="regbutton" type="submit">Submit</button><br/>
-        <a href="#/profile">jump inside</a>
+        <input ng-model = "user.username" type="email" required="required" autocomplete="on" placeholder="Email"/>
+        <input ng-model = "user.password" class="password" type="text" required="required" autocomplete="off" placeholder="Password"/>
+        <button id="regbutton" type="submit">Submit</button><br/><br/>
+        <p class="loginError" ng-class="{'errormessage':!validForm.name.$pristine}">{{ errorM }}</p>
     </form>
+    <br/>
+    <br/>
+    <p class="loginError" ng-show="loginForm.$error.required && loginForm.$submitted">All fields are required!</p>
+
+    <h4>
+        <a href="#/profile" >jump inside</a>
+    </h4>
 
 </div>
