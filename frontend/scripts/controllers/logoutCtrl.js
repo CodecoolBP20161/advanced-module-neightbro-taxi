@@ -2,15 +2,18 @@
 
 angular.module('neighbroTaxi')
 
-.controller('logoutCtrl', function ($scope, $http, $location, $window) {
+.controller('logoutCtrl', function ($scope, $http, $location) {
 
     $scope.logout = function () {
 
-        console.log($scope.inUser)
-
         $scope.inUser = {};
-        $window.localStorage.clear();
-        $location.path('/');
+        $http.post('http://localhost:9000/logout').
+            success(function (response) {
+                console.log(response);
+                $location.path('/');
+            }).error(function (response) {
+                console.log(response);
+        });
 
         console.log($scope.inUser);
         console.log("LOGGED OUT");
