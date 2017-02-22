@@ -7,16 +7,16 @@ angular.module('neighbroTaxi')
     $scope.logout = function () {
 
         $scope.inUser = {};
-        $http.post('http://localhost:9000/logout').
+        $http.post('http://localhost:9000/user-logout').
             success(function (response) {
                 console.log(response);
                 $location.path('/');
+
+                console.log($scope.inUser);
+                console.log("LOGGED OUT");
             }).error(function (response) {
                 console.log(response);
         });
-
-        console.log($scope.inUser);
-        console.log("LOGGED OUT");
     }
 
 })
