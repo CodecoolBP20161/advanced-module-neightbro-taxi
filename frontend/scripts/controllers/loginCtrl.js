@@ -30,7 +30,8 @@ angular.module('neighbroTaxi')
                     });
 
                 }else{
-                    console.log(data.errorMessages[0]);
+                    $scope.errorM = data.errorMessages[0];
+                    console.log($scope.errorM);
                 }
             }).error(function (data) {
                 console.log("fail");
