@@ -9,6 +9,14 @@ angular.module('neighbroTaxi')
 
         $scope.newuser = {};
 
+        $scope.validPw = function(){
+            if($scope.newuser.password == $scope.newuser.passwordConfirm){
+                return false;
+            }else{
+                return true;
+            }
+        }
+
         $scope.addUser = function (valid) {
 
             if(valid){
