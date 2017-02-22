@@ -2,6 +2,7 @@ package com.codecool.neighbrotaxi.model;
 
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Component
@@ -9,6 +10,20 @@ public class SessionStorage {
     private List<String> errorMessages;
     private List<String> infoMessages;
     private User loggedInUser;
+
+    public void setDefault(){
+        User user = new User();
+        user.setName("anonymous");
+        user.setEmail("anonymous@anonymous.com");
+
+        clearMessages();
+        setLoggedInUser(user);
+    }
+
+    public void clearMessages(){
+        errorMessages.clear();
+        infoMessages.clear();
+    }
 
     public List<String> getErrorMessages() {
         return errorMessages;
