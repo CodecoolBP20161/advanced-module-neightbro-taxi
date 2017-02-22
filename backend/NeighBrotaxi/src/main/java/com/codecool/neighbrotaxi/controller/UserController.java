@@ -17,8 +17,7 @@ public class UserController {
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     @ResponseBody public SerializableSessionStorage login(String logout) {
         if (logout != null) {
-            sessionStorage.clearAllErrorMessages();
-            sessionStorage.clearAllInfoMessages();
+            sessionStorage.clearMessages();
             sessionStorage.addInfoMessage("You have been logged out successfully.");
             return new SerializableSessionStorage(sessionStorage);
         }
