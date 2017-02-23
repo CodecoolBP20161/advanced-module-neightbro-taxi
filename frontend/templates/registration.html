@@ -6,11 +6,11 @@
         <input name="email" id="email" required="required" ng-model = newuser.email type="email" ng-class="{'errormessage':!validForm.email.$valid && !validForm.name.$pristine}" placeholder="Email"/>
         <div class="errormessage" ng-show="validForm.email.$error.email"><p>invalid email address</p></div>
 
-        <input name="password" class ="password" required="required" id="password" ng-model = newuser.password ng-minlength="8" ng-class="{'errormessage':!validForm.password.$valid && !validForm.name.$pristine}" type="text" placeholder="Password"/>
+        <input name="password" class ="password" required="required" autocomplete="off" id="password" ng-model = newuser.password ng-minlength="8" ng-class="{'errormessage':!validForm.password.$valid && !validForm.name.$pristine}" type="text" placeholder="Password"/>
         <br/>
         <div class="errormessage" ng-show="validForm.password.$error.minlength"><p>min. 8 character</p></div>
 
-        <input name="passwordConfirm" class ="password" required="required" id="passwordConfirm" ng-model = newuser.passwordConfirm type="text" placeholder="Confirm Password"/>
+        <input name="passwordConfirm" class ="password" required="required" autocomplete="off" id="passwordConfirm" ng-model = newuser.passwordConfirm type="text" placeholder="Confirm Password"/>
         <div class="errormessage" ng-show="errorConfirm"><p>invalid password</p></div>
 
         <button id="regbutton" type="submit">DONE</button>
