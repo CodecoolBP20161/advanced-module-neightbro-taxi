@@ -5,38 +5,37 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/home.css" type = "text/css"/>
     <link rel="stylesheet" href="styles/main.css" type = "text/css"/>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-</head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script></head>
 
-<body>
-<div ng-controller = "mainCtrl">
-    <h1>NeighbroTAXI </h1>
-    <div id="text">
-        <p>Narwhal iceland asymmetrical, swag pour-over pabst farm-to-table listicle.</p>
-    <br/>
-    </div>
-    <div class="form">
-        <div class="formbox" ng-controller = "menuCtrl">
-            <div class="navbutton">
-                <button class="actions" id="log" ng-click="login()">Log in</button>
-                <button class="actions" id="reg" ng-click="reg()">Sign up</button>
-            </div>
-
-            <div ng-show = "showLogin"><login></login></div>
-            <div ng-show = "showReg" ng-class = "{'regformbox': style}"><reg></reg></div>
-
-        </div>
-    </div>
-
-</div>
+<body ng-controller="mainCtrl">
+<navbar ng-show="showNavbar()"></navbar>
+<div ng-view></div>
 
 <script src="scripts/app.js"></script>
+<script src="scripts/route.js"></script>
+
 <script src="scripts/controllers/main.js"></script>
+<script src="scripts/controllers/loginCtrl.js"></script>
+<script src="scripts/controllers/registrationCtrl.js"></script>
 <script src="scripts/controllers/menuCtrl.js"></script>
+<script src="scripts/controllers/profileCtrl.js"></script>
+<script src="scripts/controllers/logoutCtrl.js"></script>
+
 <script src="scripts/services/data.js"></script>
-<script src="scripts/directives/login.js"></script>
-<script src="scripts/directives/reg.js"></script>
+
+<script src="scripts/directives/elementDirectives/login.js"></script>
+<script src="scripts/directives/elementDirectives/registration.js"></script>
+<script src="scripts/directives/elementDirectives/navbar.js"></script>
+<script src="scripts/directives/elementDirectives/centralLogo.js"></script>
+<script src="scripts/directives/elementDirectives/loginMenu.js"></script>
+<script src="scripts/directives/elementDirectives/profile.js"></script>
+<script src="scripts/directives/elementDirectives/ratingStars.js"></script>
+<script src="scripts/directives/goClick.js"></script>
+
 
 
 </body>

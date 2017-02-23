@@ -72,24 +72,32 @@ public class UserServiceImplTest extends AbstractTest {
 
     @Test
     public void save_PasswordHashed() throws Exception {
-        
+
         userService.save(user);
 
         assertNotEquals("password", user.getPassword());
     }
 
     @Test
-    public void save_RolesSetted() throws Exception {
+    public void save_RoleUser() throws Exception {
         Role role = new Role();
         role.setName(RoleEnum.USER.name());
-        roleRepository.save(role);
-        role = new Role();
-        role.setName(RoleEnum.ADMIN.name());
         roleRepository.save(role);
 
         userService.save(user);
 
-        assertEquals(2, user.getRoles().size());
+        assertEquals(RoleEnum.USER.name(), user.getRoles().stream().findFirst().get().getName());
+    }
+
+    @Test
+    public void save_OnlyRoleUser() throws Exception {
+        Role role = new Role();
+        role.setName(RoleEnum.USER.name());
+        roleRepository.save(role);
+
+        userService.save(user);
+
+        assertEquals(1, user.getRoles().size());
     }
 
     @Test

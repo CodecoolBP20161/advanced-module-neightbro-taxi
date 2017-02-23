@@ -1,5 +1,6 @@
 package com.codecool.neighbrotaxi.configuration;
 
+import com.codecool.neighbrotaxi.enums.RoleEnum;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -19,6 +20,20 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.csrf().disable();
+        http
+                .authorizeRequests()
+                .antMatchers("/resources/**", "/registration", "/user-login/**", "/logged-in-user/**").permitAll()
+                .antMatchers("/users/**", "/user-roles/**").hasAuthority(RoleEnum.ADMIN.name())
+                .anyRequest().authenticated()
+                .and()
+//                .addFilterAt(new CustomUsernamePasswordAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class)
+                .formLogin()
+                .loginPage("/login")
+                .permitAll()
+                .and()
+                .logout()
+                .permitAll()
+                .and()
+                .csrf().disable();
     }
 }
