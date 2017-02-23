@@ -148,7 +148,7 @@ public class AuthenticatorActivity extends AppCompatActivity {
             if (APIController.isNetworkAvailable(AuthenticatorActivity.this)) {
                 new APIController.PostTask(
                         AuthenticatorActivity.this,
-                        "login",
+                        "user-login",
                         inputEmail.getText().toString(),
                         inputPassword1.getText().toString()
                 ).execute();

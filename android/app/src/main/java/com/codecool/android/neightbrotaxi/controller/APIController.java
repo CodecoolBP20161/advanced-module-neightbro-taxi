@@ -8,7 +8,6 @@ import android.os.AsyncTask;
 import android.util.Log;
 
 import com.codecool.android.neightbrotaxi.model.AlertUser;
-import com.codecool.android.neightbrotaxi.view.ResponseView;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -34,6 +33,9 @@ public class APIController {
     // Temporary address! (The final waiting for deploying.)
     private static String API_URL = "http://192.168.0.106:9000/";
 
+//    private final Activity mActivity;
+
+//    public APIController(Activity activity) {mActivity = activity;}
 
     /**
      * This is async.
@@ -95,20 +97,13 @@ public class APIController {
 
         /**
          * Used by OS. Managing responses:
-         * @see ResponseView
+         * @see ResponseController
          * @param getResponse get from system
          */
         @Override
         protected void onPostExecute(String getResponse) {
-            Log.d(TAG, "PostTask onPostExecute message: "+getResponse);
             if (getResponse != null) {
-                try {
-                    new ResponseView(mActivity, getResponse);
-                }
-                catch (JSONException e) {
-                    e.printStackTrace();
-                    Log.e(TAG, String.valueOf(e));
-                }
+                new ResponseController(mActivity, getResponse);
             }
             else {
                 new AlertUser(mActivity).serverError();
@@ -194,19 +189,21 @@ public class APIController {
                 json.put("password", strings[2]);
                 json.put("passwordConfirm", strings[3]);
                 Log.d(TAG, "JSON CREATED: " + json);
+                return json.toString();
             }
             if (strings.length == 2) {
                 json.put("username", strings[0]);
                 json.put("password", strings[1]);
+                return json.toString();
             }
-//            else {
-//                throw new IllegalArgumentException("Can't create json with user data!");
-//            }
+            else {
+                throw new IllegalArgumentException("Can't create json with user data!");
+            }
         }
-        catch (JSONException | ArrayIndexOutOfBoundsException e) {
+        catch (JSONException | ArrayIndexOutOfBoundsException | IllegalArgumentException e) {
             Log.e(TAG, "UserDataJson caught exception: "+e);
         }
-        return json.toString();
+        return null;
     }
 
     /**
