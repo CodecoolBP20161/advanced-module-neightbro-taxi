@@ -2,8 +2,8 @@
     <img id="small-logo" src="img/logo.png"/>
     <div class="vertical-box" ng-controller = 'logoutCtrl'>
         <button type="button" id="logout" ng-click="logout()">Log out</button>
-        <div id="welcome">
-            Hello Valaki!
+        <div id="welcome" ng-controller="profileCtrl">
+            Hello {{ inUser.name }}!
             <ul class="vertical-bar">
                 <li>My profile</li>
                 <li>My messages</li>
