@@ -13,8 +13,6 @@ public class Car {
     private String type;
     private Float consumption;
     private Integer maxPassanger;
-    @ManyToMany(mappedBy = "cars")
-    private Set<User> users;
 
     public Car() {
     }
