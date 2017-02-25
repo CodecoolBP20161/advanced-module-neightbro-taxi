@@ -7,4 +7,5 @@ import java.util.List;
 
 public interface AdminService {
     List<User> getAllUser();
+    void deleteUser(Integer userID);
 }

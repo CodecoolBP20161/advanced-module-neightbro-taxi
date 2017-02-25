@@ -22,4 +22,7 @@ public class AdminServiceImpl implements AdminService {
     public List<User> getAllUser() {
         return userRepository.findAll();
     }
+
+    public void deleteUser(Integer userID) { userRepository.delete(userID);
+    }
 }

@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layout">
 <head>
     <meta charset="UTF-8"/>
     <title>Title</title>
 </head>
 <body>
+<section layout:fragment="users">
 <table>
     <thead>
     <th>Name</th>
@@ -19,9 +21,16 @@
         <td th:text="*{user.getEmail()}"></td>
         <td th:text="*{user.getUsername()}"></td>
         <td th:each="role : *{user.getRoles()}"><p th:text="*{role.getName()}"></p></td>
+        <td><form th:action="'/admin/delete/' + @{${user.getId()}}" th:method="delete">
+            <input type="hidden" name="_method" value="delete" />
+            <button class="btn btn-danger" type="submit" id="submitButton">
+                <span class="glyphicon glyphicon-trash"></span>
+            </button>
+            </form></td>
     </tr>
     </th:block>
     </tbody>
 </table>
+</section>
 </body>
 </html>
