@@ -7,12 +7,13 @@
 </head>
 <body>
 <section layout:fragment="users">
-<table>
-    <thead>
+<table class="table">
+    <thead class="thead-inverse">
     <th>Name</th>
     <th>Email</th>
     <th>Username</th>
     <th>Roles</th>
+    <th></th>
     </thead>
     <tbody>
     <th:block th:each="user : ${user_list}">
@@ -24,7 +25,7 @@
         <td><form th:action="'/admin/delete/' + @{${user.getId()}}" th:method="delete">
             <input type="hidden" name="_method" value="delete" />
             <button class="btn btn-danger" type="submit" id="submitButton">
-                <span class="glyphicon glyphicon-trash"></span>
+                <i class="fa fa-trash-o" aria-hidden="true"></i>
             </button>
             </form></td>
     </tr>
