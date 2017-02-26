@@ -18,7 +18,7 @@ public class AdminController {
 
     @RequestMapping(value = "/users", method = RequestMethod.GET)
     public String getAllUsers(Model model) {
-        System.out.println(adminService.getAllUser().get(0).getRoles());
+        if (adminService.getAllUser() == null) return "admin_users";
         model.addAttribute("user_list", adminService.getAllUser());
         return "admin_users";
     }
