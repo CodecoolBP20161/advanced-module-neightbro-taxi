@@ -18,9 +18,7 @@ import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
-/**
- * Created by cave on 2017.02.03..
- */
+
 @Transactional
 @MockBean(UserService.class)
 @MockBean(BindingResult.class)
