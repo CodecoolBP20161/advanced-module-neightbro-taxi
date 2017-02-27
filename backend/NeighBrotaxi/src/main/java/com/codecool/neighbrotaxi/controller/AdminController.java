@@ -17,11 +17,21 @@ public class AdminController {
     @Autowired
     private AdminService adminService;
 
+    /**
+     * This route is the home route of the admin UI. After a successful login the server redirects here.
+     * @return The name of the html template to render.
+     */
     @RequestMapping(value = "/home", method = RequestMethod.GET)
     public String home() {
         return "admin_page";
     }
 
+    /**
+     * This route add all users from the database into the Model object, then returns the renderable templates name.
+     * @param model Its a Model object which is autowired automatically by the spring,
+     *              and it is passed to the rendering process, and it can use its stored variables.
+     * @return the name of the template to render in String.
+     */
     @RequestMapping(value = "/users", method = RequestMethod.GET)
     public String getAllUsers(Model model) {
         if (adminService.getAllUser() == null) return "admin_users";
@@ -29,6 +39,11 @@ public class AdminController {
         return "admin_users";
     }
 
+    /**
+     * Delete a user from the database with the adminService's deleteUser method.
+     * @param userID Its the Id of the user in string given in the url, as path variable.
+     * @return A String, and with it the spring redirect to the /admin/users route.
+     */
     @RequestMapping(value = "/delete/{userID}", method = RequestMethod.DELETE)
         public String deleteUser(@PathVariable(value = "userID") String userID) {
         ResponseEntity<String> response = null;
