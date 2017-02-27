@@ -8,7 +8,7 @@ import com.codecool.android.neightbrotaxi.model.User;
 import com.google.gson.Gson;
 
 /**
- * Responsible for the storing.
+ * Responsible for the storing on device like http session in client-server communication.
  * @see SharedPreferences
  */
 class StorageController {
@@ -27,18 +27,10 @@ class StorageController {
         mSharedPreferences = context.getSharedPreferences(PREFS_KEY, Context.MODE_PRIVATE);
     }
 
-//    public  String getStoredString(String key, String defaultReturnValue) {
-//        return mSharedPreferences.getString(key, defaultReturnValue);
-//    }
-//
-//    public void setStoringString(String key, String data) {
-//        mSharedPreferences.edit().putString(key, data).apply();
-//        Log.i(TAG, "String saved successfully with this key: " + key);
-//    }
-
     User getStoredUser() {
         Gson gson = new Gson();
         String json = mSharedPreferences.getString("USER", null);
+        Log.i(TAG, "User object data loaded as String.");
         return gson.fromJson(json, User.class);
     }
 
@@ -46,11 +38,11 @@ class StorageController {
         Gson gson = new Gson();
         String stringJson = gson.toJson(user);
         mSharedPreferences.edit().putString("USER", stringJson).apply();
-        Log.i(TAG, "User data saved: " + stringJson);
+        Log.i(TAG, "User object data saved as String.");
     }
 
     void removeUser() {
         mSharedPreferences.edit().remove("USER").apply();
-        Log.i(TAG, "User removed from storage!");
+        Log.i(TAG, "User object data removed from storage!");
     }
 }
