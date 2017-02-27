@@ -1,5 +1,6 @@
 package com.codecool.neighbrotaxi.service.implementation;
 
+import com.codecool.neighbrotaxi.model.Role;
 import com.codecool.neighbrotaxi.model.User;
 import com.codecool.neighbrotaxi.repository.RoleRepository;
 import com.codecool.neighbrotaxi.repository.UserRepository;
@@ -23,6 +24,12 @@ public class AdminServiceImpl implements AdminService {
         return userRepository.findAll();
     }
 
+    @Override
     public void deleteUser(Integer userID) { userRepository.delete(userID);
+    }
+
+    @Override
+    public List<Role> getAllRole() {
+        return roleRepository.findAll();
     }
 }
