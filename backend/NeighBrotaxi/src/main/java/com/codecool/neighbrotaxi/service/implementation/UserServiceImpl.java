@@ -73,6 +73,11 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public void update(User user) {
+        userRepository.save(user);
+    }
+
+    @Override
     public void login(HttpServletRequest request, User user) throws AuthenticationException {
         UsernamePasswordAuthenticationToken authRequest = new UsernamePasswordAuthenticationToken(user.getUsername(), user.getPassword());
 
