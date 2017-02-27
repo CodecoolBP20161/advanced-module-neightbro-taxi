@@ -10,18 +10,31 @@ body {
     min-height: 100%;
 }
 
+
+.ngview{
+    min-height: 100%;
+    margin-bottom: -30px;
+}
+
+.ngview:after{
+    display: block;
+}
+
+#footer, .ngview:after{
+    height: 30px;
+}
+
 #footer{
-    background-color: rgba(55, 71, 79, 0.51);
+    background-color: rgba(0, 0, 0, 0.51);
     color: lightgray;
     position: relative;
-    margin-top: 200px;
-    margin-bottom: 0;
+    margin-top: 100px;
     bottom: 0;
-    height: auto;
     clear: both;
+}
+
+#copy{
     padding-top: 5px;
-
-
 }
 
 ::-webkit-scrollbar {
@@ -127,7 +140,7 @@ li {
     position: fixed;
     float: left;
     margin-left: 60px;
-    width: 14%;
+    width: 200px;
     text-align: left;
 }
 
@@ -146,14 +159,16 @@ li {
     font-size: 22px;
     font-weight: bolder;
     text-transform: uppercase;
+    margin-top: 10px;
 }
 
 #pcar{
     color:#FFEB3B;
-    font-size: 22px;
-    font-weight: bolder;
+    font-size: 14px;
+    font-weight: bold;
     text-transform: uppercase;
-    margin-bottom: -10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 #rate{
@@ -162,7 +177,7 @@ li {
 }
 
 #contact-infos {
-    margin-top: 0px;
+    margin-top: 5px;
     border-top: solid #FFEB3B 2px;
     border-bottom: solid #FFEB3B 2px;
     color: white;
