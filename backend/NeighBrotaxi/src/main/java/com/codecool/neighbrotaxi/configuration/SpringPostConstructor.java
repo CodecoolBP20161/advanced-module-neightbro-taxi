@@ -13,7 +13,7 @@ import javax.annotation.PostConstruct;
 import java.util.Set;
 
 @Component
-public class PostConstructor {
+public class SpringPostConstructor {
     @Autowired
     private RoleRepository roleRepository;
 
@@ -24,6 +24,9 @@ public class PostConstructor {
     private UserRepository userRepository;
 
 
+    /**
+     * Save an ADMIN and a USER role into the DB upon the first server start.
+     */
     @PostConstruct
     public void fillUpDb(){
         Role role = new Role();
@@ -40,50 +43,9 @@ public class PostConstructor {
         }
     }
 
-    /*
-    TODO: Dunno how to test with this PostConstruct
-    @PostConstruct
-    public void getFirstAdminInput() {
-        Scanner reader = new Scanner(System.in);
-        boolean regNotFinished = true;
-        while (regNotFinished) {
-            regNotFinished = false;
-
-            System.out.println("Enter a name: ");
-            String name = reader.next();
-            System.out.println("Enter an email: ");
-            String email = reader.next();
-
-            boolean notSimilarPw = true;
-            String password = "";
-            while (notSimilarPw) {
-                System.out.println("Enter a password: ");
-                password = reader.next();
-                System.out.println("Enter a password confirmation: ");
-                String passwordConfirm = reader.next();
-
-                if (Objects.equals(password, passwordConfirm)) notSimilarPw = false;
-                else System.out.println("Passwords don't match!\n");
-            }
-            User user = new User();
-            user.setEmail(email);
-            user.setName(name);
-            user.setPassword(password);
-            user.setUsername(email);
-            try {
-                userService.save(user);
-                Set<Role> roleSet = user.getRoles();
-                roleSet.add(roleRepository.findByName(RoleEnum.ADMIN.name()));
-                user.setRoles(roleSet);
-                userRepository.save(user);
-            } catch (Exception e) {
-                System.out.println("Not valid email");
-                regNotFinished = true;
-            }
-        }
-    }
-    */
-
+    /**
+     * Registering the very first user with ADMIN and USER roles upon the first server start.
+     */
     @PostConstruct
     public void setupAdmin(){
         // TODO: think about how to reg a main admin on server startup.
