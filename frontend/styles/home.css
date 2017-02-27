@@ -7,16 +7,21 @@ body {
     background-size: cover;
     background-color: #37474F;
     margin: 0 auto;
+    min-height: 100%;
 }
 
 #footer{
-    color: #FFEB3B;
-    display: inline-block;
-    min-height: 100vh;
-    flex-direction: column;
-    flex: 1 0 auto;
-    position: fixed;
-    bottom: 0px;
+    background-color: rgba(55, 71, 79, 0.51);
+    color: lightgray;
+    position: relative;
+    margin-top: 200px;
+    margin-bottom: 0;
+    bottom: 0;
+    height: auto;
+    clear: both;
+    padding-top: 5px;
+
+
 }
 
 ::-webkit-scrollbar {
