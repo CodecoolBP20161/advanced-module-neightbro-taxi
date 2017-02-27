@@ -35,7 +35,6 @@ public class UserValidator implements Validator {
      * @param errors Stores and exposes information about data-binding and validation errors for a specific object.
      * @see org.springframework.validation.Validator Validator
      */
-
     @Override
     public void validate(Object o, Errors errors) {
         User user = (User) o;

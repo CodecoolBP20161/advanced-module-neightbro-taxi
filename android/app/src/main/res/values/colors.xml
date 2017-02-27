@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#FFEB3B</color>
-    <color name="colorSecondary">#37474F</color>
-    <color name="colorPrimaryDark">#000000</color>
-    <color name="colorAccent">#0b0b0b</color>
-    <color name="colorBackground">#FFEB3B</color>
-</resources>
 
-<!--Primary: Yellow500 - #FFEB3B
-Secondary: Grey50 - #FAFAFA
-Success: Lime500 - #CDDC39
-Warning: Orange500 - #FF9800
-Danger: Red500 - #F44336
-Background: BlueGrey500 - #37474F-->
+    <color name="colorSecondary">#37474F</color>
+
+    <color name="colorPrimaryDark">#000</color>
+
+    <color name="colorAccent">#FFF</color>
+</resources>

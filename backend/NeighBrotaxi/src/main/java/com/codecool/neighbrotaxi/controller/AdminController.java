@@ -1,5 +1,6 @@
 package com.codecool.neighbrotaxi.controller;
 
+
 import com.codecool.neighbrotaxi.service.AdminService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -30,6 +31,4 @@ public class AdminController {
         response = new ResponseEntity<String>(HttpStatus.NO_CONTENT);
         return "redirect:/admin/users";
     }
-
 }
-

@@ -80,9 +80,6 @@ public class UserServiceImplTest extends AbstractTest {
 
     @Test
     public void save_RoleUser() throws Exception {
-        Role role = new Role();
-        role.setName(RoleEnum.USER.name());
-        roleRepository.save(role);
 
         userService.save(user);
 
@@ -91,9 +88,6 @@ public class UserServiceImplTest extends AbstractTest {
 
     @Test
     public void save_OnlyRoleUser() throws Exception {
-        Role role = new Role();
-        role.setName(RoleEnum.USER.name());
-        roleRepository.save(role);
 
         userService.save(user);
 
