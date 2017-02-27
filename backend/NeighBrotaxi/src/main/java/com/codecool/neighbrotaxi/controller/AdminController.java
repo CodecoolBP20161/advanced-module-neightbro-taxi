@@ -1,6 +1,7 @@
 package com.codecool.neighbrotaxi.controller;
 
 
+import com.codecool.neighbrotaxi.model.Role;
 import com.codecool.neighbrotaxi.service.AdminService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -58,5 +59,13 @@ public class AdminController {
         adminService.deleteUser(Integer.parseInt(userID));
         response = new ResponseEntity<String>(HttpStatus.NO_CONTENT);
         return "redirect:/admin/users";
+    }
+
+    @RequestMapping(value = "/add-role", method = RequestMethod.POST)
+    public String addRole(@RequestParam(value = "name") String name) {
+        Role newRole = new Role();
+        newRole.setName(name.toUpperCase());
+        adminService.addRole(newRole);
+        return "redirect:/admin/roles";
     }
 }

@@ -41,4 +41,9 @@ public class AdminServiceImpl implements AdminService {
     public List<Role> getAllRole() {
         return roleRepository.findAll();
     }
+
+    @Override
+    public void addRole(Role role) {
+        roleRepository.save(role);
+    }
 }
