@@ -113,19 +113,21 @@ a{
     text-shadow: -1px 2px #FFEB3B;
 }
 
+
 .formbox {
     text-align: center;
-    height: 180px;
+    height: auto;
     width: 428px;
     margin: 0 auto;
     background-color: #FAFAFA;
     border-radius: 3px;
     margin-top: 0px;
+
 }
 
 .regformbox {
     text-align: center;
-    height: 260px;
+    height: auto;
     width: 428px;
     margin: 0 auto;
     background-color: #FAFAFA;
