@@ -17,6 +17,11 @@ public class AdminController {
     @Autowired
     private AdminService adminService;
 
+    @RequestMapping(value = "/home", method = RequestMethod.GET)
+    public String home() {
+        return "admin_page";
+    }
+
     @RequestMapping(value = "/users", method = RequestMethod.GET)
     public String getAllUsers(Model model) {
         if (adminService.getAllUser() == null) return "admin_users";
