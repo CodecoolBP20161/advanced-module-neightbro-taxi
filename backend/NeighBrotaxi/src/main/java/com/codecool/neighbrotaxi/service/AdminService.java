@@ -9,5 +9,6 @@ import java.util.List;
 public interface AdminService {
     List<User> getAllUser();
     List<Role> getAllRole();
+    void addRole(Role role);
     void deleteUser(Integer userID);
 }
