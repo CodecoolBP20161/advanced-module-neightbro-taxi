@@ -1,7 +1,6 @@
 package com.codecool.neighbrotaxi.model;
 
 import javax.persistence.*;
-import java.util.Set;
 
 @Entity
 @Table(name = "car")
