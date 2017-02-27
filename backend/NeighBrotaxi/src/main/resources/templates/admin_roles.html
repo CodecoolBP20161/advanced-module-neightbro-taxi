@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layout">
+<head>
+    <title>Neighbro Roles</title>
+</head>
+<body>
+
+<section layout:fragment="roles">
+    <table class="table">
+        <thead class="thead-inverse container">
+        <th>ID</th>
+        <th>Role</th>
+        <th></th>
+        </thead>
+        <tbody>
+        <th:block th:each="role : ${role_list}">
+            <tr>
+                <td th:text="*{role.getId()}"></td>
+                <td th:text="*{role.getName()}"></td>
+                <td><form th:action="'/admin/delete/' + @{${role.getId()}}" th:method="delete">
+                    <input type="hidden" name="_method" value="delete" />
+                    <button class="btn btn-danger" type="submit" id="submitButton">
+                        <i class="fa fa-trash-o" aria-hidden="true"></i>
+                    </button>
+                </form></td>
+            </tr>
+        </th:block>
+        </tbody>
+    </table>
+    </section>
+</body>
+</html>
