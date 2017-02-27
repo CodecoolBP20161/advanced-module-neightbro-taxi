@@ -29,6 +29,13 @@ public class AdminController {
         return "admin_users";
     }
 
+    @RequestMapping(value = "/roles", method = RequestMethod.GET)
+    public String getAllRoles(Model model) {
+        if (adminService.getAllRole() == null) return "admin_roles";
+        model.addAttribute("role_list", adminService.getAllRole());
+        return "admin_roles";
+    }
+
     @RequestMapping(value = "/delete/{userID}", method = RequestMethod.DELETE)
         public String deleteUser(@PathVariable(value = "userID") String userID) {
         ResponseEntity<String> response = null;
