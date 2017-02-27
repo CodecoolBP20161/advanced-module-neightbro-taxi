@@ -1,11 +1,12 @@
 'use strict';
 
 angular.module('neighbroTaxi')
-    .directive('footerDir', function () {
-        return{
+    .directive('footer', function () {
+        return {
             templateUrl: 'templates/footer.html',
-            controller: 'mainCtrl',
-            replace: true,
-            restrict: 'E'
+            replace : true,
+            scope: true,
+            transclude: false,
+            restrict: 'A'
         }
     });
