@@ -2,7 +2,6 @@ package com.codecool.neighbrotaxi.service;
 
 import com.codecool.neighbrotaxi.model.User;
 import org.springframework.security.core.AuthenticationException;
-
 import javax.servlet.http.HttpServletRequest;
 
 
