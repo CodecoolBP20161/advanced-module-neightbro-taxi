@@ -19,13 +19,22 @@ public class AdminServiceImpl implements AdminService {
     @Autowired
     private RoleRepository roleRepository;
 
+    /**
+     * Return all User object parsed from the database.
+     * @return A list of users.
+     */
     @Override
     public List<User> getAllUser() {
         return userRepository.findAll();
     }
 
+    /**
+     * Delete a specified user based on their ID.
+     * @param userID The Id of the user who we want to delete.
+     */
     @Override
-    public void deleteUser(Integer userID) { userRepository.delete(userID);
+    public void deleteUser(Integer userID) {
+        userRepository.delete(userID);
     }
 
     @Override
