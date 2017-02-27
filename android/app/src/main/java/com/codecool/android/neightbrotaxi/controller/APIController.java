@@ -7,6 +7,7 @@ import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.util.Log;
 
+import com.codecool.android.neightbrotaxi.R;
 import com.codecool.android.neightbrotaxi.model.AlertUser;
 
 import org.json.JSONException;
@@ -30,12 +31,6 @@ public class APIController {
     private static final String TAG = APIController.class.getSimpleName()+"<>";
     private static final OkHttpClient client = new OkHttpClient();
     private static final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
-    // Temporary address! (The final waiting for deploying.)
-    private static String API_URL = "http://192.168.0.106:9000/";
-
-//    private final Activity mActivity;
-
-//    public APIController(Activity activity) {mActivity = activity;}
 
     /**
      * This is async.
@@ -69,8 +64,9 @@ public class APIController {
         @Override
         protected String doInBackground(String... urls) {
             try {
-                Log.i(TAG, "URL WITH POST REQUEST: " + API_URL + serverRequest);
-                return post(API_URL + serverRequest, json);
+                String url = mActivity.getString(R.string.url) + serverRequest;
+                Log.i(TAG, "URL WITH POST REQUEST: " + url);
+                return post(url, json);
             }
             catch (Exception e) {
                 Log.e(TAG, "PostTask caught exception: "+e);
@@ -135,7 +131,7 @@ public class APIController {
         @Override
         protected String doInBackground(String... urls) {
             try {
-                String url = API_URL + serverRequest;
+                String url = mActivity.getString(R.string.url) + serverRequest;
                 Log.i(TAG, "URL WITH GET REQUEST: " + url);
                 return get(url);
             }
