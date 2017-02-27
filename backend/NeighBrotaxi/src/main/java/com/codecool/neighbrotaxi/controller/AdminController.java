@@ -39,6 +39,14 @@ public class AdminController {
         return "admin_users";
     }
 
+
+    @RequestMapping(value = "/roles", method = RequestMethod.GET)
+    public String getAllRoles(Model model) {
+        if (adminService.getAllRole() == null) return "admin_roles";
+        model.addAttribute("role_list", adminService.getAllRole());
+        return "admin_roles";
+    }
+
     /**
      * Delete a user from the database with the adminService's deleteUser method.
      * @param userID Its the Id of the user in string given in the url, as path variable.
