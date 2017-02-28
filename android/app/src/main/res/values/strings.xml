@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">NeighbroTaxi</string>
-    <string name="url">http://192.168.161.210:9000/</string>
+    <!-- Cc: 192.168.161.210 -->
+    <!-- H: 192.168.0.33 -->
+    <string name="url">http://192.168.0.33:900/</string>
     <string name="hint_name">What\'s your full name?</string>
     <string name="hint_email">Email address?</string>
     <string name="hint_password1">Choose a password!</string>
