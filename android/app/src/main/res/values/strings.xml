@@ -17,4 +17,5 @@
     <string name="err_pw_short">It isn\'t enough for me!\n(8–16 characters)</string>
     <string name="err_pw_long">It\'s too much for me!\n(8–16 characters)</string>
     <string name="err_pw_same">Just type it again! \n(Second password must same with first!)</string>
+    <string name="title_activity_main">MainActivity</string>
 </resources>

@@ -1,11 +1,13 @@
 package com.codecool.android.neightbrotaxi.controller;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.util.Log;
 import android.widget.Toast;
 
 import com.codecool.android.neightbrotaxi.model.AlertUser;
 import com.codecool.android.neightbrotaxi.model.User;
+import com.codecool.android.neightbrotaxi.view.MainActivity;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -25,13 +27,13 @@ public class ResponseController {
     public ResponseController(Activity mActivity, String response) {
         Log.d(TAG, "Response from server: "+response);
 
-//        Intent intent = new Intent(mActivity, UserActivity.class);
+        Intent intent = new Intent(mActivity, MainActivity.class);
 
         try {
             if (new JSONObject(response).has("id")) {
                 Log.i(TAG, "USER REGISTERED!");
                 Toast.makeText(mActivity, "REGISTRATION DONE!", Toast.LENGTH_SHORT).show();
-//                startActivity(intent);
+                mActivity.startActivity(intent);
                 JSONObject json = new JSONObject(response);
                 User user = new User(
                         json.getInt("id"),
@@ -56,7 +58,7 @@ public class ResponseController {
                     .equals("[\"Successfully logged in!\"]")) {
                 Log.i(TAG, "USER LOGGED IN!");
                 Toast.makeText(mActivity, "AUTHENTICATION DONE!", Toast.LENGTH_SHORT).show();
-//                startActivity(intent);
+                mActivity.startActivity(intent);
                 return;
             }
             if (new JSONObject(response).getString("errorMessages")
