@@ -49,6 +49,11 @@ public class UITestOnAuthenticatorActivity {
         TEST_ACTIVITY = ACTIVITY_TEST_RULE.getActivity();
         DeviceWifiManager = (WifiManager)
                 TEST_ACTIVITY.getSystemService(Context.WIFI_SERVICE);
+        toggleScreen();
+    }
+    @Test
+    public void toggleScreen() {
+        onView(withId(R.id.btn_option)).perform(click());
     }
 
     @Test
@@ -109,6 +114,7 @@ public class UITestOnAuthenticatorActivity {
 
         DeviceWifiManager.setWifiEnabled(true);
     }
+
     @Test
     public void correctInputsValues() {
         fillCorrectInputs(1);
@@ -139,9 +145,9 @@ public class UITestOnAuthenticatorActivity {
             case 2:
                 onView(withId(R.id.input_password1)).perform(typeText("password"), closeSoftKeyboard());
             case 3:
-                onView(withId(R.id.input_email)).perform(typeText("tt@ike.st"), closeSoftKeyboard());
+                onView(withId(R.id.input_email)).perform(typeText("add@re.ss"), closeSoftKeyboard());
             case 4:
-                onView(withId(R.id.input_name)).perform(typeText("Test User"), closeSoftKeyboard());
+                onView(withId(R.id.input_name)).perform(typeText("Tester"), closeSoftKeyboard());
                 break;
         }
         if (option == 1) {
