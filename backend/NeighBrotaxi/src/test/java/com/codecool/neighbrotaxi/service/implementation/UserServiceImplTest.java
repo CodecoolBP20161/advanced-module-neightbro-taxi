@@ -2,7 +2,6 @@ package com.codecool.neighbrotaxi.service.implementation;
 
 import com.codecool.neighbrotaxi.AbstractTest;
 import com.codecool.neighbrotaxi.enums.RoleEnum;
-import com.codecool.neighbrotaxi.model.Role;
 import com.codecool.neighbrotaxi.model.User;
 import com.codecool.neighbrotaxi.repository.RoleRepository;
 import com.codecool.neighbrotaxi.repository.UserRepository;
@@ -80,9 +79,6 @@ public class UserServiceImplTest extends AbstractTest {
 
     @Test
     public void save_RoleUser() throws Exception {
-        Role role = new Role();
-        role.setName(RoleEnum.USER.name());
-        roleRepository.save(role);
 
         userService.save(user);
 
@@ -91,9 +87,6 @@ public class UserServiceImplTest extends AbstractTest {
 
     @Test
     public void save_OnlyRoleUser() throws Exception {
-        Role role = new Role();
-        role.setName(RoleEnum.USER.name());
-        roleRepository.save(role);
 
         userService.save(user);
 
