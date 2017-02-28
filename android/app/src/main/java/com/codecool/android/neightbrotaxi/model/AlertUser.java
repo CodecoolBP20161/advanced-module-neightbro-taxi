@@ -47,7 +47,15 @@ public class AlertUser {
         buildDialog(
                 "Already Registered!",
                 "The email address doesn't allow, because somebody use it.",
-                "I got this!"
+                "I fix it!"
+        );
+    }
+
+    public void invalidAuthenticationError() {
+        buildDialog(
+                "Invalid Authentication!",
+                "Authentication data is doesn\'t exist. Please, fix it or register a new account!",
+                "I get it!"
         );
     }
 

@@ -1,0 +1,15 @@
+<div id="navbar" ng-controller = 'mainCtrl'>
+    <img id="small-logo" src="img/logo.png"/>
+    <div class="vertical-box" ng-controller = 'logoutCtrl'>
+        <button type="button" id="logout" ng-click="logout()">Log out</button>
+        <div id="welcome">
+            Hello Valaki!
+            <ul class="vertical-bar">
+                <li>My profile</li>
+                <li>My messages</li>
+                <li>Other stuff</li>
+            </ul>
+        </div>
+        <p>{{currentPath}}</p>
+    </div>
+</div>

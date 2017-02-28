@@ -1,12 +1,9 @@
 package com.codecool.neighbrotaxi.model;
 
-import org.hibernate.annotations.GenericGenerator;
-import org.hibernate.annotations.Type;
 import org.hibernate.validator.constraints.Email;
 
 import javax.persistence.*;
 import java.util.Set;
-import java.util.UUID;
 
 
 @Entity
@@ -18,6 +15,7 @@ public class User {
     private String name;
     @Email
     private String email;
+    private String username;
     private String password;
     @Transient
     private String passwordConfirm;
@@ -71,5 +69,13 @@ public class User {
 
     public void setRoles(Set<Role> roles) {
         this.roles = roles;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 }

@@ -1,12 +1,10 @@
 package com.codecool.neighbrotaxi.model;
 
 
-import org.hibernate.annotations.GenericGenerator;
-import org.hibernate.annotations.Type;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 import java.util.Set;
-import java.util.UUID;
 
 
 @Entity
@@ -17,6 +15,7 @@ public class Role {
     private Integer id;
     private String name;
     @ManyToMany(mappedBy = "roles")
+    @JsonIgnore
     private Set<User> users;
 
     public Integer getId() {

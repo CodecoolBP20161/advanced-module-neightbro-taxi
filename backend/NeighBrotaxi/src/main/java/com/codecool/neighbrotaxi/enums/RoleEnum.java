@@ -5,5 +5,5 @@ package com.codecool.neighbrotaxi.enums;
  */
 public enum RoleEnum {
     ADMIN,
-    USER;
+    USER
 }
