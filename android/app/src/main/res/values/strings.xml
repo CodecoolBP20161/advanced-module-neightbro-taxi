@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">NeighbroTaxi</string>
-    <string name="url">http://192.168.161.210:9000/</string>
+    <!-- Cc: 192.168.161.210 -->
+    <!-- H: 192.168.0.33 -->
+    <string name="url">http://192.168.0.33:9000/</string>
     <string name="hint_name">What\'s your full name?</string>
     <string name="hint_email">Email address?</string>
     <string name="hint_password1">Choose a password!</string>
@@ -15,4 +17,5 @@
     <string name="err_pw_short">It isn\'t enough for me!\n(8–16 characters)</string>
     <string name="err_pw_long">It\'s too much for me!\n(8–16 characters)</string>
     <string name="err_pw_same">Just type it again! \n(Second password must same with first!)</string>
+    <string name="title_activity_main">MainActivity</string>
 </resources>
