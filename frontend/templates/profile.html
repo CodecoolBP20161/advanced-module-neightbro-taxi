@@ -3,17 +3,29 @@
     <div class="left-container">
         <img id="profile-picture" src="img/profilesample.jpg">
         <p id="pname"> {{ inUser.name }} </p>
+        <button ng-click="changeEditing()" ng-show="!onEdit">Edit</button>
+
         <!--<div id="rate">-->
             <!--<rating-stars></rating-stars>-->
         <!--</div>-->
         <div id="contact-infos">
-            <p><img src="img/mail.png" class="icon"/> {{ inUser.email }}</p>
-            <p><img src="img/Phone.png" class="icon"/> 01-23-456-6789</p>
+            <p ng-show="!onEdit"><img src="img/mail.png" class="icon"/> {{ inUser.email }}</p>
+            <p ng-show="onEdit"><img src="img/mail.png" class="icon"/>
+                <input ng-model="inUser.email" type="email"/>
+            </p>
+            <p ng-show="!onEdit"><img src="img/Phone.png" class="icon"/> {{ inUser.phone }}</p>
+            <p ng-show="onEdit"><img src="img/Phone.png" class="icon"/>
+                <input type="tel" ng-model="inUser.phone"/>
+            </p>
         </div>
         <div>
             <p id="pcar">Autók és férőhely:</p>
-            <p class="white-font">Ford fiesta, 5 hely</p>
+            <p class="white-font" ng-show="!onEdit"> {{ inUser.car }} </p>
+            <p class="white-font" ng-show="onEdit">
+                <input ng-model="inUser.car" type="text">
+            </p>
         </div>
+        <button ng-click="editUser()" ng-show="onEdit">save</button>
     </div>
 
     <div class="right-container">
