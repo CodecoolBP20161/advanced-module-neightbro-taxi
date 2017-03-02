@@ -1,7 +1,5 @@
 package com.codecool.android.neightbrotaxi.model;
 
-import java.util.Arrays;
-
 public class User {
     private final static String TAG = User.class.getSimpleName() + "<>";
 
@@ -12,9 +10,9 @@ public class User {
     private String username;
     private String password;
     private String passwordConfirm;
-    private Arrays roles;
+    private String[] roles;
 
-    public User(Integer id, String name, String email, String username, String password, String passwordConfirm, Arrays roles) {
+    public User(Integer id, String name, String email, String username, String password, String passwordConfirm, String[] roles) {
         this.id = id;
         this.name = name;
         this.email = email;
@@ -72,11 +70,11 @@ public class User {
         this.passwordConfirm = passwordConfirm;
     }
 
-    public Arrays getRoles() {
+    public String[] getRoles() {
         return roles;
     }
 
-    public void setRoles(Arrays roles) {
+    public void setRoles(String[] roles) {
         this.roles = roles;
     }
 
