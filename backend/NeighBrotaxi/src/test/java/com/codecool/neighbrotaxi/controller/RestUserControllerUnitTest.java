@@ -23,7 +23,7 @@ import static org.mockito.Mockito.when;
 @MockBean(UserService.class)
 @MockBean(BindingResult.class)
 @MockBean(UserValidator.class)
-public class UserControllerTest extends AbstractTest {
+public class RestUserControllerUnitTest extends AbstractTest {
     @Autowired
     private UserService userService;
 
