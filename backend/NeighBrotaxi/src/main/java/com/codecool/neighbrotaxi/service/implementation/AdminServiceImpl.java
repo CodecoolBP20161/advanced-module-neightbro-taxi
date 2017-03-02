@@ -46,4 +46,9 @@ public class AdminServiceImpl implements AdminService {
     public void addRole(Role role) {
         roleRepository.save(role);
     }
+
+    @Override
+    public void deleteRole(Integer roleID) {
+        roleRepository.delete(roleID);
+    }
 }

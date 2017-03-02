@@ -60,7 +60,7 @@ public class AdminController {
      * @param userID Its the Id of the user in string given in the url, as path variable.
      * @return A String, and with it the spring redirect to the /admin/users route.
      */
-    @RequestMapping(value = "/delete/{userID}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/user/delete/{userID}", method = RequestMethod.DELETE)
         public String deleteUser(@PathVariable(value = "userID") String userID) {
         ResponseEntity<String> response = null;
         adminService.deleteUser(Integer.parseInt(userID));
@@ -82,6 +82,17 @@ public class AdminController {
         Role newRole = new Role();
         newRole.setName(name.toUpperCase());
         adminService.addRole(newRole);
+        return "redirect:/admin/roles";
+    }
+
+    /**
+     * Delete a role from the database with the adminService's deleteRole method.
+     * @param roleID Its the Id of a role in string given in the url, as path variable.
+     * @return A String, and with it the spring redirect to the /admin/roles route.
+     */
+    @RequestMapping(value = "/role/delete/{roleID}", method = RequestMethod.DELETE)
+    public String deleteRole(@PathVariable(value = "roleID") String roleID) {
+        adminService.deleteRole(Integer.parseInt(roleID));
         return "redirect:/admin/roles";
     }
 }
