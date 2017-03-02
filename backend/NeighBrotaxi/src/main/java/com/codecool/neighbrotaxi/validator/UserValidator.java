@@ -20,6 +20,11 @@ public class UserValidator implements Validator {
     private UserService userService;
 
 
+    /**
+     * Can this Validator validate instances of the supplied aClass?
+     * @param aClass The supplied class what we want to validate
+     * @return True if the Validator can validate the class. Otherwise its return value is False.
+     */
     @Override
     public boolean supports(Class<?> aClass) {
         return User.class.equals(aClass);
