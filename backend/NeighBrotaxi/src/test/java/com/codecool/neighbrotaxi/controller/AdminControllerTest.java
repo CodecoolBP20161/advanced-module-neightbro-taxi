@@ -101,7 +101,7 @@ public class AdminControllerTest extends AbstractTest {
     }
 
     @Test
-    public void addRole_ReturnValueRedirectToRoleListPage() {
+    public void addRole_ReturnValueRedirectToRoleListPage() throws Exception {
 
         String renderedPage = adminController.addRole("Premium");
 
@@ -109,7 +109,7 @@ public class AdminControllerTest extends AbstractTest {
     }
 
     @Test
-    public void addRole_SaveToDatabase() {
+    public void addRole_SaveToDatabase() throws Exception {
         role.setId(1);
 
         adminService.addRole(role);
@@ -118,11 +118,31 @@ public class AdminControllerTest extends AbstractTest {
     }
 
     @Test
-    public void addRole_IfExistsThenItWillNotBeSaved() {
+    public void addRole_IfExistsThenItWillNotBeSaved() throws Exception {
         when(adminService.getAllRole()).thenReturn(new ArrayList<Role>(Arrays.asList(role)));
 
         adminController.addRole("Premium");
 
         verify(adminService, times(0)).addRole(any());
+    }
+
+    @Test
+    public void getAllRoles_AddCorrectUsersIntoModel() throws Exception {
+        List<Role> roles = new ArrayList<>();
+        roles.add(role);
+        when(adminService.getAllRole()).thenReturn(roles);
+
+
+        adminController.getAllRoles(model);
+
+        verify(model, atLeastOnce()).addAttribute("role_list", roles);
+    }
+
+    @Test
+    public void getAllRoles_RendersTheCorrectTemplate() throws Exception {
+
+        String renderedPage = adminController.getAllRoles(model);
+
+        assertEquals("admin_roles", renderedPage);
     }
 }
