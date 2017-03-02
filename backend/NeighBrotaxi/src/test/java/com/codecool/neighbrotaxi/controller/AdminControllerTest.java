@@ -1,27 +1,21 @@
 package com.codecool.neighbrotaxi.controller;
 
 import com.codecool.neighbrotaxi.AbstractTest;
+import com.codecool.neighbrotaxi.model.Role;
 import com.codecool.neighbrotaxi.model.User;
-import com.codecool.neighbrotaxi.repository.UserRepository;
 import com.codecool.neighbrotaxi.service.AdminService;
-import com.codecool.neighbrotaxi.service.UserService;
-import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.junit.Before;
 import org.junit.Test;
-import org.mockito.Mock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.boot.test.mock.mockito.SpyBean;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
-import static org.junit.Assert.*;
-import static org.mockito.Matchers.anyList;
-import static org.mockito.Matchers.anyListOf;
-import static org.mockito.Matchers.anyString;
+import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.*;
 
 @Transactional
@@ -39,9 +33,14 @@ public class AdminControllerTest extends AbstractTest {
 
     private User user;
 
+    private Role role;
+
 
     @Before
     public void setUp() throws Exception {
+        role = new Role();
+        role.setName("PREMIUM");
+
         user = new User();
         user.setName("name");
         user.setPassword("pw");
@@ -91,5 +90,39 @@ public class AdminControllerTest extends AbstractTest {
         String renderedPage = adminController.home();
 
         assertEquals("admin_page", renderedPage);
+    }
+
+    @Test
+    public void addRole_CallAddRoleFromUserService() throws Exception {
+
+        adminController.addRole("Premium");
+
+        verify(adminService, times(1)).addRole(any(Role.class));
+    }
+
+    @Test
+    public void addRole_ReturnValueRedirectToRoleListPage() {
+
+        String renderedPage = adminController.addRole("Premium");
+
+        assertEquals("redirect:/admin/roles", renderedPage);
+    }
+
+    @Test
+    public void addRole_SaveToDatabase() {
+        role.setId(1);
+
+        adminService.addRole(role);
+
+        verify(adminService, times(1)).addRole(role);
+    }
+
+    @Test
+    public void addRole_IfExistsThenItWillNotBeSaved() {
+        when(adminService.getAllRole()).thenReturn(new ArrayList<Role>(Arrays.asList(role)));
+
+        adminController.addRole("Premium");
+
+        verify(adminService, times(0)).addRole(any());
     }
 }
