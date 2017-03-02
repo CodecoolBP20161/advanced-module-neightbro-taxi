@@ -22,7 +22,7 @@
         <td th:text="*{user.getEmail()}"></td>
         <td th:text="*{user.getUsername()}"></td>
         <td th:each="role : *{user.getRoles()}"><p th:text="*{role.getName()}"></p></td>
-        <td><form th:action="'/admin/delete/' + @{${user.getId()}}" th:method="delete">
+        <td><form th:action="'/admin/users/delete/' + @{${user.getId()}}" th:method="delete">
             <input type="hidden" name="_method" value="delete" />
             <button class="btn btn-danger" type="submit" id="submitButton">
                 <i class="fa fa-trash-o fa-lg" aria-hidden="true"></i>

@@ -18,7 +18,7 @@
             <tr>
                 <td th:text="*{role.getId()}"></td>
                 <td th:text="*{role.getName()}"></td>
-                <td><form th:action="'/admin/delete/' + @{${role.getId()}}" th:method="delete">
+                <td><form th:action="'/admin/role/delete/' + @{${role.getId()}}" th:method="delete">
                     <input type="hidden" name="_method" value="delete" />
                     <button class="btn btn-danger" type="submit" id="submitButton">
                         <i class="fa fa-trash-o fa-lg" aria-hidden="true"></i>
