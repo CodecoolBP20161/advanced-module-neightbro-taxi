@@ -12,4 +12,5 @@ public interface UserService {
     User findByEmail(String email);
     void login(HttpServletRequest request, User user) throws AuthenticationException;
     User findOne(Integer id);
+    void logout(HttpServletRequest request);
 }

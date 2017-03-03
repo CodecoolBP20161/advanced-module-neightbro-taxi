@@ -2,6 +2,7 @@ package com.codecool.neighbrotaxi.service.implementation;
 
 import com.codecool.neighbrotaxi.enums.RoleEnum;
 import com.codecool.neighbrotaxi.model.Role;
+import com.codecool.neighbrotaxi.model.SessionStorage;
 import com.codecool.neighbrotaxi.model.User;
 import com.codecool.neighbrotaxi.repository.RoleRepository;
 import com.codecool.neighbrotaxi.repository.UserRepository;
@@ -37,6 +38,9 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private AuthenticationManager authenticationManager;
 
+    @Autowired
+    private SessionStorage sessionStorage;
+
     /**
      * Saving user object into the database with the UserRepository's save method.
      * @param user The object of the User class. This is the user we want to save into the database.
@@ -64,6 +68,15 @@ public class UserServiceImpl implements UserService {
     @Override
     public User findOne(Integer id) {
         return userRepository.findOne(id);
+    }
+
+    @Override
+    public void logout(HttpServletRequest request) {
+        sessionStorage.setDefault();
+        SecurityContext securityContext = SecurityContextHolder.getContext();
+        securityContext.setAuthentication(null);
+        HttpSession session = request.getSession(true);
+        session.setAttribute("SPRING_SECURITY_CONTEXT", securityContext);
     }
 
     @Override
