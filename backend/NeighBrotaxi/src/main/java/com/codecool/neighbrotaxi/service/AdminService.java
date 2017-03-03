@@ -11,5 +11,5 @@ public interface AdminService {
     List<Role> getAllRole();
     void addRole(Role role);
     void deleteUser(Integer userID);
-    void deleteRole(Integer roleID);
+    boolean deleteRole(Integer roleID);
 }

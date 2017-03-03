@@ -1,5 +1,6 @@
 package com.codecool.neighbrotaxi.service.implementation;
 
+import com.codecool.neighbrotaxi.enums.RoleEnum;
 import com.codecool.neighbrotaxi.model.Role;
 import com.codecool.neighbrotaxi.model.User;
 import com.codecool.neighbrotaxi.repository.RoleRepository;
@@ -48,7 +49,12 @@ public class AdminServiceImpl implements AdminService {
     }
 
     @Override
-    public void deleteRole(Integer roleID) {
-        roleRepository.delete(roleID);
+    public boolean deleteRole(Integer roleID) {
+        Role role = roleRepository.findOne(roleID);
+        if (!role.getName().equals(RoleEnum.ADMIN.name()) && !role.getName().equals(RoleEnum.USER.name())) {
+            roleRepository.delete(roleID);
+            return true;
+        }
+        return false;
     }
 }
