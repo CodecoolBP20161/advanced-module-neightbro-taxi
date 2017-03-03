@@ -258,4 +258,16 @@ public class RestUserControllerMvcTest extends NeighBroTaxiApplicationTests{
                 .andExpect(jsonPath("$.infoMessages[0]", containsString("Successfully logged in!")))
                 .andExpect(jsonPath("$.errorMessages", emptyIterable()));
     }
+
+    @Test
+    public void userLogout_ShouldReturnValidJsonWithInfoMessage() throws Exception {
+
+        mockMvc.perform(post("/user-logout")
+                .contentType(MediaType.APPLICATION_JSON_UTF8)
+                .content(TestUtil.convertObjectToJsonBytes(user)))
+                .andExpect(status().isOk())
+                .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8))
+                .andExpect(jsonPath("$.infoMessages[0]", containsString("You have been logged out successfully.")))
+                .andExpect(jsonPath("$.errorMessages", emptyIterable()));
+    }
 }
