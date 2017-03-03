@@ -1,18 +1,23 @@
 package com.codecool.neighbrotaxi.controller;
 
 import com.codecool.neighbrotaxi.NeighBroTaxiApplicationTests;
+import com.codecool.neighbrotaxi.model.SessionStorage;
 import com.codecool.neighbrotaxi.model.User;
 import com.codecool.neighbrotaxi.repository.UserRepository;
 import com.codecool.neighbrotaxi.service.UserService;
+import com.codecool.neighbrotaxi.service.implementation.SecurityServiceImpl;
 import com.codecool.neighbrotaxi.utils.TestUtil;
-import org.hamcrest.Matchers;
 import org.json.JSONArray;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.boot.test.mock.mockito.SpyBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.MvcResult;
+import org.springframework.test.web.servlet.ResultHandler;
+import org.springframework.test.web.servlet.result.JsonPathResultMatchers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.context.WebApplicationContext;
@@ -20,14 +25,16 @@ import org.springframework.web.context.WebApplicationContext;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import static org.hamcrest.Matchers.contains;
 import static org.hamcrest.Matchers.*;
 import static org.mockito.Matchers.any;
-import static org.mockito.Mockito.times;
-import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @SpyBean(UserService.class)
+@SpyBean(SessionStorage.class)
+@MockBean(SecurityServiceImpl.class)
 @Transactional
 public class RestUserControllerMvcTest extends NeighBroTaxiApplicationTests{
     @Autowired
@@ -40,6 +47,12 @@ public class RestUserControllerMvcTest extends NeighBroTaxiApplicationTests{
 
     @Autowired
     private UserRepository userRepository;
+
+    @Autowired
+    private SessionStorage sessionStorageMock = new SessionStorage();
+
+    @Autowired
+    private SecurityServiceImpl securityServiceImplMock;
 
     private User user;
 
@@ -54,6 +67,8 @@ public class RestUserControllerMvcTest extends NeighBroTaxiApplicationTests{
         mockMvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
     }
 
+
+    // "/registration" route tests
     @Test
     public void registration_InvalidEmail_ShouldReturnValidErrorMessage() throws Exception {
         user.setEmail("invalid email");
@@ -184,5 +199,75 @@ public class RestUserControllerMvcTest extends NeighBroTaxiApplicationTests{
 
 
         verify(userServiceMock, times(1)).save(any());
+    }
+
+    // "/user-login" route tests
+    @Test
+    public void userLogin_InvalidUsername_ShouldReturnValidJsonWithErrorMessage() throws Exception {
+        user.setUsername("invalid");
+
+        mockMvc.perform(post("/user-login")
+                .contentType(MediaType.APPLICATION_JSON_UTF8)
+                .content(TestUtil.convertObjectToJsonBytes(user)))
+                .andExpect(status().isOk())
+                .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8))
+                .andExpect(jsonPath("$.errorMessages[0]", containsString("Invalid username or password!")))
+                .andExpect(jsonPath("$.loggedInUser.name", containsString("anonymous")))
+                .andExpect(jsonPath("$.loggedInUser.email", containsString("anonymous@anonymous.com")))
+                .andExpect(jsonPath("$.loggedInUser.roles", nullValue()));
+    }
+
+    @Test
+    public void userLogin_InvalidPassword_ShouldReturnValidJsonWithErrorMessage() throws Exception {
+        user.setPassword("invalid");
+        when(securityServiceImplMock.findLoggedInUsername()).thenReturn("notloggedin");
+
+        mockMvc.perform(post("/user-login")
+                .contentType(MediaType.APPLICATION_JSON_UTF8)
+                .content(TestUtil.convertObjectToJsonBytes(user)))
+                .andExpect(status().isOk())
+                .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8))
+                .andExpect(jsonPath("$.errorMessages[0]", containsString("Invalid username or password!")))
+                .andExpect(jsonPath("$.loggedInUser.name", containsString("anonymous")))
+                .andExpect(jsonPath("$.loggedInUser.email", containsString("anonymous@anonymous.com")))
+                .andExpect(jsonPath("$.loggedInUser.roles", nullValue()));
+    }
+
+    @Test
+    public void userLogin_AlreadyLoggedIn_ShouldReturnValidJsonWithErrorMessage() throws Exception {
+        when(securityServiceImplMock.findLoggedInUsername()).thenReturn(user.getUsername());
+
+        mockMvc.perform(post("/user-login")
+                .contentType(MediaType.APPLICATION_JSON_UTF8)
+                .content(TestUtil.convertObjectToJsonBytes(user)))
+                .andExpect(status().isOk())
+                .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8))
+                .andExpect(jsonPath("$.errorMessages[0]", containsString("Already logged in.")));
+    }
+
+    @Test
+    public void userLogin_EverythingIsOk_ShouldReturnValidJsonWithInfoMessage() throws Exception {
+        doNothing().when(userServiceMock).login(any(), any());
+        when(securityServiceImplMock.findLoggedInUsername()).thenReturn("anonymousUser");
+
+        mockMvc.perform(post("/user-login")
+                .contentType(MediaType.APPLICATION_JSON_UTF8)
+                .content(TestUtil.convertObjectToJsonBytes(user)))
+                .andExpect(status().isOk())
+                .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8))
+                .andExpect(jsonPath("$.infoMessages[0]", containsString("Successfully logged in!")))
+                .andExpect(jsonPath("$.errorMessages", emptyIterable()));
+    }
+
+    @Test
+    public void userLogout_ShouldReturnValidJsonWithInfoMessage() throws Exception {
+
+        mockMvc.perform(post("/user-logout")
+                .contentType(MediaType.APPLICATION_JSON_UTF8)
+                .content(TestUtil.convertObjectToJsonBytes(user)))
+                .andExpect(status().isOk())
+                .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8))
+                .andExpect(jsonPath("$.infoMessages[0]", containsString("You have been logged out successfully.")))
+                .andExpect(jsonPath("$.errorMessages", emptyIterable()));
     }
 }
