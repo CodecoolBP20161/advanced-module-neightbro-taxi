@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.mock.mockito.SpyBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.ResultMatcher;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.context.WebApplicationContext;
@@ -24,6 +25,8 @@ import static org.hamcrest.Matchers.*;
 import static org.mockito.Matchers.any;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
@@ -184,5 +187,35 @@ public class RestUserControllerMvcTest extends NeighBroTaxiApplicationTests{
 
 
         verify(userServiceMock, times(1)).save(any());
+    }
+
+    @Test
+    public void loggedInUseruserReturnsAnonymusByDefault() throws Exception {
+
+        mockMvc.perform(get("/logged-in-user"))
+                .andExpect(status().isOk())
+                .andExpect(
+                        content().contentType(MediaType.APPLICATION_JSON_UTF8))
+                .andExpect(jsonPath("$.errorMessages[0]", containsString("Nobody is logged in!")))
+                .andExpect(jsonPath("$.infoMessages[*]", hasSize(0)))
+                .andExpect(jsonPath("$.loggedInUser.id", nullValue()))
+                .andExpect(jsonPath("$.loggedInUser.name", containsString("anonymous")))
+                .andExpect(jsonPath("$.loggedInUser.email", containsString("anonymous@anonymous.com")))
+                .andExpect(jsonPath("$.loggedInUser.username", nullValue()))
+                .andExpect(jsonPath("$.loggedInUser.password", nullValue()))
+                .andExpect(jsonPath("$.loggedInUser.passwordConfirm", nullValue()))
+                .andExpect(jsonPath("$.loggedInUser.roles", nullValue()));
+
+//        mockMvc.perform(get("/logged-in-user")
+//                .contentType(MediaType.APPLICATION_JSON_UTF8))
+//                .andExpect(status().isOk())
+//                .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8))
+//                .andExpect(jsonPath("$.id", nullValue()))
+//                .andExpect(jsonPath("$.name", containsString("anonymous")))
+//                .andExpect(jsonPath("$.email", nullValue()))
+//                .andExpect(jsonPath("$.username", nullValue()))
+//                .andExpect(jsonPath("$.password", nullValue()))
+//                .andExpect(jsonPath("$.passwordConfirm", nullValue()));
+
     }
 }
