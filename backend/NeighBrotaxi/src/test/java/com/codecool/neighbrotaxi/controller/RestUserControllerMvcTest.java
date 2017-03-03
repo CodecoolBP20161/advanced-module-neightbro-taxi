@@ -205,17 +205,5 @@ public class RestUserControllerMvcTest extends NeighBroTaxiApplicationTests{
                 .andExpect(jsonPath("$.loggedInUser.password", nullValue()))
                 .andExpect(jsonPath("$.loggedInUser.passwordConfirm", nullValue()))
                 .andExpect(jsonPath("$.loggedInUser.roles", nullValue()));
-
-//        mockMvc.perform(get("/logged-in-user")
-//                .contentType(MediaType.APPLICATION_JSON_UTF8))
-//                .andExpect(status().isOk())
-//                .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8))
-//                .andExpect(jsonPath("$.id", nullValue()))
-//                .andExpect(jsonPath("$.name", containsString("anonymous")))
-//                .andExpect(jsonPath("$.email", nullValue()))
-//                .andExpect(jsonPath("$.username", nullValue()))
-//                .andExpect(jsonPath("$.password", nullValue()))
-//                .andExpect(jsonPath("$.passwordConfirm", nullValue()));
-
     }
 }
