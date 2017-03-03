@@ -91,8 +91,10 @@ public class AdminController {
      * @return A String, and with it the spring redirect to the /admin/roles route.
      */
     @RequestMapping(value = "/role/delete/{roleID}", method = RequestMethod.DELETE)
-    public String deleteRole(@PathVariable(value = "roleID") String roleID) {
-        adminService.deleteRole(Integer.parseInt(roleID));
+    public String deleteRole(@PathVariable(value = "roleID") String roleID, Model model) {
+        if (adminService.deleteRole(Integer.parseInt(roleID))) {
+            model.addAttribute("error", "Cannot delete admin or user roles");
+        }
         return "redirect:/admin/roles";
     }
 }
