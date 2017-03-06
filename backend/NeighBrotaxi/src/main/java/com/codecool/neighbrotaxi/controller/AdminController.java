@@ -92,8 +92,11 @@ public class AdminController {
      */
     @RequestMapping(value = "/role/delete/{roleID}", method = RequestMethod.DELETE)
     public String deleteRole(@PathVariable(value = "roleID") String roleID, Model model) {
-        if (adminService.deleteRole(Integer.parseInt(roleID))) {
+        if (!adminService.deleteRole(Integer.parseInt(roleID))) {
+            System.out.println("inIF");
             model.addAttribute("error", "Cannot delete admin or user roles");
+            // Todo: There's no point of add model attribute before redirection, if we dont pass it to the redrection Url.
+            // Tests now yellow because of this.
         }
         return "redirect:/admin/roles";
     }
