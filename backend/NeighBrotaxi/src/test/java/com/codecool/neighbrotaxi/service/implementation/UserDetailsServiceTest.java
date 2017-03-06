@@ -9,6 +9,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
 import javax.transaction.Transactional;
 
@@ -48,13 +49,10 @@ public class UserDetailsServiceTest extends AbstractTest {
         userRepository.save(user);
     }
 
-    @Test
-    public void loadUserByUsername_ThereIsNoUserWithTheGivenUsername_ShouldReturnNull() throws Exception {
+    @Test(expected = UsernameNotFoundException.class)
+    public void loadUserByUsername_ThereIsNoUserWithTheGivenUsername_ShouldThrowUsernameNotFoundException() throws Exception {
 
-        org.springframework.security.core.userdetails.User returnedUser =
-                (org.springframework.security.core.userdetails.User) userDetailsService.loadUserByUsername("noUser");
-
-        assertNull(returnedUser);
+        userDetailsService.loadUserByUsername("noUser");
     }
 
     @Test

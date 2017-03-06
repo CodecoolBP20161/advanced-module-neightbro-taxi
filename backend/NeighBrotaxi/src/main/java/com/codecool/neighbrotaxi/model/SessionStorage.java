@@ -4,6 +4,9 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+/**
+ * This Class' session object stores the session attributes in valid form for JSON response.
+ */
 @Component
 public class SessionStorage {
     private List<String> errorMessages;

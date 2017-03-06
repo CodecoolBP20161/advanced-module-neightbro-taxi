@@ -54,22 +54,44 @@ public class UserServiceImpl implements UserService {
         userRepository.save(user);
     }
 
-
+    /**
+     * Find user by username.
+     * @param username Find the user by this, given username.
+     * @return null if there's no user with the given username.
+     * Otherwise a User object with the given username, parsed from the user table.
+     */
     @Override
     public User findByUsername(String username) {
         return userRepository.findByUsername(username);
     }
 
+    /**
+     * Find user by email.
+     * @param email Find the user by this - given - email.
+     * @return null if there's no user with the given email.
+     * Otherwise a User object with the given email, parsed from the user table.
+     */
     @Override
     public User findByEmail(String email) {
         return userRepository.findByEmail(email);
     }
 
+    /**
+     * Find user by id.
+     * @param id Find the user by this - given - id.
+     * @return null if there's no user with the given id.
+     * Otherwise a User object with the given id, parsed from the user table.
+     */
     @Override
     public User findOne(Integer id) {
         return userRepository.findOne(id);
     }
 
+    /**
+     * With this method we can logging out the logged in user.
+     * Clean up the session session storage and the security context.(Remove the user from these)
+     * @param request HttpServletRequest object. We use this to setup the session.
+     */
     @Override
     public void logout(HttpServletRequest request) {
         sessionStorage.setDefault();
@@ -79,6 +101,12 @@ public class UserServiceImpl implements UserService {
         session.setAttribute("SPRING_SECURITY_CONTEXT", securityContext);
     }
 
+    /**
+     * With this method we can logging in a user. Authenticate and store the user into the session.
+     * @param request HttpServletRequest object. We use this to setup the session.
+     * @param user User object with the necessary fields for validation.
+     * @throws AuthenticationException Throws this exception when the authentication fails.
+     */
     @Override
     public void login(HttpServletRequest request, User user) throws AuthenticationException {
         UsernamePasswordAuthenticationToken authRequest = new UsernamePasswordAuthenticationToken(user.getUsername(), user.getPassword());
