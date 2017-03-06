@@ -60,6 +60,14 @@ public class RestUserController {
         return user;
     }
 
+    /**
+     * Route for user login. Authenticate the given credentials.
+     * If its valid, then setup the loggedInUser, else give back an error message corresponding to the problem.
+     * @param user A User object. The Spring parse the JSON located in the request body, and make a new User object from it, with the given JSON datas.
+     * @param request HttpServletRequest object. We use this to setup the session.
+     * @return SerializableSessionStorage object. With this, we can serialize a SessionStorage objects fields, so the returned JSON will be parsed from this.
+     * @see SerializableSessionStorage SerializableSessionStorage
+     */
     @RequestMapping(value = "/user-login", method = RequestMethod.POST)
     public SerializableSessionStorage userLogin(@RequestBody User user, HttpServletRequest request) {
         sessionStorage.clearMessages();
@@ -80,6 +88,13 @@ public class RestUserController {
         return new SerializableSessionStorage(sessionStorage);
     }
 
+    /**
+     * Route for user logout. If there's a logged in user, then clear the user from the session,
+     * otherwise return an info message, that say "There's no logged in user!".
+     * @param request HttpServletRequest object. We use this to setup the session.
+     * @return SerializableSessionStorage object. With this, we can serialize a SessionStorage objects fields, so the returned JSON will be parsed from this.
+     * @see SerializableSessionStorage SerializableSessionStorage
+     */
     @RequestMapping(value = "/user-logout", method = RequestMethod.POST)
     public SerializableSessionStorage userLogout(HttpServletRequest request) {
         if (!Objects.equals(sessionStorage.getLoggedInUser().getUsername(), "anonymous")){
