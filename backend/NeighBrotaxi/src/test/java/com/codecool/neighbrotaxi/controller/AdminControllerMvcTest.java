@@ -171,18 +171,18 @@ public class AdminControllerMvcTest extends NeighBroTaxiApplicationTests {
         when(adminServiceMock.deleteRole(any())).thenReturn(false);
 
         mockMvc.perform(delete("/admin/role/delete/{roleId}", 1))
-                .andExpect(status().is3xxRedirection())
-                .andExpect(redirectedUrl("/admin/roles"))
+                .andExpect(status().isOk())
+                .andExpect(view().name("admin_roles"))
                 .andExpect(model().attribute("error", "Cannot delete admin or user roles"));
     }
 
     @Test
     public void deleteRole_AdminServiceDeleteRoleReturnsTrue_ShouldNotAddAnythingIntoModel() throws Exception {
-        when(adminServiceMock.deleteRole(anyInt())).thenReturn(false);
+        when(adminServiceMock.deleteRole(anyInt())).thenReturn(true);
 
         mockMvc.perform(delete("/admin/role/delete/{roleId}", 1))
-                .andExpect(status().is3xxRedirection())
-                .andExpect(redirectedUrl("/admin/roles"))
-                .andExpect(model().size(0));
+                .andExpect(status().isOk())
+                .andExpect(view().name("admin_roles"))
+                .andExpect(model().attributeDoesNotExist("error"));
     }
 }

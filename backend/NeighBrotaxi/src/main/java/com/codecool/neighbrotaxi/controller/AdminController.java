@@ -95,9 +95,7 @@ public class AdminController {
         if (!adminService.deleteRole(Integer.parseInt(roleID))) {
             System.out.println("inIF");
             model.addAttribute("error", "Cannot delete admin or user roles");
-            // Todo: There's no point of add model attribute before redirection, if we dont pass it to the redrection Url.
-            // Tests now yellow because of this.
         }
-        return "redirect:/admin/roles";
+        return getAllRoles(model);
     }
 }
