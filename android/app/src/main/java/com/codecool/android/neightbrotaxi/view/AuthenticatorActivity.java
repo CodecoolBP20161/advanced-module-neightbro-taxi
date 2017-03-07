@@ -19,7 +19,7 @@ import com.codecool.android.neightbrotaxi.model.AlertUser;
 
 /**
  * This responsible for the first screen when the user launch the app.
- * Manage the activity, what ensure a registration interface.
+ * Manage the activity, what ensure a registration and login interface.
  */
 public class AuthenticatorActivity extends AppCompatActivity {
 
@@ -85,6 +85,9 @@ public class AuthenticatorActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * Manipulate view form (login/registration).
+     */
     private void formToggle() {
         if(inputLayoutName.getVisibility() == View.INVISIBLE) {
             inputLayoutName.setVisibility(View.VISIBLE);
@@ -98,14 +101,17 @@ public class AuthenticatorActivity extends AppCompatActivity {
         }
     }
 
+
     /**
-     * Check the validator boolean result.
-     * If the network connectionError is OK,
-     * Send user inputs to the correct URL.
-     * Finally notify user, what happens.
+     * Check the button, then choose between registration or login.
+     * Check the necessary input fields.
+     * If everything OK, check the network status (if not, alert the user).
+     * After that call the right controller what manage the correct request.
+     * @see APIController
      */
     private void submitForm() {
         if (btnOption.getText().toString() == getText(R.string.btn_login)) {
+            // --- REGISTRATION ---
             if (!validateName()) {
                 return;
             }
@@ -136,6 +142,7 @@ public class AuthenticatorActivity extends AppCompatActivity {
                 new AlertUser(AuthenticatorActivity.this).connectionError();
             }
         }
+        // --- LOGIN ---
         else {
             if (!validateEmail()) {
                 return;
@@ -263,15 +270,11 @@ public class AuthenticatorActivity extends AppCompatActivity {
 
         // Not used by me, just must to be implemented.
         @Override
-        public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-        }
+        public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
 
         // Not used by me, just must to be implemented.
         @Override
-        public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-        }
+        public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
 
         /**
          * Based on view id define order for TextWatcher.
@@ -318,10 +321,6 @@ public class AuthenticatorActivity extends AppCompatActivity {
     protected void onPause() {
         super.onPause();
         Log.i(TAG, "ACTIVITY PAUSED!");
-//        inputName.setText("");
-//        inputEmail.setText("");
-//        inputPassword1.setText("");
-//        inputPassword2.setText("");
     }
 
     @Override
