@@ -17,18 +17,20 @@ import org.json.JSONObject;
  * Responsible for managing Activity's screen, based on the server json responses.
  * @see AlertUser
  */
-public class ResponseController {
+class ResponseController {
     private static final String TAG = ResponseController.class.getSimpleName()+"<>";
 
     /**
+     * Responsible for convert string to json, then parse it.
      * @param mActivity from the current context
      * @param response from the server
      */
-    public ResponseController(Activity mActivity, String response) {
+    ResponseController(Activity mActivity, String response) {
         Log.d(TAG, "Response from server: "+response);
 
         Intent intent = new Intent(mActivity, MainActivity.class);
 
+        // When the user successfully registered
         try {
             if (new JSONObject(response).has("id")) {
                 Log.i(TAG, "USER REGISTERED!");
@@ -46,14 +48,11 @@ public class ResponseController {
 //                        json.getJSONArray("roles")
                 );
                 StorageController session = new StorageController(mActivity);
-
                 session.setStoredUser(user);
                 Log.i(TAG, "USER OBJECT SAVED: " + user);
-                User getUser1 = session.getStoredUser();
-                Log.d(TAG, "GET OBJECT SAVED USER: " + getUser1);
-                Log.d(TAG, "TEST USER OBJECT ADDRESS:"+getUser1.getEmail());
                 return;
             }
+            // When the user successfully logged in
             if (new JSONObject(response).getString("infoMessages")
                     .equals("[\"Successfully logged in!\"]")) {
                 Log.i(TAG, "USER LOGGED IN!");
@@ -61,6 +60,7 @@ public class ResponseController {
                 mActivity.startActivity(intent);
                 return;
             }
+            // Invalid authentication at login
             if (new JSONObject(response).getString("errorMessages")
                     .equals("[\"Invalid username or password!\"]")) {
                 Log.i(TAG, "INVALID AUTHENTICATION DATA!");
@@ -68,6 +68,7 @@ public class ResponseController {
             }
         }
         catch (JSONException error) {
+            // If user give an exist email address when register
             try {
                 JSONArray responseJson = new JSONArray(response);
                 JSONObject content = (JSONObject) responseJson.get(0);
@@ -76,6 +77,7 @@ public class ResponseController {
                     new AlertUser(mActivity).duplicateError();
                 }
             }
+            // Catch everything else
             catch (JSONException e) {
                 Log.e(TAG, String.valueOf(e));
             }
