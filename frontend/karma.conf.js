@@ -15,7 +15,27 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'test-main.js'
+      'test-main.js',
+      'scripts/app.js',
+      'scripts/route.js',
+      'scripts/services/data.js',
+      'scripts/services/loggedinUser.js',
+      'scripts/directives/goClick.js',
+      'scripts/directives/locationChecker.js',
+      'scripts/directives/elementDirectives/centralLogo.js',
+      'scripts/directives/elementDirectives/footer.js',
+      'scripts/directives/elementDirectives/login.js',
+      'scripts/directives/elementDirectives/loginMenu.js',
+      'scripts/directives/elementDirectives/navbar.js',
+      'scripts/directives/elementDirectives/profile.js',
+      'scripts/directives/elementDirectives/ratingStars.js',
+      'scripts/directives/elementDirectives/registration.js',
+      'scripts/controllers/loginCtrl.js',
+      'scripts/controllers/logoutCtrl.js',
+      'scripts/controllers/menuCtrl.js',
+      'scripts/controllers/profileCtrl.js',
+      'scripts/controllers/registrationCtrl.js',
+      'scripts/controllers/main.js'
     ],
 
 
