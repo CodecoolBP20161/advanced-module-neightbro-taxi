@@ -11,7 +11,7 @@ import com.google.gson.Gson;
  * Responsible for the storing on device like http session in client-server communication.
  * @see SharedPreferences
  */
-class StorageController {
+public class StorageController {
 
     /**
      * Tag for logging.
@@ -23,25 +23,25 @@ class StorageController {
     private final static String PREFS_KEY = "com.myapp.app.passwordprotector.preferences";
     private static SharedPreferences mSharedPreferences;
 
-    StorageController(Context context) {
+    public StorageController(Context context) {
         mSharedPreferences = context.getSharedPreferences(PREFS_KEY, Context.MODE_PRIVATE);
     }
 
-    User getStoredUser() {
+    public User getStoredUser() {
         Gson gson = new Gson();
         String json = mSharedPreferences.getString("USER", null);
         Log.i(TAG, "User object data loaded as String.");
         return gson.fromJson(json, User.class);
     }
 
-    void setStoredUser(User user) {
+    public void setStoredUser(User user) {
         Gson gson = new Gson();
         String stringJson = gson.toJson(user);
         mSharedPreferences.edit().putString("USER", stringJson).apply();
         Log.i(TAG, "User object data saved as String.");
     }
 
-    void removeUser() {
+    public void removeUser() {
         mSharedPreferences.edit().remove("USER").apply();
         Log.i(TAG, "User object data removed from storage!");
     }
