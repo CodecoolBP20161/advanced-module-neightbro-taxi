@@ -23,18 +23,39 @@
     <!--</android.support.design.widget.AppBarLayout>-->
 
 <!--</android.support.design.widget.CoordinatorLayout>-->
+
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/profile_page"
-    tools:context="com.codecool.android.neightbrotaxi.view.MainActivity">
+    android:background="@drawable/bg"
+    tools:context="com.codecool.android.neightbrotaxi.view.MainActivity"
+    android:id="@+id/relative_layout">
 
-    <!--<ImageView-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--app:srcCompat="@drawable/profile_page"-->
-        <!--android:id="@+id/imageView2"/>-->
+    <!--<android.support.design.widget.AppBarLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:theme="@style/AppTheme.AppBarOverlay">-->
+    <!--<android.support.v7.widget.Toolbar-->
+    <!--android:id="@+id/toolbar"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="?attr/actionBarSize"-->
+    <!--android:background="?attr/colorPrimaryDark"-->
+    <!--android:title="NeighbroTaxi"-->
+    <!--android:titleTextColor="@color/colorPrimary"-->
+    <!--app:popupTheme="@style/AppTheme.PopupOverlay"/>-->
+    <!--</android.support.design.widget.AppBarLayout>-->
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/menu_little"
+        android:id="@+id/icon_menu"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:onClick="showPopup"/>
+    <!--android:paddingBottom="510dp"-->
+    <!--android:paddingLeft="330dp"-->
 </RelativeLayout>

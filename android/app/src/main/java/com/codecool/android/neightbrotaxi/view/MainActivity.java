@@ -62,6 +62,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void getProfile() {
+
+        storageController = new StorageController(getApplicationContext());
+
         Toast.makeText(getApplicationContext(), storageController.getStoredUser().toString(),
                 Toast.LENGTH_SHORT).show();
     }
