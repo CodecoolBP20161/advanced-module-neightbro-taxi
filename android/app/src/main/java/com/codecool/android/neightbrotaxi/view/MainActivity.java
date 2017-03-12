@@ -2,6 +2,8 @@ package com.codecool.android.neightbrotaxi.view;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.PopupMenu;
 import android.util.Log;
@@ -42,6 +44,13 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);*/
     }
 
+    public void back(View view) {
+        if(mLayout.getVisibility()==View.INVISIBLE) {
+            finish();
+        }
+        mLayout.setVisibility(View.INVISIBLE);
+    }
+
     public void showPopup(View v) {
         storageController = new StorageController(getApplicationContext());
         PopupMenu popup = new PopupMenu(this, v);
@@ -64,12 +73,6 @@ public class MainActivity extends AppCompatActivity {
         popup.show();
     }
 
-    private void logout() {
-        Toast.makeText(getApplicationContext(), "logout clicked", Toast.LENGTH_SHORT).show();
-        storageController.removeUser();
-        finish();
-    }
-
     private void getProfile() {
         storageController = new StorageController(getApplicationContext());
 
@@ -77,6 +80,21 @@ public class MainActivity extends AppCompatActivity {
         mUserEmail.setText(storageController.getStoredUser().getEmail());
 
         mLayout.setVisibility(View.VISIBLE);
+
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
+        });
+    }
+
+    private void logout() {
+        Toast.makeText(getApplicationContext(), "logout clicked", Toast.LENGTH_SHORT).show();
+        storageController.removeUser();
+        finish();
     }
 
     /**
@@ -118,7 +136,6 @@ public class MainActivity extends AppCompatActivity {
         super.onStop();
         Log.i(TAG, "ACTIVITY STOPPED!");
     }
-
 
     @Override
     protected void onDestroy() {
