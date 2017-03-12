@@ -3,8 +3,6 @@ package com.codecool.android.neightbrotaxi.model;
 import java.util.Arrays;
 
 public class User {
-    private final static String TAG = User.class.getSimpleName() + "<>";
-
     private Integer id;
     private String name;
     private String email;

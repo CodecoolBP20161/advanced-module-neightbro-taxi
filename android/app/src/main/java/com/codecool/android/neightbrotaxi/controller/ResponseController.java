@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.codecool.android.neightbrotaxi.R;
 import com.codecool.android.neightbrotaxi.model.AlertUser;
 import com.codecool.android.neightbrotaxi.model.User;
 import com.codecool.android.neightbrotaxi.view.MainActivity;
@@ -18,13 +19,15 @@ import org.json.JSONObject;
  * @see AlertUser
  */
 public class ResponseController {
-    private static final String TAG = ResponseController.class.getSimpleName()+"<>";
+    private static String TAG = ResponseController.class.getSimpleName();
 
     /**
      * @param mActivity from the current context
      * @param response from the server
      */
     public ResponseController(Activity mActivity, String response) {
+        TAG = TAG + mActivity.getString(R.string.tag);
+
         Log.d(TAG, "Response from server: "+response);
 
         Intent intent = new Intent(mActivity, MainActivity.class);
@@ -48,10 +51,8 @@ public class ResponseController {
                 StorageController session = new StorageController(mActivity);
 
                 session.setStoredUser(user);
-                Log.i(TAG, "USER OBJECT SAVED: " + user);
-                User getUser1 = session.getStoredUser();
-                Log.d(TAG, "GET OBJECT SAVED USER: " + getUser1);
-                Log.d(TAG, "TEST USER OBJECT ADDRESS:"+getUser1.getEmail());
+                Log.i(TAG, "SESSION SAVED: " + user);
+                mActivity.finish();
                 return;
             }
             if (new JSONObject(response).getString("infoMessages")
@@ -59,6 +60,7 @@ public class ResponseController {
                 Log.i(TAG, "USER LOGGED IN!");
                 Toast.makeText(mActivity, "AUTHENTICATION DONE!", Toast.LENGTH_SHORT).show();
                 mActivity.startActivity(intent);
+                mActivity.finish();
                 return;
             }
             if (new JSONObject(response).getString("errorMessages")
