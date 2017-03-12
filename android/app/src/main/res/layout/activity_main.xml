@@ -23,18 +23,98 @@
     <!--</android.support.design.widget.AppBarLayout>-->
 
 <!--</android.support.design.widget.CoordinatorLayout>-->
+
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.codecool.android.neightbrotaxi.view.MainActivity"
+
+    android:id="@+id/relative_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/profile_page"
-    tools:context="com.codecool.android.neightbrotaxi.view.MainActivity">
+    android:background="@drawable/bg">
 
-    <!--<ImageView-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--app:srcCompat="@drawable/profile_page"-->
-        <!--android:id="@+id/imageView2"/>-->
+    <ImageView
+        android:id="@+id/ic_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_back"
+        android:layout_above="@+id/profile_layout"
+        android:onClick="back"
+        android:contentDescription="@string/note_back"/>
+
+    <ImageView
+        android:id="@+id/ic_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/menu_little"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:onClick="showPopup"
+        android:contentDescription="@string/note_menu"/>
+
+    <!--        android:onClick="showPopup"
+        android:contentDescription="@string/note_menu"
+        android:layout_alignStart="@+id/ic_menu"    -->
+
+    <RelativeLayout
+        android:id="@+id/profile_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/ic_menu"
+        android:visibility="invisible"
+        >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/sample_avatar"
+            android:id="@+id/imageView"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:contentDescription="@string/note_avatar"/>
+
+        <TextView
+            android:id="@+id/userName"
+            android:text="@string/user_name"
+            android:textColor="@color/colorPrimary"
+            android:textSize="21sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imageView"
+            android:layout_alignStart="@+id/imageView"
+            android:layout_alignEnd="@+id/imageView"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/userEmail"
+            android:text="@string/user_email"
+            android:textColor="@color/colorAccent"
+            android:textSize="15sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/userName"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"/>
+
+
+        <!--android:layout_toEndOf="@+id/userName"-->
+        <!--android:layout_marginLeft="16dp"-->
+        <android.support.design.widget.FloatingActionButton
+            tools:ignore="RtlHardcoded"
+            app:fabSize="normal"
+            app:srcCompat="@drawable/ic_edit"
+            app:backgroundTint="@color/colorPrimaryDark"
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="fill_vertical|fill_horizontal|fill"
+            android:layout_marginBottom="21dp"
+            android:layout_marginRight="12dp"
+            />
+    </RelativeLayout>
+
 </RelativeLayout>

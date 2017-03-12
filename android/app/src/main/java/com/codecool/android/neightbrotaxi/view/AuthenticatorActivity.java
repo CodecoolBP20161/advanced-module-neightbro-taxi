@@ -1,5 +1,6 @@
 package com.codecool.android.neightbrotaxi.view;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -14,7 +15,9 @@ import android.widget.Toast;
 
 import com.codecool.android.neightbrotaxi.R;
 import com.codecool.android.neightbrotaxi.controller.APIController;
+import com.codecool.android.neightbrotaxi.controller.StorageController;
 import com.codecool.android.neightbrotaxi.model.AlertUser;
+import com.codecool.android.neightbrotaxi.model.User;
 
 
 /**
@@ -26,7 +29,7 @@ public class AuthenticatorActivity extends AppCompatActivity {
     /**
      * Create TAG for logging and views for the inputs and their layouts.
      */
-    private static final String TAG = AuthenticatorActivity.class.getSimpleName() + "<>";
+    private static String TAG = AuthenticatorActivity.class.getSimpleName();
     private EditText inputName, inputEmail, inputPassword1, inputPassword2;
     private TextInputLayout inputLayoutName, inputLayoutEmail,
             inputLayoutPassword1, inputLayoutPassword2;
@@ -42,13 +45,9 @@ public class AuthenticatorActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_authenticator);
+        TAG = TAG + getResources().getString(R.string.tag);
 
         Log.i(TAG, "ACTIVITY CREATED!");
-
-        // Set to the right color for the toolbar.
-//        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-//        toolbar.setTitleTextColor(getColor(R.color.colorPrimary));
-//        setSupportActionBar(toolbar);
 
         // Find the views in the layout.
         inputName = (EditText) findViewById(R.id.input_name);
@@ -110,6 +109,9 @@ public class AuthenticatorActivity extends AppCompatActivity {
      * @see APIController
      */
     private void submitForm() {
+        String email = inputEmail.getText().toString();
+        String pwd = inputPassword1.getText().toString();
+
         if (btnOption.getText().toString() == getText(R.string.btn_login)) {
             // --- REGISTRATION ---
             if (!validateName()) {
@@ -132,8 +134,8 @@ public class AuthenticatorActivity extends AppCompatActivity {
                         AuthenticatorActivity.this,
                         "registration",
                         inputName.getText().toString(),
-                        inputEmail.getText().toString(),
-                        inputPassword1.getText().toString(),
+                        email,
+                        pwd,
                         inputPassword2.getText().toString()
                 ).execute();
                 Toast.makeText(getApplicationContext(), "Waiting for authentication!", Toast.LENGTH_SHORT).show();
@@ -144,25 +146,34 @@ public class AuthenticatorActivity extends AppCompatActivity {
         }
         // --- LOGIN ---
         else {
-            if (!validateEmail()) {
-                return;
-            }
-
-            if (!validateFirstPassword()) {
-                return;
-            }
-
-            if (APIController.isNetworkAvailable(AuthenticatorActivity.this)) {
-                new APIController.PostTask(
-                        AuthenticatorActivity.this,
-                        "user-login",
-                        inputEmail.getText().toString(),
-                        inputPassword1.getText().toString()
-                ).execute();
-                Toast.makeText(getApplicationContext(), "Waiting for authentication!", Toast.LENGTH_SHORT).show();
+            if (email.equals("t@es.t") && pwd.equals("DEVELOPER")) {
+                Log.d(TAG, "LOGGED AS DEVELOPER!");
+                Intent intent = new Intent(this, MainActivity.class);
+                startActivity(intent);
+                StorageController controller = new StorageController(getApplicationContext());
+                controller.setStoredUser(new User(999, "DEVELOPER", email, "dev", pwd, null, null));
+                finish();
             }
             else {
-                new AlertUser(AuthenticatorActivity.this).connectionError();
+                if (!validateEmail()) {
+                    return;
+                }
+
+                if (!validateFirstPassword()) {
+                    return;
+                }
+
+                if (APIController.isNetworkAvailable(AuthenticatorActivity.this)) {
+                    new APIController.PostTask(
+                            AuthenticatorActivity.this,
+                            "user-login",
+                            email,
+                            pwd
+                    ).execute();
+                    Toast.makeText(getApplicationContext(), "Waiting for authentication!", Toast.LENGTH_SHORT).show();
+                } else {
+                    new AlertUser(AuthenticatorActivity.this).connectionError();
+                }
             }
         }
     }

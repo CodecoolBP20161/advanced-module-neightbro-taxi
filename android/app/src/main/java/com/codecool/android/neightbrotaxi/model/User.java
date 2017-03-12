@@ -1,15 +1,10 @@
 package com.codecool.android.neightbrotaxi.model;
-
-import android.util.Log;
-
 import java.util.Arrays;
 
 /**
  * This class responsible for storing user data in object.
  */
 public class User {
-    private final static String TAG = User.class.getSimpleName() + "<>";
-
     private Integer id;
     private String name;
     private String email;
@@ -38,7 +33,6 @@ public class User {
         this.password = password;
         this.passwordConfirm = passwordConfirm;
         this.roles = roles;
-        Log.i(TAG, "USER OBJECT CREATED!");
     }
 
     /**
