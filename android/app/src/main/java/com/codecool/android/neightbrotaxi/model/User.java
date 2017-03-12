@@ -1,7 +1,4 @@
 package com.codecool.android.neightbrotaxi.model;
-
-import android.util.Log;
-
 import java.util.Arrays;
 
 /**
@@ -36,7 +33,6 @@ public class User {
         this.password = password;
         this.passwordConfirm = passwordConfirm;
         this.roles = roles;
-        Log.i(TAG, "USER OBJECT CREATED!");
     }
 
     /**
