@@ -8,6 +8,8 @@ import android.util.Log;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.codecool.android.neightbrotaxi.R;
@@ -18,12 +20,19 @@ public class MainActivity extends AppCompatActivity {
     private static String TAG = MainActivity.class.getSimpleName() + "<>";
     private StorageController storageController;
 
+    RelativeLayout mLayout;
+    TextView mUserName, mUserEmail;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         TAG = TAG + getResources().getString(R.string.tag);
         storageController = new StorageController(getApplicationContext());
+        mLayout = (RelativeLayout) findViewById(R.id.profile_layout);
+        mUserName = (TextView) findViewById(R.id.userName);
+        mUserEmail = (TextView) findViewById(R.id.userEmail);
 
         Log.i(TAG, "ACTIVITY CREATED!");
 /*
@@ -62,11 +71,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void getProfile() {
-
         storageController = new StorageController(getApplicationContext());
 
-        Toast.makeText(getApplicationContext(), storageController.getStoredUser().toString(),
-                Toast.LENGTH_SHORT).show();
+        mUserName.setText(storageController.getStoredUser().getName());
+        mUserEmail.setText(storageController.getStoredUser().getEmail());
+
+        mLayout.setVisibility(View.VISIBLE);
     }
 
     /**
