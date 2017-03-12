@@ -1,27 +1,21 @@
 package com.codecool.neighbrotaxi.controller;
 
 import com.codecool.neighbrotaxi.AbstractTest;
+import com.codecool.neighbrotaxi.model.Role;
 import com.codecool.neighbrotaxi.model.User;
-import com.codecool.neighbrotaxi.repository.UserRepository;
 import com.codecool.neighbrotaxi.service.AdminService;
-import com.codecool.neighbrotaxi.service.UserService;
-import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.junit.Before;
 import org.junit.Test;
-import org.mockito.Mock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.boot.test.mock.mockito.SpyBean;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
-import static org.junit.Assert.*;
-import static org.mockito.Matchers.anyList;
-import static org.mockito.Matchers.anyListOf;
-import static org.mockito.Matchers.anyString;
+import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.*;
 
 @Transactional
@@ -39,21 +33,18 @@ public class AdminControllerTest extends AbstractTest {
 
     private User user;
 
+    private Role role;
+
 
     @Before
     public void setUp() throws Exception {
+        role = new Role();
+        role.setName("PREMIUM");
+
         user = new User();
         user.setName("name");
         user.setPassword("pw");
         user.setEmail("email@email.com");
-    }
-
-    @Test
-    public void getAllUsers_RenderTheCorrectTemplate() throws Exception {
-
-        String renderedPage = adminController.getAllUsers(model);
-
-        assertEquals("admin_users", renderedPage);
     }
 
     @Test
@@ -69,14 +60,6 @@ public class AdminControllerTest extends AbstractTest {
     }
 
     @Test
-    public void deleteUser_ReturnValue_RedirectToUsersListPage() throws Exception {
-
-        String redirectUrl = adminController.deleteUser("1");
-
-        assertEquals("redirect:/admin/users", redirectUrl);
-    }
-
-    @Test
     public void deleteUser_CallDeleteUserFromUserService() throws Exception {
         user.setId(1);
 
@@ -86,10 +69,40 @@ public class AdminControllerTest extends AbstractTest {
     }
 
     @Test
-    public void home_RenderValidTemplate() throws Exception {
+    public void addRole_CallAddRoleFromUserService() throws Exception {
 
-        String renderedPage = adminController.home();
+        adminController.addRole("Premium");
 
-        assertEquals("admin_page", renderedPage);
+        verify(adminService, times(1)).addRole(any(Role.class));
+    }
+
+    @Test
+    public void addRole_SaveToDatabase() throws Exception {
+        role.setId(1);
+
+        adminService.addRole(role);
+
+        verify(adminService, times(1)).addRole(role);
+    }
+
+    @Test
+    public void addRole_IfExistsThenItWillNotBeSaved() throws Exception {
+        when(adminService.getAllRole()).thenReturn(new ArrayList<Role>(Arrays.asList(role)));
+
+        adminController.addRole("Premium");
+
+        verify(adminService, times(0)).addRole(any());
+    }
+
+    @Test
+    public void getAllRoles_AddCorrectUsersIntoModel() throws Exception {
+        List<Role> roles = new ArrayList<>();
+        roles.add(role);
+        when(adminService.getAllRole()).thenReturn(roles);
+
+
+        adminController.getAllRoles(model);
+
+        verify(model, atLeastOnce()).addAttribute("role_list", roles);
     }
 }

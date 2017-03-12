@@ -10,6 +10,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Objects;
+
 @Controller
 @CrossOrigin
 @RequestMapping("/admin")
@@ -40,7 +42,12 @@ public class AdminController {
         return "admin_users";
     }
 
-
+    /**
+     * The route adds all users from the database into the Model object, then returns a renderable template's name.
+     * @param model it is a Model object which is autowired automatically by Spring, and is passed to the rendering process,
+     *              and it can use its stored variables.
+     * @return the name of the template.
+     */
     @RequestMapping(value = "/roles", method = RequestMethod.GET)
     public String getAllRoles(Model model) {
         if (adminService.getAllRole() == null) return "admin_roles";
@@ -53,7 +60,7 @@ public class AdminController {
      * @param userID Its the Id of the user in string given in the url, as path variable.
      * @return A String, and with it the spring redirect to the /admin/users route.
      */
-    @RequestMapping(value = "/delete/{userID}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/user/delete/{userID}", method = RequestMethod.DELETE)
         public String deleteUser(@PathVariable(value = "userID") String userID) {
         ResponseEntity<String> response = null;
         adminService.deleteUser(Integer.parseInt(userID));
@@ -61,11 +68,34 @@ public class AdminController {
         return "redirect:/admin/users";
     }
 
+    /**
+     * Add a role to the database with the adminService's addRole method.
+     * @param name It is the name of the role that the admin wants to create, as a path variable.
+     * @return As string, which is a redirect and is a route to /admin/roles.
+     */
     @RequestMapping(value = "/add-role", method = RequestMethod.POST)
     public String addRole(@RequestParam(value = "name") String name) {
+        for (Role role : adminService.getAllRole()) {
+            if (Objects.equals(role.getName(), name.toUpperCase())) return "redirect:/admin/roles";
+        }
+
         Role newRole = new Role();
         newRole.setName(name.toUpperCase());
         adminService.addRole(newRole);
         return "redirect:/admin/roles";
+    }
+
+    /**
+     * Delete a role from the database with the adminService's deleteRole method.
+     * @param roleID Its the Id of a role in string given in the url, as path variable.
+     * @return A String, and with it the spring redirect to the /admin/roles route.
+     */
+    @RequestMapping(value = "/role/delete/{roleID}", method = RequestMethod.DELETE)
+    public String deleteRole(@PathVariable(value = "roleID") String roleID, Model model) {
+        if (!adminService.deleteRole(Integer.parseInt(roleID))) {
+            System.out.println("inIF");
+            model.addAttribute("error", "Cannot delete admin or user roles");
+        }
+        return getAllRoles(model);
     }
 }

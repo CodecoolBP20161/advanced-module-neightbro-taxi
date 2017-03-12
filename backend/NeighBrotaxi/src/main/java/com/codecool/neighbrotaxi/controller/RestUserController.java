@@ -6,12 +6,16 @@ import com.codecool.neighbrotaxi.model.User;
 import com.codecool.neighbrotaxi.service.SecurityService;
 import com.codecool.neighbrotaxi.service.UserService;
 import com.codecool.neighbrotaxi.validator.UserValidator;
+import org.codehaus.groovy.runtime.powerassert.SourceText;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.AuthenticationException;
+import org.springframework.security.core.context.SecurityContext;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 import java.util.Objects;
 
@@ -30,6 +34,9 @@ public class RestUserController {
 
     @Autowired
     private SessionStorage sessionStorage;
+
+    @Autowired
+    private HttpSession session;
 
 
     /**
@@ -53,9 +60,21 @@ public class RestUserController {
         return user;
     }
 
+    /**
+     * Route for user login. Authenticate the given credentials.
+     * If its valid, then setup the loggedInUser, else give back an error message corresponding to the problem.
+     * @param user A User object. The Spring parse the JSON located in the request body, and make a new User object from it, with the given JSON datas.
+     * @param request HttpServletRequest object. We use this to setup the session.
+     * @return SerializableSessionStorage object. With this, we can serialize a SessionStorage objects fields, so the returned JSON will be parsed from this.
+     * @see SerializableSessionStorage SerializableSessionStorage
+     */
     @RequestMapping(value = "/user-login", method = RequestMethod.POST)
     public SerializableSessionStorage userLogin(@RequestBody User user, HttpServletRequest request) {
         sessionStorage.clearMessages();
+        if (Objects.equals(securityService.findLoggedInUsername(), user.getUsername())) {
+            sessionStorage.addErrorMessage("Already logged in.");
+            return new SerializableSessionStorage(sessionStorage);
+        }
 
         try {
             userService.login(request, user);
@@ -64,19 +83,22 @@ public class RestUserController {
             return new SerializableSessionStorage(sessionStorage);
         }
 
-        if (!Objects.equals(sessionStorage.getLoggedInUser().getName(), "anonymous")) {
-            sessionStorage.addErrorMessage("Already logged in.");
-        } else {
-            sessionStorage.setLoggedInUser(userService.findByUsername(securityService.findLoggedInUsername()));
-            sessionStorage.addInfoMessage("Successfully logged in!");
-        }
+        sessionStorage.setLoggedInUser(userService.findByUsername(securityService.findLoggedInUsername()));
+        sessionStorage.addInfoMessage("Successfully logged in!");
         return new SerializableSessionStorage(sessionStorage);
     }
 
+    /**
+     * Route for user logout. If there's a logged in user, then clear the user from the session,
+     * otherwise return an info message, that say "There's no logged in user!".
+     * @param request HttpServletRequest object. We use this to setup the session.
+     * @return SerializableSessionStorage object. With this, we can serialize a SessionStorage objects fields, so the returned JSON will be parsed from this.
+     * @see SerializableSessionStorage SerializableSessionStorage
+     */
     @RequestMapping(value = "/user-logout", method = RequestMethod.POST)
     public SerializableSessionStorage userLogout(HttpServletRequest request) {
         if (!Objects.equals(sessionStorage.getLoggedInUser().getUsername(), "anonymous")){
-            sessionStorage.setDefault();
+            userService.logout(request);
             sessionStorage.addInfoMessage("You have been logged out successfully.");
         } else {
             sessionStorage.clearMessages();

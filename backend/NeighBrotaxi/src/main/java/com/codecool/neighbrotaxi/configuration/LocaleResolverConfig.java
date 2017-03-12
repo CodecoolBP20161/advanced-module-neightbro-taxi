@@ -10,6 +10,10 @@ import java.util.Locale;
 @Configuration
 public class LocaleResolverConfig {
 
+    /**
+     * Setting up the default location of the server.
+     * With it the Spring will know what language to use for the default Spring messages.
+     */
     @Bean
     public LocaleResolver localeResolver() {
         SessionLocaleResolver slr = new SessionLocaleResolver();

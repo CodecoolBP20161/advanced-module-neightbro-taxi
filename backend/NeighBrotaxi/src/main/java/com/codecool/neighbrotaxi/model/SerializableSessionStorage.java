@@ -4,6 +4,12 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+/**
+ * This class has no methods, but constructor.
+ * This constructor takes a SessionStorage object and setup the fields based on it.
+ * Technically it is the same as the the SessionStorage class,
+ * but it can be parsed to a JSON object by the Spring, because its scope is not session.
+ */
 @Component
 public class SerializableSessionStorage {
     private List<String> errorMessages;

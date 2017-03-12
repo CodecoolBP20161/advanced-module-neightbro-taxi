@@ -18,6 +18,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         return new BCryptPasswordEncoder();
     }
 
+    /**
+     * Overriding the WebSecurityConfigurerAdapter's configure method.
+     * We setup here the authorities for the routes.
+     */
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
