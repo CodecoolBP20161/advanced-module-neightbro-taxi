@@ -1,8 +1,10 @@
 package com.codecool.android.neightbrotaxi.model;
+import java.util.Arrays;
 
+/**
+ * This class responsible for storing user data in object.
+ */
 public class User {
-    private final static String TAG = User.class.getSimpleName() + "<>";
-
     private Integer id;
     private String name;
     private String email;
@@ -12,7 +14,18 @@ public class User {
     private String passwordConfirm;
     private String[] roles;
 
-    public User(Integer id, String name, String email, String username, String password, String passwordConfirm, String[] roles) {
+    /**
+     * Set object attribute based on given value.
+     * @param id Integer
+     * @param name String
+     * @param email String
+     * @param username String
+     * @param password String
+     * @param passwordConfirm String
+     * @param roles String[]
+     */
+    public User(Integer id, String name, String email, String username, String password,
+                String passwordConfirm, String[] roles) {
         this.id = id;
         this.name = name;
         this.email = email;
@@ -22,62 +35,103 @@ public class User {
         this.roles = roles;
     }
 
+    /**
+     * @return Integer
+     */
     public Integer getId() {
         return id;
     }
 
+    /**
+     * @param id Integer
+     */
     public void setId(Integer id) {
         this.id = id;
     }
 
+    /**
+     * @return String
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     * @param name String
+     */
     public void setName(String name) {
         this.name = name;
     }
 
+    /**
+     * @return String
+     */
     public String getEmail() {
         return email;
     }
 
+    /**
+     * @param email String
+     */
     public void setEmail(String email) {
         this.email = email;
     }
 
-    public String getUsername() {
+    /**
+     * @return String
+     */
+    String getUsername() {
         return username;
     }
 
-    public void setUsername(String username) {
+    /**
+     * @param username String
+     */
+    void setUsername(String username) {
         this.username = username;
     }
 
-    public String getPassword() {
+    /**
+     * @return String
+     */
+    String getPassword() {
         return password;
     }
 
-    public void setPassword(String password) {
+    /**
+     * @param password String
+     */
+    void setPassword(String password) {
         this.password = password;
     }
 
-    public String getPasswordConfirm() {
+    /**
+     * @return String
+     */
+    String getPasswordConfirm() {
         return passwordConfirm;
     }
 
-    public void setPasswordConfirm(String passwordConfirm) {
-        this.passwordConfirm = passwordConfirm;
-    }
+    /**
+     * @param passwordConfirm String
+     */
+    void setPasswordConfirm(String passwordConfirm) {this.passwordConfirm = passwordConfirm;}
 
-    public String[] getRoles() {
+    /**
+     * @return String[]
+     */
+    String[] getRoles() {
         return roles;
     }
 
-    public void setRoles(String[] roles) {
-        this.roles = roles;
-    }
+    /**
+     * @param roles String[]
+     */
+    void setRoles(String[] roles) {this.roles = roles;}
 
+    /**
+     * @return String
+     */
     @Override
     public String toString() {
         return "User{" +
@@ -87,7 +141,7 @@ public class User {
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 ", passwordConfirm='" + passwordConfirm + '\'' +
-                ", roles=" + roles +
+                ", roles=" + Arrays.toString(roles) +
                 '}';
     }
 }

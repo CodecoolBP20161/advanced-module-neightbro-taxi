@@ -1,7 +1,7 @@
 package com.codecool.neighbrotaxi.enums;
 
 /**
- * Created by cave on 2017.02.02..
+ * Enum for user roles.
  */
 public enum RoleEnum {
     ADMIN,

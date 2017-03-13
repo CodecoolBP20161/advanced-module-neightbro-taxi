@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.codecool.android.neightbrotaxi.R;
 import com.codecool.android.neightbrotaxi.model.AlertUser;
 import com.codecool.android.neightbrotaxi.model.User;
 import com.codecool.android.neightbrotaxi.view.MainActivity;
@@ -18,17 +19,21 @@ import org.json.JSONObject;
  * @see AlertUser
  */
 public class ResponseController {
-    private static final String TAG = ResponseController.class.getSimpleName()+"<>";
+    private static String TAG = ResponseController.class.getSimpleName();
 
     /**
+     * Responsible for convert string to json, then parse it.
      * @param mActivity from the current context
      * @param response from the server
      */
     public ResponseController(Activity mActivity, String response) {
+        TAG = TAG + mActivity.getString(R.string.tag);
+
         Log.d(TAG, "Response from server: "+response);
 
         Intent intent = new Intent(mActivity, MainActivity.class);
 
+        // When the user successfully registered
         try {
             if (new JSONObject(response).has("id")) {
                 Log.i(TAG, "USER REGISTERED!");
@@ -46,21 +51,21 @@ public class ResponseController {
 //                        json.getJSONArray("roles")
                 );
                 StorageController session = new StorageController(mActivity);
-
                 session.setStoredUser(user);
-                Log.i(TAG, "USER OBJECT SAVED: " + user);
-                User getUser1 = session.getStoredUser();
-                Log.d(TAG, "GET OBJECT SAVED USER: " + getUser1);
-                Log.d(TAG, "TEST USER OBJECT ADDRESS:"+getUser1.getEmail());
+                Log.i(TAG, "SESSION SAVED: " + user);
+                mActivity.finish();
                 return;
             }
+            // When the user successfully logged in
             if (new JSONObject(response).getString("infoMessages")
                     .equals("[\"Successfully logged in!\"]")) {
                 Log.i(TAG, "USER LOGGED IN!");
                 Toast.makeText(mActivity, "AUTHENTICATION DONE!", Toast.LENGTH_SHORT).show();
                 mActivity.startActivity(intent);
+                mActivity.finish();
                 return;
             }
+            // Invalid authentication at login
             if (new JSONObject(response).getString("errorMessages")
                     .equals("[\"Invalid username or password!\"]")) {
                 Log.i(TAG, "INVALID AUTHENTICATION DATA!");
@@ -68,6 +73,7 @@ public class ResponseController {
             }
         }
         catch (JSONException error) {
+            // If user give an exist email address when register
             try {
                 JSONArray responseJson = new JSONArray(response);
                 JSONObject content = (JSONObject) responseJson.get(0);
@@ -76,6 +82,7 @@ public class ResponseController {
                     new AlertUser(mActivity).duplicateError();
                 }
             }
+            // Catch everything else
             catch (JSONException e) {
                 Log.e(TAG, String.valueOf(e));
             }

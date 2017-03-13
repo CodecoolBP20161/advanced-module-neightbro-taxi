@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.util.Log;
 
+import com.codecool.android.neightbrotaxi.R;
 import com.codecool.android.neightbrotaxi.model.User;
 import com.google.gson.Gson;
 
@@ -11,37 +12,53 @@ import com.google.gson.Gson;
  * Responsible for the storing on device like http session in client-server communication.
  * @see SharedPreferences
  */
-class StorageController {
+public class StorageController {
 
     /**
      * Tag for logging.
      */
-    private final static String TAG = StorageController.class.getSimpleName() + "<>";
+    private static String TAG = StorageController.class.getSimpleName();
     /**
-     * Initializing the storage.
+     * Create fields
      */
     private final static String PREFS_KEY = "com.myapp.app.passwordprotector.preferences";
     private static SharedPreferences mSharedPreferences;
 
-    StorageController(Context context) {
+    /**
+     * Responsible for SharedPreferences initializing
+     * @param context from the current activity
+     */
+    public StorageController(Context context) {
         mSharedPreferences = context.getSharedPreferences(PREFS_KEY, Context.MODE_PRIVATE);
+        TAG = TAG + context.getString(R.string.tag);
     }
 
-    User getStoredUser() {
+    /**
+   * Load the current user from device.
+   * @return a user object
+   */
+    public User getStoredUser() {
         Gson gson = new Gson();
         String json = mSharedPreferences.getString("USER", null);
         Log.i(TAG, "User object data loaded as String.");
         return gson.fromJson(json, User.class);
     }
 
-    void setStoredUser(User user) {
+    /**
+     * Save the current user in device.
+     * @param user object
+     */
+    public void setStoredUser(User user) {
         Gson gson = new Gson();
         String stringJson = gson.toJson(user);
         mSharedPreferences.edit().putString("USER", stringJson).apply();
         Log.i(TAG, "User object data saved as String.");
     }
 
-    void removeUser() {
+    /**
+     * Remove the current user.
+     */
+    public void removeUser() {
         mSharedPreferences.edit().remove("USER").apply();
         Log.i(TAG, "User object data removed from storage!");
     }

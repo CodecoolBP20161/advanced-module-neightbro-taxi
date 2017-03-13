@@ -15,7 +15,6 @@ import com.codecool.android.neightbrotaxi.view.AuthenticatorActivity;
 import org.hamcrest.Description;
 import org.hamcrest.Matcher;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -33,7 +32,6 @@ import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.not;
-import static org.junit.Assert.assertFalse;
 
 @RunWith(AndroidJUnit4.class)
 public class UITestOnAuthenticatorActivity {
@@ -101,21 +99,19 @@ public class UITestOnAuthenticatorActivity {
         checkNullInputError(R.id.input_password2, R.id.input_layout_password2, R.string.err_pw_same);
     }
 
-    // D/APIController<>: PostTask onPostExecute message: could not execute query
-    //{"timestamp":1487181234442,"status":500,"error":"Internal Server Error"
-    // TODO: Test separately the common cases!
-    @Ignore
     @Test
-    public void CorrectInputsNoWifi() {
-        DeviceWifiManager.setWifiEnabled(false);
-
-        Boolean signal = APIController.isNetworkAvailable(TEST_ACTIVITY);
-        assertFalse(signal);
-
+    public void correctInputWithWifi() {
         DeviceWifiManager.setWifiEnabled(true);
+        correctInputsValues();
+
     }
 
     @Test
+    public void correctInputWithNoWifi() {
+        DeviceWifiManager.setWifiEnabled(false);
+        correctInputsValues();
+    }
+
     public void correctInputsValues() {
         fillCorrectInputs(1);
         if (APIController.isNetworkAvailable(TEST_ACTIVITY)) {

@@ -4,11 +4,13 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.util.Log;
 
+import com.codecool.android.neightbrotaxi.R;
+
 /**
  * Responsible for notify the user, when something went wrong in the app.
  */
 public class AlertUser {
-    private final static String TAG = AlertUser.class.getSimpleName()+"<>";
+    private static String TAG = AlertUser.class.getSimpleName();
     private Activity mActivity;
 
     /**
@@ -17,46 +19,58 @@ public class AlertUser {
      */
     public AlertUser(Activity activity) {
         mActivity = activity;
+        TAG = TAG + mActivity.getString(R.string.tag);
     }
 
     /**
      * If user send a request, but no internet connection.
+     * @return true if everything OK
      */
-    public void connectionError()  {
+    public Boolean connectionError()  {
         buildDialog(
                 "Connection Error!",
                 "Please, make sure you have a right internet access!",
                 "All right!");
+        return true;
     }
 
     /**
      * If user send a request, but serverError doesn't response.
+     * @return true if everything OK
      */
-    public void serverError() {
+    public Boolean serverError() {
         buildDialog(
                 "Server Error!",
                 "The server doesn't available now! Please try again a few moments or make contact " +
                         "to the support team. Thank you! ",
                 "Okay.");
+        return true;
     }
 
     /**
      * If user send an existing email in database.
+     * @return true if everything OK
      */
-    public void duplicateError() {
+    public Boolean duplicateError() {
         buildDialog(
                 "Already Registered!",
                 "The email address doesn't allow, because somebody use it.",
                 "I fix it!"
         );
+        return true;
     }
 
-    public void invalidAuthenticationError() {
+    /**
+     * If user want to login an invalid email address or password (based on server response).
+     * @return true if everything OK
+     */
+    public Boolean invalidAuthenticationError() {
         buildDialog(
                 "Invalid Authentication!",
                 "Authentication data is doesn\'t exist. Please, fix it or register a new account!",
                 "I get it!"
         );
+        return true;
     }
 
     /**
