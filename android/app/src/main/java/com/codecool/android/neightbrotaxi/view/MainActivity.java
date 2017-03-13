@@ -2,12 +2,16 @@ package com.codecool.android.neightbrotaxi.view;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.PopupMenu;
 import android.util.Log;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -34,12 +38,22 @@ public class MainActivity extends AppCompatActivity {
         mUserName = (TextView) findViewById(R.id.userName);
         mUserEmail = (TextView) findViewById(R.id.userEmail);
 
+        Toast.makeText(getApplicationContext(), "WELCOME ON THE MAIN PAGE!",
+                Toast.LENGTH_SHORT).show();
+
         Log.i(TAG, "ACTIVITY CREATED!");
 /*
         // Set to the right color for the toolbar.
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitleTextColor(getColor(R.color.colorPrimary));
         setSupportActionBar(toolbar);*/
+    }
+
+    public void back(View view) {
+        if(mLayout.getVisibility()==View.INVISIBLE) {
+            finish();
+        }
+        mLayout.setVisibility(View.INVISIBLE);
     }
 
     public void showPopup(View v) {
@@ -64,19 +78,40 @@ public class MainActivity extends AppCompatActivity {
         popup.show();
     }
 
-    private void logout() {
-        Toast.makeText(getApplicationContext(), "logout clicked", Toast.LENGTH_SHORT).show();
-        storageController.removeUser();
-        finish();
-    }
-
     private void getProfile() {
         storageController = new StorageController(getApplicationContext());
 
         mUserName.setText(storageController.getStoredUser().getName());
         mUserEmail.setText(storageController.getStoredUser().getEmail());
 
+        ListView listView = (ListView) findViewById(R.id.userOpinions);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+                R.array.opinions, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        listView.setAdapter(adapter);
+
         mLayout.setVisibility(View.VISIBLE);
+
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Profile editing unavailable for now..", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
+        });
+    }
+
+    private void logout() {
+        Toast.makeText(getApplicationContext(), "logout clicked", Toast.LENGTH_SHORT).show();
+        storageController.removeUser();
+        finish();
+    }
+
+    private void profileEditing() {
+        Intent intent = new Intent(this, AuthenticatorActivity.class);
+        intent.putExtra("PROFILE_SETTING", true);
+        startActivity(intent);
     }
 
     /**
@@ -118,7 +153,6 @@ public class MainActivity extends AppCompatActivity {
         super.onStop();
         Log.i(TAG, "ACTIVITY STOPPED!");
     }
-
 
     @Override
     protected void onDestroy() {
