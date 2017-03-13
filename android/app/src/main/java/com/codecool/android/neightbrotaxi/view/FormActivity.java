@@ -24,12 +24,12 @@ import com.codecool.android.neightbrotaxi.model.User;
  * This responsible for the first screen when the user launch the app.
  * Manage the activity, what ensure a registration and login interface.
  */
-public class AuthenticatorActivity extends AppCompatActivity {
+public class FormActivity extends AppCompatActivity {
 
     /**
      * Create TAG for logging and views for the inputs and their layouts.
      */
-    private static String TAG = AuthenticatorActivity.class.getSimpleName();
+    private static String TAG = FormActivity.class.getSimpleName();
     private EditText inputName, inputEmail, inputPassword1, inputPassword2;
     private TextInputLayout inputLayoutName, inputLayoutEmail,
             inputLayoutPassword1, inputLayoutPassword2;
@@ -129,9 +129,9 @@ public class AuthenticatorActivity extends AppCompatActivity {
                 return;
             }
 
-            if (APIController.isNetworkAvailable(AuthenticatorActivity.this)) {
+            if (APIController.isNetworkAvailable(FormActivity.this)) {
                 new APIController.PostTask(
-                        AuthenticatorActivity.this,
+                        FormActivity.this,
                         "registration",
                         inputName.getText().toString(),
                         email,
@@ -141,7 +141,7 @@ public class AuthenticatorActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "Waiting for authentication!", Toast.LENGTH_SHORT).show();
             }
             else {
-                new AlertUser(AuthenticatorActivity.this).connectionError();
+                new AlertUser(FormActivity.this).connectionError();
             }
         }
         // --- LOGIN ---
@@ -163,16 +163,16 @@ public class AuthenticatorActivity extends AppCompatActivity {
                     return;
                 }
 
-                if (APIController.isNetworkAvailable(AuthenticatorActivity.this)) {
+                if (APIController.isNetworkAvailable(FormActivity.this)) {
                     new APIController.PostTask(
-                            AuthenticatorActivity.this,
+                            FormActivity.this,
                             "user-login",
                             email,
                             pwd
                     ).execute();
                     Toast.makeText(getApplicationContext(), "Waiting for authentication!", Toast.LENGTH_SHORT).show();
                 } else {
-                    new AlertUser(AuthenticatorActivity.this).connectionError();
+                    new AlertUser(FormActivity.this).connectionError();
                 }
             }
         }

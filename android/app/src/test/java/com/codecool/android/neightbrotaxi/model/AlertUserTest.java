@@ -1,7 +1,7 @@
 package com.codecool.android.neightbrotaxi.model;
 
 import com.codecool.android.neightbrotaxi.BuildConfig;
-import com.codecool.android.neightbrotaxi.view.AuthenticatorActivity;
+import com.codecool.android.neightbrotaxi.view.FormActivity;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -21,7 +21,7 @@ public class AlertUserTest {
 
     @Before
     public void setUp() throws Exception {
-        testDialog = new AlertUser(Robolectric.setupActivity(AuthenticatorActivity.class));
+        testDialog = new AlertUser(Robolectric.setupActivity(FormActivity.class));
         ShadowLog.stream = System.out;
     }
 

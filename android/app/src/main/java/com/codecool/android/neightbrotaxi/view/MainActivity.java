@@ -109,7 +109,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void profileEditing() {
-        Intent intent = new Intent(this, AuthenticatorActivity.class);
+        Intent intent = new Intent(this, FormActivity.class);
         intent.putExtra("PROFILE_SETTING", true);
         startActivity(intent);
     }
@@ -131,7 +131,7 @@ public class MainActivity extends AppCompatActivity {
         }
         catch (NullPointerException e ) {
             Log.e(TAG, e.getMessage());
-            Intent intent = new Intent(MainActivity.this, AuthenticatorActivity.class);
+            Intent intent = new Intent(MainActivity.this, FormActivity.class);
             startActivity(intent);
         }
     }
