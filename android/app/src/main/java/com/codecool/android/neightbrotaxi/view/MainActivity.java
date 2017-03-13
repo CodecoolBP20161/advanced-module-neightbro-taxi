@@ -8,6 +8,8 @@ import android.util.Log;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -75,6 +77,12 @@ public class MainActivity extends AppCompatActivity {
 
         mUserName.setText(storageController.getStoredUser().getName());
         mUserEmail.setText(storageController.getStoredUser().getEmail());
+
+        ListView listView = (ListView) findViewById(R.id.userOpinions);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+                R.array.opinions, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        listView.setAdapter(adapter);
 
         mLayout.setVisibility(View.VISIBLE);
     }

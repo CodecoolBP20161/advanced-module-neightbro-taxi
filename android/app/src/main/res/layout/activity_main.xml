@@ -83,5 +83,15 @@
             android:layout_below="@+id/userName"
             android:layout_centerHorizontal="true"
             android:gravity="center"/>
+
+        <ListView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/userOpinions"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/userEmail"
+            android:layout_centerHorizontal="true"
+            android:paddingTop="12dp"/>
+
     </RelativeLayout>
 </RelativeLayout>
