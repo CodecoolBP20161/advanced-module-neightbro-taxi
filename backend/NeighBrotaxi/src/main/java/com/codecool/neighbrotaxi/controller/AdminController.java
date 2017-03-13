@@ -10,7 +10,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashSet;
+import java.util.List;
 import java.util.Objects;
+import java.util.Set;
 
 @Controller
 @CrossOrigin
@@ -39,6 +42,7 @@ public class AdminController {
     public String getAllUsers(Model model) {
         if (adminService.getAllUser() == null) return "admin_users";
         model.addAttribute("user_list", adminService.getAllUser());
+        model.addAttribute("role_list", adminService.getAllRole());
         return "admin_users";
     }
 
@@ -96,5 +100,31 @@ public class AdminController {
             model.addAttribute("error", "Cannot delete admin or user roles");
         }
         return "redirect:/admin/roles";
+    }
+
+    @RequestMapping(value = "/user/role/add/{userID}", method = RequestMethod.POST)
+    public String addRoleToUser(
+            @PathVariable("userID") String userID,
+            @RequestParam(value = "id", required=false) List<String>id) {
+        Set<Role> roles = new HashSet<>();
+        if (id == null) {
+            adminService.addRoleToUser(roles, Integer.parseInt(userID));
+            return "redirect:/admin/users";
+        }
+
+        for (Role role : adminService.getAllRole()) {
+            for (String roleId : id) {
+                if (role.getId().toString().equals(roleId)) roles.add(role);
+                roles.forEach(System.out::println);
+            }
+        }
+
+        for (String roleId : id) {
+            for (Role role : adminService.getAllRole())
+            if (roleId.equals(role.getId().toString())) {
+                adminService.addRoleToUser(roles, Integer.parseInt(userID));
+            }
+        }
+        return "redirect:/admin/users";
     }
 }
