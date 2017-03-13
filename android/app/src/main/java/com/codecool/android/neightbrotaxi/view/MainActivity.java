@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "Profile editing unavailable for now..", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         });
@@ -95,6 +95,12 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(getApplicationContext(), "logout clicked", Toast.LENGTH_SHORT).show();
         storageController.removeUser();
         finish();
+    }
+
+    private void profileEditing() {
+        Intent intent = new Intent(this, AuthenticatorActivity.class);
+        intent.putExtra("PROFILE_SETTING", true);
+        startActivity(intent);
     }
 
     /**
