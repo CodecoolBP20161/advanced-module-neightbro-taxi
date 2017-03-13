@@ -10,7 +10,7 @@ import android.support.test.runner.AndroidJUnit4;
 import android.view.View;
 
 import com.codecool.android.neightbrotaxi.controller.APIController;
-import com.codecool.android.neightbrotaxi.view.AuthenticatorActivity;
+import com.codecool.android.neightbrotaxi.view.FormActivity;
 
 import org.hamcrest.Description;
 import org.hamcrest.Matcher;
@@ -37,9 +37,9 @@ import static org.hamcrest.Matchers.not;
 public class UITestOnAuthenticatorActivity {
 
     @Rule
-    public  ActivityTestRule<AuthenticatorActivity> ACTIVITY_TEST_RULE =
-            new ActivityTestRule<>(AuthenticatorActivity.class);
-    private AuthenticatorActivity TEST_ACTIVITY;
+    public  ActivityTestRule<FormActivity> ACTIVITY_TEST_RULE =
+            new ActivityTestRule<>(FormActivity.class);
+    private FormActivity TEST_ACTIVITY;
     private WifiManager DeviceWifiManager;
 
     @Before
