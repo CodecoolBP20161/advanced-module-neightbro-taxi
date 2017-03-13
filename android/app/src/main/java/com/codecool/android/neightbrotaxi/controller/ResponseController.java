@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.codecool.android.neightbrotaxi.R;
 import com.codecool.android.neightbrotaxi.model.AlertUser;
 import com.codecool.android.neightbrotaxi.model.User;
 import com.codecool.android.neightbrotaxi.view.MainActivity;
@@ -17,15 +18,17 @@ import org.json.JSONObject;
  * Responsible for managing Activity's screen, based on the server json responses.
  * @see AlertUser
  */
-class ResponseController {
-    private static final String TAG = ResponseController.class.getSimpleName()+"<>";
+public class ResponseController {
+    private static String TAG = ResponseController.class.getSimpleName();
 
     /**
      * Responsible for convert string to json, then parse it.
      * @param mActivity from the current context
      * @param response from the server
      */
-    ResponseController(Activity mActivity, String response) {
+    public ResponseController(Activity mActivity, String response) {
+        TAG = TAG + mActivity.getString(R.string.tag);
+
         Log.d(TAG, "Response from server: "+response);
 
         Intent intent = new Intent(mActivity, MainActivity.class);
@@ -49,7 +52,8 @@ class ResponseController {
                 );
                 StorageController session = new StorageController(mActivity);
                 session.setStoredUser(user);
-                Log.i(TAG, "USER OBJECT SAVED: " + user);
+                Log.i(TAG, "SESSION SAVED: " + user);
+                mActivity.finish();
                 return;
             }
             // When the user successfully logged in
@@ -58,6 +62,7 @@ class ResponseController {
                 Log.i(TAG, "USER LOGGED IN!");
                 Toast.makeText(mActivity, "AUTHENTICATION DONE!", Toast.LENGTH_SHORT).show();
                 mActivity.startActivity(intent);
+                mActivity.finish();
                 return;
             }
             // Invalid authentication at login
