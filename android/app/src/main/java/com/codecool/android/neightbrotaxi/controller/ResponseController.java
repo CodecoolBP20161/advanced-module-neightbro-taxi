@@ -31,29 +31,14 @@ public class ResponseController {
 
         Log.d(TAG, "Response from server: "+response);
 
-        Intent intent = new Intent(mActivity, MainActivity.class);
 
         // When the user successfully registered
         try {
             if (new JSONObject(response).has("id")) {
                 Log.i(TAG, "USER REGISTERED!");
                 Toast.makeText(mActivity, "REGISTRATION DONE!", Toast.LENGTH_SHORT).show();
-                mActivity.startActivity(intent);
                 JSONObject json = new JSONObject(response);
-                User user = new User(
-                        json.getInt("id"),
-                        json.getString("name"),
-                        json.getString("email"),
-                        json.getString("username"),
-                        json.getString("password"),
-                        json.getString("passwordConfirm"),
-                        null
-//                        json.getJSONArray("roles")
-                );
-                StorageController session = new StorageController(mActivity);
-                session.setStoredUser(user);
-                Log.i(TAG, "SESSION SAVED: " + user);
-                mActivity.finish();
+                saveCurrentUser(mActivity, json);
                 return;
             }
             // When the user successfully logged in
@@ -61,8 +46,12 @@ public class ResponseController {
                     .equals("[\"Successfully logged in!\"]")) {
                 Log.i(TAG, "USER LOGGED IN!");
                 Toast.makeText(mActivity, "AUTHENTICATION DONE!", Toast.LENGTH_SHORT).show();
-                mActivity.startActivity(intent);
-                mActivity.finish();
+                JSONObject json = (JSONObject) new JSONObject(response).get("loggedInUser");
+
+                Log.d(TAG, "JSON: "+json.toString());
+
+                saveCurrentUser(mActivity, json);
+
                 return;
             }
             // Invalid authentication at login
@@ -88,5 +77,24 @@ public class ResponseController {
             }
             Log.e(TAG, String.valueOf(error));
         }
+    }
+
+    private void saveCurrentUser(Activity mActivity, JSONObject json) throws JSONException {
+        Intent intent = new Intent(mActivity, MainActivity.class);
+        User user = new User(
+                json.getInt("id"),
+                json.getString("name"),
+                json.getString("email"),
+                json.getString("username"),
+                json.getString("password"),
+                json.getString("passwordConfirm"),
+                null
+//                        json.getJSONArray("roles")
+        );
+        StorageController session = new StorageController(mActivity);
+        session.setStoredUser(user);
+        Log.i(TAG, "SESSION SAVED: " + user);
+        mActivity.startActivity(intent);
+        mActivity.finish();
     }
 }
