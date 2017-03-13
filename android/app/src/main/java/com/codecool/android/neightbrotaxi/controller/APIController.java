@@ -22,14 +22,14 @@ import okhttp3.RequestBody;
 
 /**
  * Responsible for connectionError between app and the server, by OkHttpClient
- * @see APIController#client
+ * @see APIController#HTTP_CLIENT
  */
 public class APIController {
     /**
-     * Initialize TAG, client, JSON convert type and URL.
+     * Initialize TAG, HTTP_CLIENT, JSON convert type and URL.
      */
-    private static final String TAG = APIController.class.getSimpleName()+"<>";
-    private static final OkHttpClient client = new OkHttpClient();
+    private static String TAG = APIController.class.getSimpleName();
+    private static final OkHttpClient HTTP_CLIENT = new OkHttpClient();
     private static final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
 
     /**
@@ -52,6 +52,7 @@ public class APIController {
             mActivity = activity;
             serverRequest = request;
             json = UserDataJson(strings);
+            TAG = TAG + mActivity.getString(R.string.tag);
         }
 
         /**
@@ -87,7 +88,7 @@ public class APIController {
                     .url(url)
                     .post(body)
                     .build();
-            okhttp3.Response response = client.newCall(request).execute();
+            okhttp3.Response response = HTTP_CLIENT.newCall(request).execute();
             return response.body().string();
         }
 
@@ -119,6 +120,7 @@ public class APIController {
         GetTask(Activity activity, String request) {
             mActivity = activity;
             serverRequest = request;
+            TAG = TAG + mActivity.getString(R.string.tag);
         }
 
         /**
@@ -152,7 +154,7 @@ public class APIController {
                     .url(url)
                     .get()
                     .build();
-            okhttp3.Response response = client.newCall(request).execute();
+            okhttp3.Response response = HTTP_CLIENT.newCall(request).execute();
             return response.body().string();
         }
 

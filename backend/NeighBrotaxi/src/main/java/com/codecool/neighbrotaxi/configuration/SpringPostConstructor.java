@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
+import java.util.HashSet;
 import java.util.Set;
 
 @Component
@@ -58,6 +59,7 @@ public class SpringPostConstructor {
             user.setName("admin");
             user.setPassword("admin");
             user.setUsername("admin");
+            user.setRoles(new HashSet<>());
             userService.save(user);
             Set<Role> roleSet = user.getRoles();
             roleSet.add(roleRepository.findByName(RoleEnum.ADMIN.name()));

@@ -48,14 +48,6 @@ public class AdminControllerTest extends AbstractTest {
     }
 
     @Test
-    public void getAllUsers_RenderTheCorrectTemplate() throws Exception {
-
-        String renderedPage = adminController.getAllUsers(model);
-
-        assertEquals("admin_users", renderedPage);
-    }
-
-    @Test
     public void getAllUsers_AddCorrectUsersIntoModel() throws Exception {
         List<User> users = new ArrayList<>();
         users.add(user);
@@ -68,14 +60,6 @@ public class AdminControllerTest extends AbstractTest {
     }
 
     @Test
-    public void deleteUser_ReturnValue_RedirectToUsersListPage() throws Exception {
-
-        String redirectUrl = adminController.deleteUser("1");
-
-        assertEquals("redirect:/admin/users", redirectUrl);
-    }
-
-    @Test
     public void deleteUser_CallDeleteUserFromUserService() throws Exception {
         user.setId(1);
 
@@ -85,27 +69,11 @@ public class AdminControllerTest extends AbstractTest {
     }
 
     @Test
-    public void home_RenderValidTemplate() throws Exception {
-
-        String renderedPage = adminController.home();
-
-        assertEquals("admin_page", renderedPage);
-    }
-
-    @Test
     public void addRole_CallAddRoleFromUserService() throws Exception {
 
         adminController.addRole("Premium");
 
         verify(adminService, times(1)).addRole(any(Role.class));
-    }
-
-    @Test
-    public void addRole_ReturnValueRedirectToRoleListPage() throws Exception {
-
-        String renderedPage = adminController.addRole("Premium");
-
-        assertEquals("redirect:/admin/roles", renderedPage);
     }
 
     @Test
@@ -136,13 +104,5 @@ public class AdminControllerTest extends AbstractTest {
         adminController.getAllRoles(model);
 
         verify(model, atLeastOnce()).addAttribute("role_list", roles);
-    }
-
-    @Test
-    public void getAllRoles_RendersTheCorrectTemplate() throws Exception {
-
-        String renderedPage = adminController.getAllRoles(model);
-
-        assertEquals("admin_roles", renderedPage);
     }
 }
