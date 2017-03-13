@@ -7,6 +7,34 @@ body {
     background-size: cover;
     background-color: #37474F;
     margin: 0 auto;
+    min-height: 100%;
+}
+
+
+.ngview{
+    min-height: 100%;
+    margin-bottom: -30px;
+}
+
+.ngview:after{
+    display: block;
+}
+
+#footer, .ngview:after{
+    height: 30px;
+}
+
+#footer{
+    background-color: rgba(0, 0, 0, 0.51);
+    color: lightgray;
+    position: relative;
+    margin-top: 100px;
+    bottom: 0;
+    clear: both;
+}
+
+#copy{
+    padding-top: 5px;
 }
 
 ::-webkit-scrollbar {
@@ -41,7 +69,7 @@ body {
 #welcome {
     float: right;
     font-family: Helvetica;
-    font-size: 12px;
+    font-size: 14px;
     color: #FFEB3B;
     text-transform: uppercase;
     margin-top: 8%;
@@ -92,7 +120,7 @@ li {
 }
 
 #profile-picture {
-    width: 95%;
+    width: 100%;
     border-radius: 10px;
     /*border: solid #FFEB3B 2px;*/
 }
@@ -112,7 +140,7 @@ li {
     position: fixed;
     float: left;
     margin-left: 60px;
-    width: 14%;
+    width: 200px;
     text-align: left;
 }
 
@@ -131,14 +159,16 @@ li {
     font-size: 22px;
     font-weight: bolder;
     text-transform: uppercase;
+    margin-top: 10px;
 }
 
 #pcar{
     color:#FFEB3B;
-    font-size: 22px;
-    font-weight: bolder;
+    font-size: 14px;
+    font-weight: bold;
     text-transform: uppercase;
-    margin-bottom: -10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 #rate{
@@ -147,13 +177,18 @@ li {
 }
 
 #contact-infos {
-    margin-top: 60px;
+    margin-top: 5px;
     border-top: solid #FFEB3B 2px;
     border-bottom: solid #FFEB3B 2px;
     color: white;
     font-size: 13px;
     text-transform: uppercase;
     letter-spacing: 1px;
+}
+
+.icon{
+    width: auto;
+    height: 15px;
 }
 
 

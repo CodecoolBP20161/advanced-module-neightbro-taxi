@@ -20,15 +20,6 @@ angular.module('neighbroTaxi')
                     console.log("Hello " + data.loggedInUser.name);
                     $location.path("/profile");
 
-                    $http.get('http://localhost:9000/logged-in-user')
-                        .success(function (response) {
-                            $scope.inUser = response;
-                            var inUser = $scope.inUser;
-                            console.log(inUser);
-                        }).error(function (response) {
-                            console.log(response);
-                    });
-
                 }else{
                     $scope.errorM = data.errorMessages[0];
                     console.log($scope.errorM);

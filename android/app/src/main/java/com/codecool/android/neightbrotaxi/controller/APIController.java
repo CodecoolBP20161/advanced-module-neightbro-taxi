@@ -7,6 +7,7 @@ import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.util.Log;
 
+import com.codecool.android.neightbrotaxi.R;
 import com.codecool.android.neightbrotaxi.model.AlertUser;
 
 import org.json.JSONException;
@@ -21,21 +22,15 @@ import okhttp3.RequestBody;
 
 /**
  * Responsible for connectionError between app and the server, by OkHttpClient
- * @see APIController#client
+ * @see APIController#HTTP_CLIENT
  */
 public class APIController {
     /**
-     * Initialize TAG, client, JSON convert type and URL.
+     * Initialize TAG, HTTP_CLIENT, JSON convert type and URL.
      */
-    private static final String TAG = APIController.class.getSimpleName()+"<>";
-    private static final OkHttpClient client = new OkHttpClient();
+    private static String TAG = APIController.class.getSimpleName();
+    private static final OkHttpClient HTTP_CLIENT = new OkHttpClient();
     private static final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
-    // Temporary address! (The final waiting for deploying.)
-    private static String API_URL = "http://192.168.0.106:9000/";
-
-//    private final Activity mActivity;
-
-//    public APIController(Activity activity) {mActivity = activity;}
 
     /**
      * This is async.
@@ -57,6 +52,7 @@ public class APIController {
             mActivity = activity;
             serverRequest = request;
             json = UserDataJson(strings);
+            TAG = TAG + mActivity.getString(R.string.tag);
         }
 
         /**
@@ -69,8 +65,9 @@ public class APIController {
         @Override
         protected String doInBackground(String... urls) {
             try {
-                Log.i(TAG, "URL WITH POST REQUEST: " + API_URL + serverRequest);
-                return post(API_URL + serverRequest, json);
+                String url = "http://192.168.161.219:9000/" + serverRequest;
+                Log.i(TAG, "URL WITH POST REQUEST: " + url);
+                return post(url, json);
             }
             catch (Exception e) {
                 Log.e(TAG, "PostTask caught exception: "+e);
@@ -91,7 +88,7 @@ public class APIController {
                     .url(url)
                     .post(body)
                     .build();
-            okhttp3.Response response = client.newCall(request).execute();
+            okhttp3.Response response = HTTP_CLIENT.newCall(request).execute();
             return response.body().string();
         }
 
@@ -123,6 +120,7 @@ public class APIController {
         GetTask(Activity activity, String request) {
             mActivity = activity;
             serverRequest = request;
+            TAG = TAG + mActivity.getString(R.string.tag);
         }
 
         /**
@@ -135,7 +133,7 @@ public class APIController {
         @Override
         protected String doInBackground(String... urls) {
             try {
-                String url = API_URL + serverRequest;
+                String url = mActivity.getString(R.string.url) + serverRequest;
                 Log.i(TAG, "URL WITH GET REQUEST: " + url);
                 return get(url);
             }
@@ -156,7 +154,7 @@ public class APIController {
                     .url(url)
                     .get()
                     .build();
-            okhttp3.Response response = client.newCall(request).execute();
+            okhttp3.Response response = HTTP_CLIENT.newCall(request).execute();
             return response.body().string();
         }
 

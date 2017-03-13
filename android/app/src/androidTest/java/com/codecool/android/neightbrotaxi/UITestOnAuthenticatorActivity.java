@@ -10,12 +10,11 @@ import android.support.test.runner.AndroidJUnit4;
 import android.view.View;
 
 import com.codecool.android.neightbrotaxi.controller.APIController;
-import com.codecool.android.neightbrotaxi.view.AuthenticatorActivity;
+import com.codecool.android.neightbrotaxi.view.FormActivity;
 
 import org.hamcrest.Description;
 import org.hamcrest.Matcher;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -33,15 +32,14 @@ import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.not;
-import static org.junit.Assert.assertFalse;
 
 @RunWith(AndroidJUnit4.class)
 public class UITestOnAuthenticatorActivity {
 
     @Rule
-    public  ActivityTestRule<AuthenticatorActivity> ACTIVITY_TEST_RULE =
-            new ActivityTestRule<>(AuthenticatorActivity.class);
-    private AuthenticatorActivity TEST_ACTIVITY;
+    public  ActivityTestRule<FormActivity> ACTIVITY_TEST_RULE =
+            new ActivityTestRule<>(FormActivity.class);
+    private FormActivity TEST_ACTIVITY;
     private WifiManager DeviceWifiManager;
 
     @Before
@@ -49,6 +47,11 @@ public class UITestOnAuthenticatorActivity {
         TEST_ACTIVITY = ACTIVITY_TEST_RULE.getActivity();
         DeviceWifiManager = (WifiManager)
                 TEST_ACTIVITY.getSystemService(Context.WIFI_SERVICE);
+        toggleScreen();
+    }
+    @Test
+    public void toggleScreen() {
+        onView(withId(R.id.btn_option)).perform(click());
     }
 
     @Test
@@ -96,20 +99,19 @@ public class UITestOnAuthenticatorActivity {
         checkNullInputError(R.id.input_password2, R.id.input_layout_password2, R.string.err_pw_same);
     }
 
-    // D/APIController<>: PostTask onPostExecute message: could not execute query
-    //{"timestamp":1487181234442,"status":500,"error":"Internal Server Error"
-    // TODO: Test separately the common cases!
-    @Ignore
     @Test
-    public void CorrectInputsNoWifi() {
-        DeviceWifiManager.setWifiEnabled(false);
-
-        Boolean signal = APIController.isNetworkAvailable(TEST_ACTIVITY);
-        assertFalse(signal);
-
+    public void correctInputWithWifi() {
         DeviceWifiManager.setWifiEnabled(true);
+        correctInputsValues();
+
     }
+
     @Test
+    public void correctInputWithNoWifi() {
+        DeviceWifiManager.setWifiEnabled(false);
+        correctInputsValues();
+    }
+
     public void correctInputsValues() {
         fillCorrectInputs(1);
         if (APIController.isNetworkAvailable(TEST_ACTIVITY)) {
@@ -139,9 +141,9 @@ public class UITestOnAuthenticatorActivity {
             case 2:
                 onView(withId(R.id.input_password1)).perform(typeText("password"), closeSoftKeyboard());
             case 3:
-                onView(withId(R.id.input_email)).perform(typeText("tt@ike.st"), closeSoftKeyboard());
+                onView(withId(R.id.input_email)).perform(typeText("add@re.ss"), closeSoftKeyboard());
             case 4:
-                onView(withId(R.id.input_name)).perform(typeText("Test User"), closeSoftKeyboard());
+                onView(withId(R.id.input_name)).perform(typeText("Tester"), closeSoftKeyboard());
                 break;
         }
         if (option == 1) {

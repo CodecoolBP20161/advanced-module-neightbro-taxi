@@ -18,17 +18,20 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         return new BCryptPasswordEncoder();
     }
 
+    /**
+     * Overriding the WebSecurityConfigurerAdapter's configure method.
+     * We setup here the authorities for the routes.
+     */
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
                 .antMatchers("/resources/**", "/registration", "/user-login/**", "/logged-in-user/**").permitAll()
-                .antMatchers("/users/**", "/user-roles/**").hasAuthority(RoleEnum.ADMIN.name())
+                .antMatchers("/users/**", "/user-roles/**", "/admin/**").hasAuthority(RoleEnum.ADMIN.name())
                 .anyRequest().authenticated()
                 .and()
-//                .addFilterAt(new CustomUsernamePasswordAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class)
                 .formLogin()
-                .loginPage("/login")
+                .defaultSuccessUrl("/admin/home", true)
                 .permitAll()
                 .and()
                 .logout()

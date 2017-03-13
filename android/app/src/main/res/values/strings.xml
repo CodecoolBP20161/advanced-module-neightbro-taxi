@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">NeighbroTaxi</string>
+    <string name="url">http://192.168.161.219:9000/</string>
+    <string name="tag"> >>> ¤#¤ >>> </string>
     <string name="hint_name">What\'s your full name?</string>
     <string name="hint_email">Email address?</string>
     <string name="hint_password1">Choose a password!</string>
@@ -14,4 +16,18 @@
     <string name="err_pw_short">It isn\'t enough for me!\n(8–16 characters)</string>
     <string name="err_pw_long">It\'s too much for me!\n(8–16 characters)</string>
     <string name="err_pw_same">Just type it again! \n(Second password must same with first!)</string>
+    <string name="note_back">Image of back button.</string>
+    <string name="note_menu">Image of menu icon.</string>
+    <string name="note_avatar">Picture of user avatar.</string>
+    <string name="user_id"/>
+    <string name="user_name"/>
+    <string name="user_email"/>
+    <string-array name="opinions">
+        <item><font color="#ffeb3b"><b>SAMPLE USER</b></font></item>
+        <item><font color="#ffeb3b">Sample user opinion text here, nothing special!</font></item>
+        <item><font color="#ffeb3b"><b>SAMPLE USER</b></font></item>
+        <item><font color="#ffeb3b">Sample user opinion text here, nothing special!</font></item>
+        <item><font color="#ffeb3b"><b>SAMPLE USER</b></font></item>
+        <item><font color="#ffeb3b">Sample user opinion text here, nothing special!</font></item>
+    </string-array>
 </resources>

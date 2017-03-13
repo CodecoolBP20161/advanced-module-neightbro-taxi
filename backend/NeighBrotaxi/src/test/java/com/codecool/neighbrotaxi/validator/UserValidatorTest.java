@@ -10,12 +10,12 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.Errors;
 
+import static junit.framework.TestCase.assertFalse;
+import static junit.framework.TestCase.assertTrue;
 import static org.mockito.Matchers.anyString;
 import static org.mockito.Mockito.*;
 
-/**
- * Created by kalman on 2017.02.02..
- */
+
 @MockBean(UserService.class)
 @MockBean(Errors.class)
 @Transactional
@@ -39,6 +39,24 @@ public class UserValidatorTest extends AbstractTest {
         user.setPassword("password");
         user.setPasswordConfirm("password");
     }
+
+    @Test
+    public void supports_WhenTheClassIsSupported_ShouldReturnTrue() throws Exception {
+
+        boolean isSupported = userValidator.supports(User.class);
+
+        assertTrue(isSupported);
+    }
+
+    @Test
+    public void supports_WhenTheClassIsNotSupported_ShouldReturnFalse() throws Exception {
+
+        boolean isSupported = userValidator.supports(NotSupportedClassForValidator.class);
+
+        assertFalse(isSupported);
+    }
+
+    private class NotSupportedClassForValidator{}
 
     @Test
     public void validate_AllFieldValid_NoErrorsInBinding() throws Exception {
