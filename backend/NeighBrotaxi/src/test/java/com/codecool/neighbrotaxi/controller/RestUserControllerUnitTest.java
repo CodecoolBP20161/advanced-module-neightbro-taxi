@@ -1,6 +1,7 @@
 package com.codecool.neighbrotaxi.controller;
 
 import com.codecool.neighbrotaxi.AbstractTest;
+import com.codecool.neighbrotaxi.model.SessionStorage;
 import com.codecool.neighbrotaxi.model.User;
 import com.codecool.neighbrotaxi.service.UserService;
 import com.codecool.neighbrotaxi.validator.UserValidator;
@@ -23,6 +24,7 @@ import static org.mockito.Mockito.when;
 @MockBean(UserService.class)
 @MockBean(BindingResult.class)
 @MockBean(UserValidator.class)
+@MockBean(SessionStorage.class)
 public class RestUserControllerUnitTest extends AbstractTest {
     @Autowired
     private UserService userService;
@@ -37,6 +39,9 @@ public class RestUserControllerUnitTest extends AbstractTest {
 
     @Autowired
     private UserValidator userValidator;
+
+    @Autowired
+    private SessionStorage sessionStorage;
 
     @Before
     public void setUp() throws Exception {
@@ -83,5 +88,14 @@ public class RestUserControllerUnitTest extends AbstractTest {
         restUserController.registration(user, bindingResult);
 
         verify(userValidator).validate(user, bindingResult);
+    }
+
+    @Test
+    public void loggedInUser_ReturnValidUser() throws Exception {
+        when(sessionStorage.getLoggedInUser()).thenReturn(user);
+
+        Object object = restUserController.loggedInUser();
+
+        assertEquals(user, (User) object);
     }
 }
