@@ -64,6 +64,7 @@ public class RestUserControllerUnitTest extends AbstractTest {
         user.setEmail("email");
     }
 
+    // Registration route tests
     @Test
     public void registration_HasErrorsInBindingResult_ReturnListOfErrors() throws Exception {
         ArrayList<ObjectError> listOfErrors = new ArrayList<>();
@@ -102,6 +103,7 @@ public class RestUserControllerUnitTest extends AbstractTest {
         verify(userValidator).validate(user, bindingResult);
     }
 
+    // Login Route Tests
     @Test
     public void loggedInUser_ReturnValidUser() throws Exception {
         when(sessionStorage.getLoggedInUser()).thenReturn(user);
