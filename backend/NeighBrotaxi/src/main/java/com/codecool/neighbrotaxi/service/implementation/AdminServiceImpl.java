@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Set;
 
 @Service
 public class AdminServiceImpl implements AdminService {
@@ -57,4 +58,17 @@ public class AdminServiceImpl implements AdminService {
         }
         return false;
     }
+
+    @Override
+    public User getUser(Integer userID) {
+        return userRepository.findOne(userID);
+    }
+
+    @Override
+    public void addRoleToUser(Set<Role> roles, Integer userID) {
+        User user = userRepository.findOne(userID);
+        user.setRoles(roles);
+        userRepository.save(user);
+    }
+
 }
