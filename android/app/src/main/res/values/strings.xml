@@ -25,5 +25,9 @@
     <string-array name="opinions">
         <item><font color="#ffeb3b"><b>SAMPLE USER</b></font></item>
         <item><font color="#ffeb3b">Sample user opinion text here, nothing special!</font></item>
+        <item><font color="#ffeb3b"><b>SAMPLE USER</b></font></item>
+        <item><font color="#ffeb3b">Sample user opinion text here, nothing special!</font></item>
+        <item><font color="#ffeb3b"><b>SAMPLE USER</b></font></item>
+        <item><font color="#ffeb3b">Sample user opinion text here, nothing special!</font></item>
     </string-array>
 </resources>

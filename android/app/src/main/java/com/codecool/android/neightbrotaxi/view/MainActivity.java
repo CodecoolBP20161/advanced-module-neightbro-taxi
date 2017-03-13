@@ -38,6 +38,9 @@ public class MainActivity extends AppCompatActivity {
         mUserName = (TextView) findViewById(R.id.userName);
         mUserEmail = (TextView) findViewById(R.id.userEmail);
 
+        Toast.makeText(getApplicationContext(), "WELCOME ON THE MAIN PAGE!",
+                Toast.LENGTH_SHORT).show();
+
         Log.i(TAG, "ACTIVITY CREATED!");
 /*
         // Set to the right color for the toolbar.
