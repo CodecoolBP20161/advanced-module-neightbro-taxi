@@ -270,8 +270,7 @@ public class RestUserControllerMvcTest extends NeighBroTaxiApplicationTests{
     }
 
     @Test
-    public void loggedInUseruserReturnsAnonymusByDefault() throws Exception {
-
+    public void loggedInUserReturnsAnonymusByDefault() throws Exception {
         mockMvc.perform(get("/logged-in-user"))
                 .andExpect(status().isOk())
                 .andExpect(

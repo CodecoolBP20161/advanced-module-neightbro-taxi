@@ -11,11 +11,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.boot.test.mock.mockito.SpyBean;
-import org.springframework.mock.web.MockMultipartHttpServletRequest;
 import org.springframework.security.authentication.BadCredentialsException;
-import org.springframework.security.core.AuthenticationException;
-import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
@@ -26,7 +22,6 @@ import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
-import static org.mockito.Matchers.any;
 import static org.mockito.Matchers.anyString;
 import static org.mockito.Mockito.*;
 
@@ -38,6 +33,7 @@ import static org.mockito.Mockito.*;
 @MockBean(UserService.class)
 @MockBean(BindingResult.class)
 @MockBean(UserValidator.class)
+@MockBean(SessionStorage.class)
 @MockBean(SerializableSessionStorage.class)
 public class RestUserControllerUnitTest extends AbstractTest {
     @Autowired
@@ -104,6 +100,15 @@ public class RestUserControllerUnitTest extends AbstractTest {
         restUserController.registration(user, bindingResult);
 
         verify(userValidator).validate(user, bindingResult);
+    }
+
+    @Test
+    public void loggedInUser_ReturnValidUser() throws Exception {
+        when(sessionStorage.getLoggedInUser()).thenReturn(user);
+
+        Object object = restUserController.loggedInUser();
+
+        assertEquals(user, (User) object);
     }
 
     @Test
