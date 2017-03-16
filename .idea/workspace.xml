@@ -1,0 +1,1804 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list id="6320e7fe-77c6-4956-8da0-9990ba93f650" name="Default" comment="" />
+    <list default="true" id="0dc33607-0f6d-4955-8ffc-9ca35bb8a0a2" name="TAXI-123 testing &amp; doc" comment="TAXI-123 testing &amp; doc">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/node_modules/is-buffer/.travis.yml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/node_modules/is-buffer/.zuul.yml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/karma.conf.js" afterPath="$PROJECT_DIR$/frontend/karma.conf.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/accepts/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/accepts/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/after/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/after/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/anymatch/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/anymatch/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/arr-diff/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/arr-diff/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/arr-flatten/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/arr-flatten/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/array-slice/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/array-slice/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/array-unique/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/array-unique/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/arraybuffer.slice/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/arraybuffer.slice/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/arrify/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/arrify/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/async-each/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/async-each/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/backo2/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/backo2/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/balanced-match/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/balanced-match/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/base64-arraybuffer/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/base64-arraybuffer/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/base64id/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/base64id/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/better-assert/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/better-assert/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/binary-extensions/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/binary-extensions/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/blob/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/blob/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/bluebird/LICENSE" afterPath="$PROJECT_DIR$/frontend/node_modules/bluebird/LICENSE" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/bluebird/README.md" afterPath="$PROJECT_DIR$/frontend/node_modules/bluebird/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/bluebird/js/browser/bluebird.core.js" afterPath="$PROJECT_DIR$/frontend/node_modules/bluebird/js/browser/bluebird.core.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/bluebird/js/browser/bluebird.core.min.js" afterPath="$PROJECT_DIR$/frontend/node_modules/bluebird/js/browser/bluebird.core.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/bluebird/js/browser/bluebird.js" afterPath="$PROJECT_DIR$/frontend/node_modules/bluebird/js/browser/bluebird.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/bluebird/js/browser/bluebird.min.js" afterPath="$PROJECT_DIR$/frontend/node_modules/bluebird/js/browser/bluebird.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/bluebird/js/release/finally.js" afterPath="$PROJECT_DIR$/frontend/node_modules/bluebird/js/release/finally.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/bluebird/js/release/generators.js" afterPath="$PROJECT_DIR$/frontend/node_modules/bluebird/js/release/generators.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/bluebird/js/release/promise.js" afterPath="$PROJECT_DIR$/frontend/node_modules/bluebird/js/release/promise.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/bluebird/js/release/promise_array.js" afterPath="$PROJECT_DIR$/frontend/node_modules/bluebird/js/release/promise_array.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/bluebird/js/release/props.js" afterPath="$PROJECT_DIR$/frontend/node_modules/bluebird/js/release/props.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/bluebird/js/release/schedule.js" afterPath="$PROJECT_DIR$/frontend/node_modules/bluebird/js/release/schedule.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/bluebird/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/bluebird/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/body-parser/HISTORY.md" afterPath="$PROJECT_DIR$/frontend/node_modules/body-parser/HISTORY.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/body-parser/lib/read.js" afterPath="$PROJECT_DIR$/frontend/node_modules/body-parser/lib/read.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/body-parser/lib/types/json.js" afterPath="$PROJECT_DIR$/frontend/node_modules/body-parser/lib/types/json.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/body-parser/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/body-parser/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/brace-expansion/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/brace-expansion/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/braces/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/braces/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/buffer-shims/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/buffer-shims/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/bytes/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/bytes/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/callsite/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/callsite/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/chokidar/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/chokidar/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/colors/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/colors/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/combine-lists/node_modules/lodash/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/combine-lists/node_modules/lodash/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/combine-lists/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/combine-lists/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/component-bind/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/component-bind/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/component-emitter/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/component-emitter/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/component-inherit/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/component-inherit/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/concat-map/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/concat-map/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/connect/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/connect/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/content-type/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/content-type/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/cookie/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/cookie/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/core-js/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/core-js/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/core-util-is/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/core-util-is/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/custom-event/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/custom-event/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/debug/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/debug/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/depd/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/depd/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/di/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/di/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/dom-serialize/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/dom-serialize/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/ee-first/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/ee-first/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/encodeurl/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/encodeurl/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/engine.io-client/node_modules/component-emitter/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/engine.io-client/node_modules/component-emitter/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/engine.io-client/node_modules/debug/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/engine.io-client/node_modules/debug/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/engine.io-client/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/engine.io-client/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/engine.io-parser/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/engine.io-parser/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/engine.io/node_modules/debug/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/engine.io/node_modules/debug/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/engine.io/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/engine.io/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/ent/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/ent/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/escape-html/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/escape-html/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/eventemitter3/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/eventemitter3/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/expand-braces/node_modules/braces/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/expand-braces/node_modules/braces/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/expand-braces/node_modules/expand-range/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/expand-braces/node_modules/expand-range/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/expand-braces/node_modules/is-number/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/expand-braces/node_modules/is-number/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/expand-braces/node_modules/repeat-string/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/expand-braces/node_modules/repeat-string/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/expand-braces/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/expand-braces/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/expand-brackets/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/expand-brackets/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/expand-range/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/expand-range/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/extend/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/extend/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/extglob/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/extglob/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/filename-regex/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/filename-regex/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/fill-range/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/fill-range/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/finalhandler/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/finalhandler/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/for-in/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/for-in/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/for-own/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/for-own/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/fs-access/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/fs-access/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/fs.realpath/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/fs.realpath/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/glob-base/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/glob-base/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/glob-parent/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/glob-parent/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/glob/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/glob/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/graceful-fs/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/graceful-fs/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/has-binary/node_modules/isarray/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/has-binary/node_modules/isarray/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/has-binary/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/has-binary/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/has-cors/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/has-cors/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/http-errors/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/http-errors/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/http-proxy/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/http-proxy/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/iconv-lite/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/iconv-lite/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/indexof/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/indexof/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/inflight/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/inflight/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/inherits/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/inherits/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/is-binary-path/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/is-binary-path/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/is-buffer/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/is-buffer/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/is-dotfile/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/is-dotfile/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/is-equal-shallow/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/is-equal-shallow/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/is-extendable/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/is-extendable/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/is-extglob/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/is-extglob/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/is-glob/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/is-glob/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/is-number/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/is-number/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/is-posix-bracket/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/is-posix-bracket/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/is-primitive/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/is-primitive/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/isarray/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/isarray/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/isbinaryfile/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/isbinaryfile/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/isexe/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/isexe/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/isobject/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/isobject/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/json3/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/json3/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/kind-of/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/kind-of/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/lodash/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/lodash/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/log4js/node_modules/isarray/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/log4js/node_modules/isarray/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/log4js/node_modules/readable-stream/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/log4js/node_modules/readable-stream/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/log4js/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/log4js/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/lru-cache/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/lru-cache/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/media-typer/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/media-typer/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/micromatch/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/micromatch/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/mime-db/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/mime-db/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/mime-types/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/mime-types/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/mime/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/mime/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/minimatch/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/minimatch/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/minimist/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/minimist/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/ms/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/ms/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/negotiator/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/negotiator/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/normalize-path/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/normalize-path/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/null-check/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/null-check/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/object-assign/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/object-assign/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/object-component/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/object-component/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/object.omit/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/object.omit/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/on-finished/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/on-finished/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/once/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/once/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/optimist/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/optimist/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/options/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/options/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/os-tmpdir/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/os-tmpdir/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/parse-glob/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/parse-glob/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/parsejson/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/parsejson/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/parseqs/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/parseqs/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/parseuri/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/parseuri/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/parseurl/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/parseurl/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/path-is-absolute/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/path-is-absolute/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/preserve/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/preserve/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/process-nextick-args/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/process-nextick-args/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/qjobs/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/qjobs/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/qs/.eslintrc" afterPath="$PROJECT_DIR$/frontend/node_modules/qs/.eslintrc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/qs/CHANGELOG.md" afterPath="$PROJECT_DIR$/frontend/node_modules/qs/CHANGELOG.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/qs/README.md" afterPath="$PROJECT_DIR$/frontend/node_modules/qs/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/qs/dist/qs.js" afterPath="$PROJECT_DIR$/frontend/node_modules/qs/dist/qs.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/qs/lib/index.js" afterPath="$PROJECT_DIR$/frontend/node_modules/qs/lib/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/qs/lib/parse.js" afterPath="$PROJECT_DIR$/frontend/node_modules/qs/lib/parse.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/qs/lib/stringify.js" afterPath="$PROJECT_DIR$/frontend/node_modules/qs/lib/stringify.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/qs/lib/utils.js" afterPath="$PROJECT_DIR$/frontend/node_modules/qs/lib/utils.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/qs/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/qs/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/qs/test/.eslintrc" afterPath="$PROJECT_DIR$/frontend/node_modules/qs/test/.eslintrc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/qs/test/parse.js" afterPath="$PROJECT_DIR$/frontend/node_modules/qs/test/parse.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/qs/test/stringify.js" afterPath="$PROJECT_DIR$/frontend/node_modules/qs/test/stringify.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/qs/test/utils.js" afterPath="$PROJECT_DIR$/frontend/node_modules/qs/test/utils.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/randomatic/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/randomatic/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/range-parser/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/range-parser/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/raw-body/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/raw-body/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/readable-stream/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/readable-stream/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/readdirp/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/readdirp/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/regex-cache/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/regex-cache/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/repeat-element/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/repeat-element/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/repeat-string/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/repeat-string/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/requires-port/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/requires-port/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/rimraf/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/rimraf/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/safe-buffer/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/safe-buffer/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/semver/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/semver/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/set-immediate-shim/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/set-immediate-shim/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/setprototypeof/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/setprototypeof/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/socket.io-adapter/node_modules/debug/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/socket.io-adapter/node_modules/debug/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/socket.io-adapter/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/socket.io-adapter/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/socket.io-client/node_modules/component-emitter/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/socket.io-client/node_modules/component-emitter/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/socket.io-client/node_modules/debug/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/socket.io-client/node_modules/debug/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/socket.io-client/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/socket.io-client/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/socket.io-parser/node_modules/debug/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/socket.io-parser/node_modules/debug/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/socket.io-parser/node_modules/isarray/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/socket.io-parser/node_modules/isarray/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/socket.io-parser/node_modules/ms/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/socket.io-parser/node_modules/ms/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/socket.io-parser/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/socket.io-parser/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/socket.io/node_modules/debug/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/socket.io/node_modules/debug/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/socket.io/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/socket.io/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/source-map/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/source-map/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/statuses/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/statuses/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/string_decoder/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/string_decoder/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/tmp/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/tmp/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/to-array/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/to-array/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/type-is/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/type-is/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/ultron/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/ultron/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/unpipe/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/unpipe/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/useragent/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/useragent/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/util-deprecate/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/util-deprecate/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/utils-merge/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/utils-merge/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/void-elements/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/void-elements/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/which/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/which/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/wordwrap/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/wordwrap/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/wrappy/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/wrappy/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/ws/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/ws/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/wtf-8/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/wtf-8/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/xmlhttprequest-ssl/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/xmlhttprequest-ssl/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/node_modules/yeast/package.json" afterPath="$PROJECT_DIR$/frontend/node_modules/yeast/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/tests/test.js" afterPath="$PROJECT_DIR$/frontend/tests/test.js" />
+    </list>
+    <ignored path="advanced-module-neightbro-taxi.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <ignored path=".idea/dataSources.local.xml" />
+    <ignored path="$PROJECT_DIR$/backend/NeighBrotaxi/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DatabaseView">
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_TABLE_DETAILS" value="true" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="advanced-module-neightbro-taxi" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="karma.conf.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/karma.conf.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="22" column="23" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="jasmine-injector.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/node_modules/jasmine-injector/jasmine-injector.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/frontend/tests/test.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="108">
+              <caret line="8" column="43" selection-start-line="8" selection-start-column="43" selection-end-line="8" selection-end-column="43" />
+              <folding>
+                <element signature="e#0#44#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/scripts/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="36">
+              <caret line="2" column="28" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="217">
+              <caret line="25" column="23" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test-main.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/test-main.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="432">
+              <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="HTML File" />
+        <option value="Class" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="4c84f82621d2c573d586a046022f4d8ccca694bb" />
+      </map>
+    </option>
+  </component>
+  <component name="GradleLocalSettings">
+    <option name="modificationStamps">
+      <map>
+        <entry key="$PROJECT_DIR$/../poker-player-spinning-commando-squad" value="1483605484591" />
+        <entry key="$PROJECT_DIR$/../spring-rest-todos" value="1485174638371" />
+      </map>
+    </option>
+    <option name="externalProjectsViewState">
+      <projects_view />
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/backend/NeighBrotaxi/src/main/java/StackToDelete.java" />
+        <option value="$PROJECT_DIR$/backend/NeighBrotaxi/src/main/java/OtherFuckingStackToDelete.java" />
+        <option value="$PROJECT_DIR$/backend/NeighBrotaxi/src/main/java/OtherFokkinStackToDelete.java" />
+        <option value="$PROJECT_DIR$/frontend/scripts/directives/compareTo.js" />
+        <option value="$PROJECT_DIR$/frontend/sdf.html" />
+        <option value="$PROJECT_DIR$/frontend/scripts/directives/pwCheck.js" />
+        <option value="$PROJECT_DIR$/frontend/templates/reg.html" />
+        <option value="$PROJECT_DIR$/backend/NeighBrotaxi/src/main/java/com/codecool/neighbrotaxi/ToDel.java" />
+        <option value="$PROJECT_DIR$/backend/NeighBrotaxi/src/main/toDelete.js" />
+        <option value="$PROJECT_DIR$/backend/NeighBrotaxi/src/main/ToDel.js" />
+        <option value="$PROJECT_DIR$/backend/NeighBrotaxi/src/main/java/com/codecool/neighbrotaxi/Que.java" />
+        <option value="$PROJECT_DIR$/backend/NeighBrotaxi/src/main/java/com/codecool/neighbrotaxi/Item.java" />
+        <option value="$PROJECT_DIR$/frontend/welcome.html" />
+        <option value="$PROJECT_DIR$/frontend/templates/welcome.html" />
+        <option value="$PROJECT_DIR$/frontend/scripts/directives/navbar.js" />
+        <option value="$PROJECT_DIR$/frontend/registration_frame.html" />
+        <option value="$PROJECT_DIR$/frontend/templates/central_logo.html" />
+        <option value="$PROJECT_DIR$/frontend/login_frame.html" />
+        <option value="$PROJECT_DIR$/frontend/scripts/directives/elementDirectives/central_logo.js" />
+        <option value="$PROJECT_DIR$/frontend/templates/login_frame.html" />
+        <option value="$PROJECT_DIR$/frontend/scripts/directives/elementDirectives/login_menu.js" />
+        <option value="$PROJECT_DIR$/frontend/login.html" />
+        <option value="$PROJECT_DIR$/frontend/registration.html" />
+        <option value="$PROJECT_DIR$/frontend/scripts/directives/elementDirectives/login.js" />
+        <option value="$PROJECT_DIR$/frontend/templates/centralLogo.html" />
+        <option value="$PROJECT_DIR$/frontend/scripts/directives/elementDirectives/proflie.js" />
+        <option value="$PROJECT_DIR$/frontend/scripts/directives/elementDirectives/profile.js" />
+        <option value="$PROJECT_DIR$/frontend/scripts/directives/goClick.js" />
+        <option value="$PROJECT_DIR$/frontend/loginFrame.html" />
+        <option value="$PROJECT_DIR$/frontend/home.html" />
+        <option value="$PROJECT_DIR$/frontend/scripts/route.js" />
+        <option value="$PROJECT_DIR$/frontend/scripts/directives/elementDirectives/ratingStars.js" />
+        <option value="$PROJECT_DIR$/frontend/templates/ratingStars.html" />
+        <option value="$PROJECT_DIR$/frontend/templates/navbar.html" />
+        <option value="$PROJECT_DIR$/frontend/styles/main.css" />
+        <option value="$PROJECT_DIR$/frontend/scripts/controllers/registrationCtrl.js" />
+        <option value="$PROJECT_DIR$/frontend/templates/registration.html" />
+        <option value="$PROJECT_DIR$/frontend/templates/login.html" />
+        <option value="$PROJECT_DIR$/frontend/scripts/controllers/loginCtrl.js" />
+        <option value="$PROJECT_DIR$/backend/NeighBrotaxi/src/main/java/deletze.java" />
+        <option value="$PROJECT_DIR$/frontend/templates/footer.html" />
+        <option value="$PROJECT_DIR$/frontend/styles/home.css" />
+        <option value="$PROJECT_DIR$/frontend/index.html" />
+        <option value="$PROJECT_DIR$/frontend/scripts/directives/locationChecker.js" />
+        <option value="$PROJECT_DIR$/frontend/templates/profile.html" />
+        <option value="$PROJECT_DIR$/frontend/scripts/controllers/profileCtrl.js" />
+        <option value="$PROJECT_DIR$/backend/NeighBrotaxi/src/main/java/com/codecool/neighbrotaxi/controller/RestUserController.java" />
+        <option value="$PROJECT_DIR$/frontend/scripts/controllers/main.js" />
+        <option value="$PROJECT_DIR$/frontend/package.json" />
+        <option value="$PROJECT_DIR$/frontend/karma.conf.js" />
+        <option value="$PROJECT_DIR$/frontend/tests/test.js" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Bundled (Maven 3)" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/frontend/node_modules" />
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="33" />
+    <option name="y" value="15" />
+    <option name="width" value="1247" />
+    <option name="height" value="705" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>Android &gt; Lint &gt; Correctness</id>
+          </State>
+          <State>
+            <id>Android &gt; Lint &gt; Performance</id>
+          </State>
+          <State>
+            <id>Android &gt; Lint &gt; Usability</id>
+          </State>
+          <State>
+            <id>Android Lint for Kotlin</id>
+          </State>
+          <State>
+            <id>Code style issuesJava</id>
+          </State>
+          <State>
+            <id>Data flow issuesJava</id>
+          </State>
+          <State>
+            <id>GeneralJavaScript</id>
+          </State>
+          <State>
+            <id>Initialization issuesJava</id>
+          </State>
+          <State>
+            <id>Java</id>
+          </State>
+          <State>
+            <id>JavaScript</id>
+          </State>
+          <State>
+            <id>Logging issuesJava</id>
+          </State>
+          <State>
+            <id>Memory issuesJava</id>
+          </State>
+          <State>
+            <id>Probable bugsJava</id>
+          </State>
+          <State>
+            <id>Threading issuesJava</id>
+          </State>
+          <State>
+            <id>UI Form Problems</id>
+          </State>
+          <State>
+            <id>Visibility issuesJava</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>JSUnusedAssignment</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="advanced-module-neightbro-taxi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="advanced-module-neightbro-taxi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="advanced-module-neightbro-taxi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="frontend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="advanced-module-neightbro-taxi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="advanced-module-neightbro-taxi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="frontend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tests" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="advanced-module-neightbro-taxi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="advanced-module-neightbro-taxi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="frontend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="advanced-module-neightbro-taxi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="advanced-module-neightbro-taxi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="frontend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="advanced-module-neightbro-taxi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="advanced-module-neightbro-taxi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="frontend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="node_modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="advanced-module-neightbro-taxi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="advanced-module-neightbro-taxi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="frontend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="node_modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jasmine-injector" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="advanced-module-neightbro-taxi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="advanced-module-neightbro-taxi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="settings.editor.selected.configurable" value="editor.preferences.smartKeys" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/frontend/karma.conf.js" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="com.intellij.database.dataSource.DataSourceTemplate" value="PostgreSQL" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="start.from.branch" value="origin/development" />
+    <property name="js-jscs-nodeInterpreter" value="/usr/bin/node" />
+    <property name="nodejs_interpreter_path" value="/usr/bin/node" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/frontend/scripts/directives/elementDirectives" />
+      <recent name="$PROJECT_DIR$/frontend" />
+      <recent name="$PROJECT_DIR$/frontend/templates" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/frontend/img" />
+      <recent name="$PROJECT_DIR$/frontend/images" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Karma.JSTest">
+    <configuration default="false" name="NeighBroTaxiApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.codecool.neighbrotaxi.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="com.codecool.neighbrotaxi.NeighBroTaxiApplication" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="advanced-module-neightbro-taxi" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="ToDel" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.codecool.neighbrotaxi.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="com.codecool.neighbrotaxi.ToDel" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="neighbro-taxi" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="index.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/advanced-module-neightbro-taxi/frontend/index.html">
+      <method />
+    </configuration>
+    <configuration default="false" name="index.html (1)" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63343/advanced-module-neightbro-taxi/frontend/index.html">
+      <method />
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <method />
+    </configuration>
+    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="" />
+      <option name="DEPLOY" value="true" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="DEBUGGER_TYPE" value="Java" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <Java />
+      <Profilers>
+        <option name="GAPID_DISABLE_PCS" value="false" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
+      <module name="" />
+      <option name="TESTING_TYPE" value="0" />
+      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="EXTRA_OPTIONS" value="" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="DEBUGGER_TYPE" value="Java" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <Java />
+      <Profilers>
+        <option name="GAPID_DISABLE_PCS" value="false" />
+      </Profilers>
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <module />
+      <method />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="ArquillianTestNG" factoryName="">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="Cold Fusion runner description" factoryName="Cold Fusion" custom_browser="" web_path="">
+      <method />
+    </configuration>
+    <configuration default="true" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="myFilePath" />
+      <option name="GLUE" />
+      <option name="myNameFilter" />
+      <option name="myGeneratedName" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="FlashRunConfigurationType" factoryName="Flash App">
+      <option name="BCName" value="" />
+      <option name="IOSSimulatorSdkPath" value="" />
+      <option name="adlOptions" value="" />
+      <option name="airProgramParameters" value="" />
+      <option name="appDescriptorForEmulator" value="Android" />
+      <option name="debugTransport" value="USB" />
+      <option name="debuggerSdkRaw" value="BC SDK" />
+      <option name="emulator" value="NexusOne" />
+      <option name="emulatorAdlOptions" value="" />
+      <option name="fastPackaging" value="true" />
+      <option name="fullScreenHeight" value="0" />
+      <option name="fullScreenWidth" value="0" />
+      <option name="launchUrl" value="false" />
+      <option name="launcherParameters">
+        <LauncherParameters>
+          <option name="browser" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
+          <option name="launcherType" value="OSDefault" />
+          <option name="newPlayerInstance" value="false" />
+          <option name="playerPath" value="/usr/bin/flashplayerdebugger" />
+        </LauncherParameters>
+      </option>
+      <option name="mobileRunTarget" value="Emulator" />
+      <option name="moduleName" value="" />
+      <option name="overriddenMainClass" value="" />
+      <option name="overriddenOutputFileName" value="" />
+      <option name="overrideMainClass" value="false" />
+      <option name="runTrusted" value="true" />
+      <option name="screenDpi" value="0" />
+      <option name="screenHeight" value="0" />
+      <option name="screenWidth" value="0" />
+      <option name="url" value="http://" />
+      <option name="usbDebugPort" value="7936" />
+      <method />
+    </configuration>
+    <configuration default="true" type="FlexUnitRunConfigurationType" factoryName="FlexUnit" appDescriptorForEmulator="Android" class_name="" emulatorAdlOptions="" method_name="" package_name="" scope="Class">
+      <option name="BCName" value="" />
+      <option name="launcherParameters">
+        <LauncherParameters>
+          <option name="browser" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
+          <option name="launcherType" value="OSDefault" />
+          <option name="newPlayerInstance" value="false" />
+          <option name="playerPath" value="/usr/bin/flashplayerdebugger" />
+        </LauncherParameters>
+      </option>
+      <option name="moduleName" value="" />
+      <option name="trusted" value="true" />
+      <method />
+    </configuration>
+    <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list />
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <method />
+    </configuration>
+    <configuration default="true" type="GrailsRunConfigurationType" factoryName="Grails">
+      <setting name="vmparams" value="" />
+      <setting name="cmdLine" value="run-app" />
+      <setting name="passParentEnv" value="true" />
+      <setting name="launchBrowser" value="true" />
+      <setting name="depsClasspath" value="false" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="JUnitTestDiscovery" factoryName="JUnit Test Discovery" changeList="All">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="JarApplication" factoryName="JAR Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="Java Scratch" factoryName="Java Scratch">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="SCRATCH_FILE_ID" value="0" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="advanced-module-neightbro-taxi" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType" factoryName="Kotlin script">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+      <method />
+    </configuration>
+    <configuration default="true" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="TestNGTestDiscovery" factoryName="TestNG Test Discovery" changeList="All">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="executeSpecs" factoryName="Gauge Execution">
+      <setting name="environment" value="" />
+      <setting name="specsToExecute" value="" />
+      <setting name="tags" value="" />
+      <setting name="parallelNodes" value="" />
+      <setting name="execInParallel" value="false" />
+      <setting name="programParameters" value="" />
+      <setting name="workingDirectory" value="" />
+      <setting name="moduleName" value="" />
+      <envMap />
+      <setting name="rowsRange" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run-script" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="osgi.bnd.run" factoryName="Run Launcher">
+      <method />
+    </configuration>
+    <configuration default="true" type="osgi.bnd.run" factoryName="Test Launcher (JUnit)">
+      <method />
+    </configuration>
+    <configuration default="false" name="JSTest" type="JavaScriptTestRunnerKarma" factoryName="Karma">
+      <config-file value="$PROJECT_DIR$/frontend/karma.conf.js" />
+      <karma-package-dir value="$PROJECT_DIR$/frontend/node_modules/karma" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="NeighBroTaxiApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.codecool.neighbrotaxi.NeighBroTaxiApplication" />
+      <module name="neighbro-taxi" />
+      <envs />
+      <method />
+    </configuration>
+    <list size="6">
+      <item index="0" class="java.lang.String" itemvalue="Karma.JSTest" />
+      <item index="1" class="java.lang.String" itemvalue="Spring Boot.NeighBroTaxiApplication" />
+      <item index="2" class="java.lang.String" itemvalue="Application.NeighBroTaxiApplication" />
+      <item index="3" class="java.lang.String" itemvalue="Application.ToDel" />
+      <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.index.html" />
+      <item index="5" class="java.lang.String" itemvalue="JavaScript Debug.index.html (1)" />
+    </list>
+    <recent_temporary>
+      <list size="4">
+        <item index="0" class="java.lang.String" itemvalue="Application.ToDel" />
+        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.index.html (1)" />
+        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.index.html" />
+        <item index="3" class="java.lang.String" itemvalue="Application.NeighBroTaxiApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task id="Default" summary="Default task">
+      <branch name="TAXI-94_registration_hotfix" repository="$PROJECT_DIR$" original="true" />
+      <changelist id="6320e7fe-77c6-4956-8da0-9990ba93f650" name="Default" comment="" />
+      <created>1486373991569</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1487233215169</updated>
+      <workItem from="1486373999852" duration="3031000" />
+      <workItem from="1486452758420" duration="11120000" />
+      <workItem from="1486636076300" duration="1797000" />
+      <workItem from="1486642233817" duration="252000" />
+      <workItem from="1486810086081" duration="5548000" />
+      <workItem from="1486819015304" duration="702000" />
+      <workItem from="1486983450748" duration="1758000" />
+      <workItem from="1487068895024" duration="663000" />
+      <workItem from="1487146431091" duration="3228000" />
+      <workItem from="1487232816108" duration="398000" />
+    </task>
+    <task id="TAXI-82" summary="Create base profile html with route">
+      <branch name="development" repository="$PROJECT_DIR$" original="true" />
+      <branch name="TAXI-82_create_profile_html" repository="$PROJECT_DIR$" />
+      <created>1487153685980</created>
+      <option name="issue" value="true" />
+      <option name="number" value="82" />
+      <option name="presentableId" value="TAXI-82" />
+      <option name="project" value="TAXI" />
+      <updated>1488372178093</updated>
+      <workItem from="1487325575702" duration="5568000" />
+      <workItem from="1487363343735" duration="7707000" />
+      <workItem from="1487422982241" duration="15954000" />
+    </task>
+    <task id="TAXI-105" summary="Great refactor">
+      <branch name="development" repository="$PROJECT_DIR$" original="true" />
+      <branch name="TAXI-105" repository="$PROJECT_DIR$" />
+      <created>1487334232858</created>
+      <option name="issue" value="true" />
+      <option name="number" value="105" />
+      <option name="presentableId" value="TAXI-105" />
+      <option name="project" value="TAXI" />
+      <updated>1488535813602</updated>
+      <workItem from="1487334576140" duration="5071000" />
+      <workItem from="1487359352895" duration="3987000" />
+      <workItem from="1488535012605" duration="801000" />
+    </task>
+    <task id="TAXI-108" summary="Password validation">
+      <branch name="origin/TAXI-8" repository="$PROJECT_DIR$" original="true" />
+      <branch name="TAXI-108" repository="$PROJECT_DIR$" />
+      <option name="closed" value="true" />
+      <created>1487769035588</created>
+      <option name="issue" value="true" />
+      <option name="number" value="108" />
+      <option name="presentableId" value="TAXI-108" />
+      <option name="project" value="TAXI" />
+      <updated>1488192310022</updated>
+      <workItem from="1487769069316" duration="2221000" />
+      <workItem from="1487854135826" duration="143000" />
+      <workItem from="1487854411554" duration="6461000" />
+      <workItem from="1487882636442" duration="998000" />
+      <workItem from="1488188669526" duration="3199000" />
+      <workItem from="1488192238569" duration="72000" />
+    </task>
+    <task active="true" id="TAXI-123" summary="testing &amp; doc">
+      <branch name="origin/development" repository="$PROJECT_DIR$" original="true" />
+      <branch name="TAXI-123" repository="$PROJECT_DIR$" />
+      <changelist id="0dc33607-0f6d-4955-8ffc-9ca35bb8a0a2" name="TAXI-123 testing &amp; doc" comment="TAXI-123 testing &amp; doc" />
+      <created>1488371913533</created>
+      <option name="issue" value="true" />
+      <option name="number" value="123" />
+      <option name="presentableId" value="TAXI-123" />
+      <option name="project" value="TAXI" />
+      <updated>1488535813635</updated>
+      <workItem from="1488535813894" duration="1967000" />
+      <workItem from="1488884557954" duration="843000" />
+      <workItem from="1489053004756" duration="3075000" />
+      <workItem from="1489394389393" duration="531000" />
+      <workItem from="1489394955622" duration="3485000" />
+      <workItem from="1489398477926" duration="1609000" />
+    </task>
+    <servers>
+      <YouTrack shared="false" url="https://codecool-2016-1-neighbro-taxi.myjetbrains.com/youtrack">
+        <commitMessageFormat>{id} {summary}</commitMessageFormat>
+        <option name="defaultSearch" value="Assignee: me sort by: updated #Unresolved" />
+        <password>dfdedfc5dfc7dfcedfcfdfc4dfcfdfc7</password>
+        <option name="loginAnonymously" value="false" />
+        <option name="preferredCloseTaskState" />
+        <option name="preferredOpenTaskState" />
+        <option name="shouldFormatCommitMessage" value="true" />
+        <option name="useHttpAuthentication" value="false" />
+        <option name="useProxy" value="false" />
+        <username>kerteszannanak@gmail.com</username>
+      </YouTrack>
+    </servers>
+  </component>
+  <component name="TestHistory">
+    <history-entry file="JSTest - 2017.03.13 at 10h 39m 39s.xml">
+      <configuration name="JSTest" configurationId="JavaScriptTestRunnerKarma" />
+    </history-entry>
+    <history-entry file="JSTest - 2017.03.13 at 10h 47m 09s.xml">
+      <configuration name="JSTest" configurationId="JavaScriptTestRunnerKarma" />
+    </history-entry>
+    <history-entry file="JSTest - 2017.03.13 at 10h 47m 22s.xml">
+      <configuration name="JSTest" configurationId="JavaScriptTestRunnerKarma" />
+    </history-entry>
+    <history-entry file="JSTest - 2017.03.13 at 10h 50m 25s.xml">
+      <configuration name="JSTest" configurationId="JavaScriptTestRunnerKarma" />
+    </history-entry>
+    <history-entry file="JSTest - 2017.03.13 at 10h 54m 22s.xml">
+      <configuration name="JSTest" configurationId="JavaScriptTestRunnerKarma" />
+    </history-entry>
+    <history-entry file="JSTest - 2017.03.13 at 10h 54m 44s.xml">
+      <configuration name="JSTest" configurationId="JavaScriptTestRunnerKarma" />
+    </history-entry>
+    <history-entry file="JSTest - 2017.03.13 at 10h 55m 03s.xml">
+      <configuration name="JSTest" configurationId="JavaScriptTestRunnerKarma" />
+    </history-entry>
+    <history-entry file="JSTest - 2017.03.13 at 11h 22m 15s.xml">
+      <configuration name="JSTest" configurationId="JavaScriptTestRunnerKarma" />
+    </history-entry>
+    <history-entry file="JSTest - 2017.03.13 at 11h 27m 09s.xml">
+      <configuration name="JSTest" configurationId="JavaScriptTestRunnerKarma" />
+    </history-entry>
+    <history-entry file="JSTest - 2017.03.13 at 11h 27m 41s.xml">
+      <configuration name="JSTest" configurationId="JavaScriptTestRunnerKarma" />
+    </history-entry>
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="130084000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="33" y="15" width="1247" height="705" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5265625" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39375" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24378508" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329591" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/frontend/templates/profile.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/scripts/controllers/profileCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="30" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/scripts/controllers/registrationCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/templates/navbar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/loginFrame.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="62" selection-start-line="5" selection-start-column="42" selection-end-line="5" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/scripts/controllers/loginCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/scripts/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/scripts/route.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="17" column="15" selection-start-line="17" selection-start-column="15" selection-end-line="17" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/scripts/controllers/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/templates/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="15" column="6" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/scripts/controllers/loginCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/scripts/controllers/registrationCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="23" column="81" selection-start-line="23" selection-start-column="81" selection-end-line="23" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/scripts/controllers/loginCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/scripts/controllers/registrationCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="23" column="81" selection-start-line="23" selection-start-column="81" selection-end-line="23" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/scripts/controllers/registrationCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/scripts/controllers/loginCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/scripts/controllers/registrationCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/scripts/controllers/loginCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/NeighBrotaxi/src/main/java/deletze.java" />
+    <entry file="file://$PROJECT_DIR$/frontend/templates/navbar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/scripts/directives/elementDirectives/footer.js" />
+    <entry file="file://$PROJECT_DIR$/frontend/templates/footer.html" />
+    <entry file="file://$PROJECT_DIR$/frontend/styles/home.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2214">
+          <caret line="20" column="15" selection-start-line="20" selection-start-column="15" selection-end-line="20" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/styles/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="174" column="19" selection-start-line="174" selection-start-column="19" selection-end-line="174" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/scripts/directives/locationChecker.js" />
+    <entry file="file://$PROJECT_DIR$/frontend/scripts/directives/goClick.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/templates/loginMenu.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/loginFrame.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="79" selection-start-line="5" selection-start-column="66" selection-end-line="5" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/scripts/controllers/loginCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/scripts/directives/elementDirectives/registration.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/templates/registration.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="25" column="64" selection-start-line="25" selection-start-column="64" selection-end-line="25" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/scripts/directives/elementDirectives/profile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/scripts/controllers/profileCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="395">
+          <caret line="28" column="62" selection-start-line="28" selection-start-column="62" selection-end-line="28" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/templates/profile.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-90">
+          <caret line="13" column="34" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/NeighBrotaxi/src/main/java/com/codecool/neighbrotaxi/controller/RestUserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="70" column="50" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/scripts/route.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="22" column="3" selection-start-line="22" selection-start-column="3" selection-end-line="22" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/templates/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/scripts/directives/elementDirectives/login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="41" selection-start-line="6" selection-start-column="41" selection-end-line="6" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/scripts/controllers/registrationCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="24" column="38" selection-start-line="24" selection-start-column="38" selection-end-line="24" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/scripts/controllers/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="33" column="16" selection-start-line="33" selection-start-column="16" selection-end-line="33" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/test-main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="11" column="14" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/scripts/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="28" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="25" column="23" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/node_modules/jasmine-injector/jasmine-injector.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/karma.conf.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="22" column="23" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/tests/test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="8" column="43" selection-start-line="8" selection-start-column="43" selection-end-line="8" selection-end-column="43" />
+          <folding>
+            <element signature="e#0#44#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>advanced-module-neightbro-taxi</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: antlr:antlr:2.7.7</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
