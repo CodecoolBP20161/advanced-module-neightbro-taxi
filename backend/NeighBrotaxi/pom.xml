@@ -14,17 +14,15 @@
 	<!--<profiles>-->
 		<!--<profile>-->
 			<!--<id>dev</id>-->
-			<!--<properties>-->
-				<!--<activatedProperties>dev</activatedProperties>-->
-			<!--</properties>-->
 			<!--<activation>-->
 				<!--<activeByDefault>true</activeByDefault>-->
 			<!--</activation>-->
+			<!--<properties>-->
+			<!--</properties>-->
 		<!--</profile>-->
 		<!--<profile>-->
 			<!--<id>test</id>-->
 			<!--<properties>-->
-				<!--<activatedProperties>test</activatedProperties>-->
 			<!--</properties>-->
 		<!--</profile>-->
 	<!--</profiles>-->
@@ -129,7 +127,7 @@
 		</plugins>
 		<testResources>
             <testResource>
-			   <directory>src/test/resources</directory>
+			   <directory>src/test</directory>
 			   <filtering>true</filtering>
 		   </testResource>
 	    </testResources>
