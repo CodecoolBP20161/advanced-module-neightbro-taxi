@@ -11,6 +11,22 @@
 	<name>NeighBro-taxi</name>
 	<description></description>
 
+	<!--<profiles>-->
+		<!--<profile>-->
+			<!--<id>dev</id>-->
+			<!--<activation>-->
+				<!--<activeByDefault>true</activeByDefault>-->
+			<!--</activation>-->
+			<!--<properties>-->
+			<!--</properties>-->
+		<!--</profile>-->
+		<!--<profile>-->
+			<!--<id>test</id>-->
+			<!--<properties>-->
+			<!--</properties>-->
+		<!--</profile>-->
+	<!--</profiles>-->
+
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
@@ -111,11 +127,13 @@
 		</plugins>
 		<testResources>
             <testResource>
-			   <directory>src/test/resources</directory>
+			   <directory>src/test</directory>
 			   <filtering>true</filtering>
 		   </testResource>
 	    </testResources>
 	</build>
+
+
 
 
 </project>
