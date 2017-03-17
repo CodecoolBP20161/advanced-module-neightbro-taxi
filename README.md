@@ -1,1 +1,1 @@
-###### _Please, read the Wiki about more information! ~ NeightbroTaxi team_
+###### _Please, read the Wiki about more information! ~ NeighbroTaxi team_
