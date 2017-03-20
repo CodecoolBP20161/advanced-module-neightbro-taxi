@@ -1,5 +1,5 @@
 language: java
-script:
+script: cd backend/NeighBroTaxiAPI && mvn clean test -Dmaven.javadoc.skip=true -Dspring.profiles.active=test -B -V
 sudo: false
 addons:
   apt:
