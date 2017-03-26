@@ -4,6 +4,8 @@ angular.module('neighbroTaxi')
 
 .controller('menuCtrl', function ($scope) {
 
+    $scope.showDropDown = true;
+
     $scope.showLogin = true;
     $scope.showReg = false;
 

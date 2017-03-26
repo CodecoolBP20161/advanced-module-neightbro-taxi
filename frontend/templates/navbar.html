@@ -3,12 +3,11 @@
     <div class="vertical-box" ng-controller = 'logoutCtrl'>
         <button type="button" id="logout" ng-click="logout()">Log out</button>
         <div id="welcome" ng-controller="profileCtrl">
-            Hello {{ inUser.name }}!
-            <ul class="vertical-bar">
-                <li>My profile</li>
-                <li>My messages</li>
-                <li>Other stuff</li>
-            </ul>
+
+            <menu></menu>
+
+
+            Hello {{ inUser.name }}
         </div>
         <p>{{currentPath}}</p>
     </div>

@@ -4,6 +4,16 @@ angular.module('neighbroTaxi')
 
     .controller('mainCtrl', function ($scope, $http) {
 
+        $scope.showDropDown =true;
+
+        $scope.clickDropDown = function(){
+            alert("yeah");
+            if ($scope.showDropDown) {
+                $scope.showDropDown = false;
+            }
+            else $scope.showDropDown = true;
+        }
+
         $scope.showNavbar = function(){
             if(window.location.hash =='#/login' || window.location.hash =='#/registration'){
                 return false;
