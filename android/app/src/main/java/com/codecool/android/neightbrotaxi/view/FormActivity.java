@@ -33,7 +33,7 @@ public class FormActivity extends AppCompatActivity {
     private EditText inputName, inputEmail, inputPassword1, inputPassword2;
     private TextInputLayout inputLayoutName, inputLayoutEmail,
             inputLayoutPassword1, inputLayoutPassword2;
-    private Button btnSubmit, btnOption;
+    private Button btnOption;
 
 
     /**
@@ -44,7 +44,7 @@ public class FormActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_authenticator);
+        setContentView(R.layout.activity_form);
 
         Log.i(TAG, "ACTIVITY CREATED!");
 
@@ -59,7 +59,7 @@ public class FormActivity extends AppCompatActivity {
         inputLayoutPassword1 = (TextInputLayout) findViewById(R.id.input_layout_password1);
         inputLayoutPassword2 = (TextInputLayout) findViewById(R.id.input_layout_password2);
 
-        btnSubmit = (Button) findViewById(R.id.btn_submit);
+        Button btnSubmit = (Button) findViewById(R.id.btn_submit);
         btnOption = (Button) findViewById(R.id.btn_option);
 
         // Every input view get a TextWatcher.
