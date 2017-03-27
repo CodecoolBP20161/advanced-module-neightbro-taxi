@@ -21,7 +21,7 @@ import com.codecool.android.neightbrotaxi.controller.StorageController;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static String TAG = MainActivity.class.getSimpleName() + "<>";
+    private static String TAG = MainActivity.class.getSimpleName() + " >>> ¤#¤ >>> ";
     private StorageController storageController;
 
     RelativeLayout mLayout;
@@ -32,7 +32,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        TAG = TAG + getResources().getString(R.string.tag);
         storageController = new StorageController(getApplicationContext());
         mLayout = (RelativeLayout) findViewById(R.id.profile_layout);
         mUserName = (TextView) findViewById(R.id.userName);

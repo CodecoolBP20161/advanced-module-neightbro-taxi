@@ -29,7 +29,7 @@ public class FormActivity extends AppCompatActivity {
     /**
      * Create TAG for logging and views for the inputs and their layouts.
      */
-    private static String TAG = FormActivity.class.getSimpleName();
+    private static String TAG = FormActivity.class.getSimpleName() + " >>> ¤#¤ >>> ";
     private EditText inputName, inputEmail, inputPassword1, inputPassword2;
     private TextInputLayout inputLayoutName, inputLayoutEmail,
             inputLayoutPassword1, inputLayoutPassword2;
@@ -45,7 +45,6 @@ public class FormActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_authenticator);
-        TAG = TAG + getResources().getString(R.string.tag);
 
         Log.i(TAG, "ACTIVITY CREATED!");
 

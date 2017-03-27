@@ -10,7 +10,7 @@ import com.codecool.android.neightbrotaxi.R;
  * Responsible for notify the user, when something went wrong in the app.
  */
 public class AlertUser {
-    private static String TAG = AlertUser.class.getSimpleName();
+    private static String TAG = AlertUser.class.getSimpleName() + " >>> ¤#¤ >>> ";
     private Activity mActivity;
 
     /**
@@ -19,7 +19,6 @@ public class AlertUser {
      */
     public AlertUser(Activity activity) {
         mActivity = activity;
-        TAG = TAG + mActivity.getString(R.string.tag);
     }
 
     /**
