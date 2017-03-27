@@ -18,6 +18,7 @@
     <!--</android.support.design.widget.AppBarLayout>-->
 
     <LinearLayout
+        android:id="@+id/form_layout"
         android:layout_width="fill_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="?attr/actionBarSize"
