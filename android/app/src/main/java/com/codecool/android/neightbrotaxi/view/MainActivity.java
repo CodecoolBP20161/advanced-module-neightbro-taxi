@@ -20,13 +20,15 @@ import android.widget.Toast;
 import com.codecool.android.neightbrotaxi.R;
 import com.codecool.android.neightbrotaxi.controller.StorageController;
 
+import static java.lang.String.format;
+
 public class MainActivity extends AppCompatActivity {
 
     private static String TAG = MainActivity.class.getSimpleName() + " >>> ¤#¤ >>> ";
     private StorageController storageController;
 
     RelativeLayout mMainLayout;
-    TextView mUserName, mUserEmail;
+    TextView mUserName, mUserEmail, mVersion, mTitle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,13 +39,16 @@ public class MainActivity extends AppCompatActivity {
         mMainLayout = (RelativeLayout) findViewById(R.id.main_layout);
         mUserName = (TextView) findViewById(R.id.userName);
         mUserEmail = (TextView) findViewById(R.id.userEmail);
-
+        mVersion = (TextView) findViewById(R.id.versionTextView);
+        mTitle = (TextView) findViewById(R.id.titleTextView);
         Log.i(TAG, "ACTIVITY CREATED!");
 /*
         // Set to the right color for the toolbar.
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitleTextColor(getColor(R.color.colorPrimary));
         setSupportActionBar(toolbar);*/
+
+        mTitle.setText(format(getResources().getString(R.string.title), "Home"));
     }
 
     public void back(View view) {
@@ -51,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
             finish();
         }
         mMainLayout.setVisibility(View.INVISIBLE);
+        mTitle.setText(format(getResources().getString(R.string.title), "Home"));
     }
 
     public void showPopup(View v) {
@@ -81,6 +87,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void getProfile() {
+        mTitle.setText(format(getResources().getString(R.string.title), "Profile"));
         mUserName.setText(storageController.getStoredUser().getName());
         mUserEmail.setText(storageController.getStoredUser().getEmail());
 
@@ -91,6 +98,7 @@ public class MainActivity extends AppCompatActivity {
         listView.setAdapter(adapter);
 
         mMainLayout.setVisibility(View.VISIBLE);
+        mVersion.setVisibility(View.INVISIBLE);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
