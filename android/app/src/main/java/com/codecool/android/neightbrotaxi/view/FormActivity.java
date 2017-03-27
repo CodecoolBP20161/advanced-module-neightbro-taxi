@@ -33,7 +33,7 @@ public class FormActivity extends AppCompatActivity {
     private EditText inputName, inputEmail, inputPassword1, inputPassword2;
     private TextInputLayout inputLayoutName, inputLayoutEmail,
             inputLayoutPassword1, inputLayoutPassword2;
-    private Button btnOption;
+    private Button btnSubmit, btnOption;
 
 
     /**
@@ -59,7 +59,7 @@ public class FormActivity extends AppCompatActivity {
         inputLayoutPassword1 = (TextInputLayout) findViewById(R.id.input_layout_password1);
         inputLayoutPassword2 = (TextInputLayout) findViewById(R.id.input_layout_password2);
 
-        Button btnSubmit = (Button) findViewById(R.id.btn_submit);
+        btnSubmit = (Button) findViewById(R.id.btn_submit);
         btnOption = (Button) findViewById(R.id.btn_option);
 
         // Every input view get a TextWatcher.
@@ -81,6 +81,14 @@ public class FormActivity extends AppCompatActivity {
                 formToggle();
             }
         });
+
+        // Receive an intent (about profile edit) and handle it.
+        Intent intent = getIntent();
+        String res = intent.getStringExtra("PROFILE_SETTING");
+        Log.d(TAG, "INTENT RES: "+res);
+        if (!(res==null)) {
+            profileEditing();
+        }
     }
 
     /**
@@ -307,6 +315,26 @@ public class FormActivity extends AppCompatActivity {
                     break;
             }
         }
+    }
+
+    public void profileEditing() {
+        inputLayoutPassword1.setVisibility(View.INVISIBLE);
+        inputLayoutName.setVisibility(View.VISIBLE);
+        btnOption.setVisibility(View.INVISIBLE);
+
+
+        btnSubmit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                StorageController controller = new StorageController(getApplicationContext());
+                User user = controller.getStoredUser();
+                user.setName(inputName.getText().toString());
+                user.setEmail(inputEmail.getText().toString());
+                Log.d(TAG, user.toString());
+                controller.setStoredUser(user);
+                finish();
+            }
+        });
     }
 
     /**
