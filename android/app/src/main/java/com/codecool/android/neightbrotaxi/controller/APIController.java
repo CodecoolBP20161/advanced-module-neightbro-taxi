@@ -119,7 +119,6 @@ public class APIController {
         GetTask(Activity activity, String request) {
             mActivity = activity;
             serverRequest = request;
-            TAG = TAG + mActivity.getString(R.string.tag);
         }
 
         /**
