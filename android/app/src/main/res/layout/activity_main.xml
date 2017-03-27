@@ -40,7 +40,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/ic_back"
-        android:layout_above="@+id/profile_layout"
+        android:layout_above="@+id/main_layout"
         android:onClick="back"
         android:contentDescription="@string/note_back"/>
 
@@ -59,7 +59,7 @@
         android:layout_alignStart="@+id/ic_menu"    -->
 
     <RelativeLayout
-        android:id="@+id/profile_layout"
+        android:id="@+id/main_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/ic_menu"
