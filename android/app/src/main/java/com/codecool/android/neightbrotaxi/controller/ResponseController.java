@@ -19,7 +19,7 @@ import org.json.JSONObject;
  * @see AlertUser
  */
 class ResponseController {
-    private static String TAG = ResponseController.class.getSimpleName();
+    private static String TAG = ResponseController.class.getSimpleName() + " >>> ¤#¤ >>> ";
 
     /**
      * Responsible for convert string to json, then parse it.
@@ -27,10 +27,7 @@ class ResponseController {
      * @param response from the server
      */
     ResponseController(Activity mActivity, String response) {
-        TAG = TAG + mActivity.getString(R.string.tag);
-
         Log.d(TAG, "Response from server: "+response);
-
 
         // When the user successfully registered
         try {

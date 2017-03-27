@@ -17,7 +17,7 @@ public class StorageController {
     /**
      * Tag for logging.
      */
-    private static String TAG = StorageController.class.getSimpleName();
+    private static String TAG = StorageController.class.getSimpleName() + " >>> ¤#¤ >>> ";
     /**
      * Create fields
      */
@@ -30,7 +30,6 @@ public class StorageController {
      */
     public StorageController(Context context) {
         mSharedPreferences = context.getSharedPreferences(PREFS_KEY, Context.MODE_PRIVATE);
-        TAG = TAG + context.getString(R.string.tag);
     }
 
     /**
