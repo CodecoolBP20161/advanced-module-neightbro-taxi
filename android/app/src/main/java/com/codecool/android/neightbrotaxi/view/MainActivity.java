@@ -3,14 +3,15 @@ package com.codecool.android.neightbrotaxi.view;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.PopupMenu;
+import android.text.Layout;
 import android.util.Log;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -24,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
     private static String TAG = MainActivity.class.getSimpleName() + " >>> ¤#¤ >>> ";
     private StorageController storageController;
 
-    RelativeLayout mLayout;
+    RelativeLayout mMainLayout;
     TextView mUserName, mUserEmail;
 
     @Override
@@ -33,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         storageController = new StorageController(getApplicationContext());
-        mLayout = (RelativeLayout) findViewById(R.id.profile_layout);
+        mMainLayout = (RelativeLayout) findViewById(R.id.main_layout);
         mUserName = (TextView) findViewById(R.id.userName);
         mUserEmail = (TextView) findViewById(R.id.userEmail);
 
@@ -49,14 +50,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void back(View view) {
-        if(mLayout.getVisibility()==View.INVISIBLE) {
+        if(mMainLayout.getVisibility()==View.INVISIBLE) {
             finish();
         }
-        mLayout.setVisibility(View.INVISIBLE);
+        mMainLayout.setVisibility(View.INVISIBLE);
     }
 
     public void showPopup(View v) {
-        storageController = new StorageController(getApplicationContext());
         PopupMenu popup = new PopupMenu(this, v);
         MenuInflater inflater = popup.getMenuInflater();
         inflater.inflate(R.menu.main, popup.getMenu());
@@ -77,9 +77,13 @@ public class MainActivity extends AppCompatActivity {
         popup.show();
     }
 
-    private void getProfile() {
-        storageController = new StorageController(getApplicationContext());
+    private void logout() {
+        Toast.makeText(getApplicationContext(), "logout clicked", Toast.LENGTH_SHORT).show();
+        storageController.removeUser();
+        finish();
+    }
 
+    private void getProfile() {
         mUserName.setText(storageController.getStoredUser().getName());
         mUserEmail.setText(storageController.getStoredUser().getEmail());
 
@@ -89,27 +93,23 @@ public class MainActivity extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         listView.setAdapter(adapter);
 
-        mLayout.setVisibility(View.VISIBLE);
+        mMainLayout.setVisibility(View.VISIBLE);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Profile editing unavailable for now..", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+//                Snackbar.make(view, "Profile editing unavailable for now..", Snackbar.LENGTH_LONG)
+//                        .setAction("Action", null).show();
+                profileEditing();
             }
         });
     }
 
-    private void logout() {
-        Toast.makeText(getApplicationContext(), "logout clicked", Toast.LENGTH_SHORT).show();
-        storageController.removeUser();
-        finish();
-    }
-
     private void profileEditing() {
+        // Sign an intent (profile editing) for FormActivity.
         Intent intent = new Intent(this, FormActivity.class);
-        intent.putExtra("PROFILE_SETTING", true);
+        intent.putExtra("PROFILE_SETTING", "");
         startActivity(intent);
     }
 
@@ -139,6 +139,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         Log.i(TAG, "ACTIVITY RESUMED!");
+        storageController.getStoredUser();
+        getProfile();
     }
 
     @Override
