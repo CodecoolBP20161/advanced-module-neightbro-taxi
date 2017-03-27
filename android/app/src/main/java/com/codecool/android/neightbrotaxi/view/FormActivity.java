@@ -85,7 +85,6 @@ public class FormActivity extends AppCompatActivity {
         // Receive an intent (about profile edit) and handle it.
         Intent intent = getIntent();
         String res = intent.getStringExtra("PROFILE_SETTING");
-        Log.d(TAG, "INTENT RES: "+res);
         if (!(res==null)) {
             profileEditing();
         }
