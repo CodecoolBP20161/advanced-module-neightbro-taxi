@@ -4,9 +4,11 @@ angular.module('neighbroTaxi')
 
     .controller('mainCtrl', function ($scope, $http) {
 
+
         $scope.showNavbar = function(){
             if(window.location.hash =='#/login' || window.location.hash =='#/registration'){
                 return false;
+
             }else{
                 return true;
             }
@@ -19,5 +21,7 @@ angular.module('neighbroTaxi')
                 return false;
             }
         }
+
+
 
     });

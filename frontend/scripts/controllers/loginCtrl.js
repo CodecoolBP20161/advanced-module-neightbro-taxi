@@ -11,7 +11,7 @@ angular.module('neighbroTaxi')
         if(valid) {
             console.log($scope.user);
 
-            $http.post('http://localhost:9000/user-login', $scope.user).
+            $http.post(properties.URL + '/user-login', $scope.user).
             success(function (data) {
                 console.log(data);
 
