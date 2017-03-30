@@ -7,7 +7,7 @@ angular.module('neighbroTaxi')
     $scope.logout = function () {
 
         $scope.inUser = {};
-        $http.post('http://localhost:9000/user-logout').
+        $http.post(properties.URL+'/user-logout').
             success(function (response) {
                 console.log(response);
                 $location.path('/');
