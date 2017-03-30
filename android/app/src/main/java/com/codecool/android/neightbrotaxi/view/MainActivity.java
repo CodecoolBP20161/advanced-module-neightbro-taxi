@@ -3,14 +3,15 @@ package com.codecool.android.neightbrotaxi.view;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.PopupMenu;
+import android.text.Layout;
 import android.util.Log;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -19,45 +20,46 @@ import android.widget.Toast;
 import com.codecool.android.neightbrotaxi.R;
 import com.codecool.android.neightbrotaxi.controller.StorageController;
 
+import static java.lang.String.format;
+
 public class MainActivity extends AppCompatActivity {
 
-    private static String TAG = MainActivity.class.getSimpleName() + "<>";
+    private static String TAG = MainActivity.class.getSimpleName() + " >>> ¤#¤ >>> ";
     private StorageController storageController;
 
-    RelativeLayout mLayout;
-    TextView mUserName, mUserEmail;
+    RelativeLayout mMainLayout;
+    TextView mUserName, mUserEmail, mVersion, mTitle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        TAG = TAG + getResources().getString(R.string.tag);
         storageController = new StorageController(getApplicationContext());
-        mLayout = (RelativeLayout) findViewById(R.id.profile_layout);
+        mMainLayout = (RelativeLayout) findViewById(R.id.main_layout);
         mUserName = (TextView) findViewById(R.id.userName);
         mUserEmail = (TextView) findViewById(R.id.userEmail);
-
-        Toast.makeText(getApplicationContext(), "WELCOME ON THE MAIN PAGE!",
-                Toast.LENGTH_SHORT).show();
-
+        mVersion = (TextView) findViewById(R.id.versionTextView);
+        mTitle = (TextView) findViewById(R.id.titleTextView);
         Log.i(TAG, "ACTIVITY CREATED!");
 /*
         // Set to the right color for the toolbar.
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitleTextColor(getColor(R.color.colorPrimary));
         setSupportActionBar(toolbar);*/
+
+        mTitle.setText(format(getResources().getString(R.string.title), "Home"));
     }
 
     public void back(View view) {
-        if(mLayout.getVisibility()==View.INVISIBLE) {
+        if(mMainLayout.getVisibility()==View.INVISIBLE) {
             finish();
         }
-        mLayout.setVisibility(View.INVISIBLE);
+        mMainLayout.setVisibility(View.INVISIBLE);
+        mTitle.setText(format(getResources().getString(R.string.title), "Home"));
     }
 
     public void showPopup(View v) {
-        storageController = new StorageController(getApplicationContext());
         PopupMenu popup = new PopupMenu(this, v);
         MenuInflater inflater = popup.getMenuInflater();
         inflater.inflate(R.menu.main, popup.getMenu());
@@ -78,9 +80,14 @@ public class MainActivity extends AppCompatActivity {
         popup.show();
     }
 
-    private void getProfile() {
-        storageController = new StorageController(getApplicationContext());
+    private void logout() {
+        Toast.makeText(getApplicationContext(), "logout clicked", Toast.LENGTH_SHORT).show();
+        storageController.removeUser();
+        finish();
+    }
 
+    private void getProfile() {
+        mTitle.setText(format(getResources().getString(R.string.title), "Profile"));
         mUserName.setText(storageController.getStoredUser().getName());
         mUserEmail.setText(storageController.getStoredUser().getEmail());
 
@@ -90,28 +97,26 @@ public class MainActivity extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         listView.setAdapter(adapter);
 
-        mLayout.setVisibility(View.VISIBLE);
+        mMainLayout.setVisibility(View.VISIBLE);
+        mVersion.setVisibility(View.INVISIBLE);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Profile editing unavailable for now..", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+//                Snackbar.make(view, "Profile editing unavailable for now..", Snackbar.LENGTH_LONG)
+//                        .setAction("Action", null).show();
+                profileEditing();
             }
         });
     }
 
-    private void logout() {
-        Toast.makeText(getApplicationContext(), "logout clicked", Toast.LENGTH_SHORT).show();
-        storageController.removeUser();
-        finish();
-    }
-
     private void profileEditing() {
+        // Sign an intent (profile editing) for FormActivity.
         Intent intent = new Intent(this, FormActivity.class);
-        intent.putExtra("PROFILE_SETTING", true);
+        intent.putExtra("PROFILE_SETTING", "");
         startActivity(intent);
+        recreate();
     }
 
     /**

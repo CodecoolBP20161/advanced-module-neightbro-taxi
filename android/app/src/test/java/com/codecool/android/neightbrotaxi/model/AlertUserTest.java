@@ -27,22 +27,22 @@ public class AlertUserTest {
 
     @Test
     public void connectionError() throws Exception {
-        assertNotNull(testDialog.connectionError());
+        testDialog.connectionError();
     }
 
     @Test
     public void serverError() throws Exception {
-        assertNotNull(testDialog.serverError());
+       testDialog.serverError();
     }
 
     @Test
     public void duplicateError() throws Exception {
-        assertNotNull(testDialog.duplicateError());
+        testDialog.duplicateError();
     }
 
     @Test
     public void invalidAuthenticationError() throws Exception {
-        assertNotNull(testDialog.invalidAuthenticationError());
+        testDialog.invalidAuthenticationError();
     }
 
 }
