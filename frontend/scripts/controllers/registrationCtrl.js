@@ -13,7 +13,7 @@ angular.module('neighbroTaxi')
 
             if(valid){
                 console.log($scope.newuser);
-                $http.post('http://localhost:9000/registration', $scope.newuser).
+                $http.post(properties.URL+'/registration', $scope.newuser).
                 success(function (data) {
                     console.log("Success");
                     $scope.validForm.$setPristine();

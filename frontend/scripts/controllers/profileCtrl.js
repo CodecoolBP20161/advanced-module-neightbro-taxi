@@ -13,7 +13,8 @@ angular.module('neighbroTaxi')
         $scope.onEdit = !$scope.onEdit;
     };
 
-    $http.get('http://localhost:9000/logged-in-user')
+
+    $http.get(properties.URL+'/logged-in-user')
         .success(function (response) {
             $scope.inUser = response;
             var inUser = $scope.inUser;
