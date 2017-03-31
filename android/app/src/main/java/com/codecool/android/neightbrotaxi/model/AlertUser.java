@@ -3,6 +3,7 @@ package com.codecool.android.neightbrotaxi.model;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.util.Log;
+import android.view.View;
 
 import com.codecool.android.neightbrotaxi.R;
 
@@ -68,11 +69,18 @@ public class AlertUser {
      * Build a Dialog and show it on the actual screen.
      */
     private void buildDialog(String... strings) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(mActivity)
+        AlertDialog.Builder builder = new AlertDialog.Builder(mActivity, R.style.MyDialogTheme)
                 .setTitle(strings[0])
                 .setMessage(strings[1])
                 .setPositiveButton(strings[2], null);
-        builder.create().show();
+        AlertDialog dialog = builder.show();
+
+        int titleDividerId = mActivity.getResources().getIdentifier("titleDivider", "id", "android");
+        View titleDivider = dialog.findViewById(titleDividerId);
+        if (titleDivider != null)
+            titleDivider.setBackgroundColor(mActivity.getApplicationContext()
+                    .getColor(android.R.color.holo_orange_light));
+
         Log.i(TAG, strings[0]);
     }
 }
