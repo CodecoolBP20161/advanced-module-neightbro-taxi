@@ -10,6 +10,7 @@ angular.module('neighbroTaxi')
             }else{
                 return true;
             }
+            return ['#/login', '#/registration'].indexOf(window.location.hash) > -1;
         }
 
         $scope.showIfUrl = function(actualUrl){
