@@ -64,7 +64,7 @@ public class APIController {
         @Override
         protected String doInBackground(String... urls) {
             try {
-                String url = "http://192.168.161.219:9000/" + serverRequest;
+                String url = mActivity.getString(R.string.url) + serverRequest;
                 Log.i(TAG, "URL WITH POST REQUEST: " + url);
                 return post(url, json);
             }
