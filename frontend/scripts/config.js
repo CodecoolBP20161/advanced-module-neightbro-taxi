@@ -3,5 +3,5 @@
  */
 var properties = {
 
-    URL: 'http://neighbro-dev.herokuapp.com'
+    URL: 'https://neighbro-dev.herokuapp.com'
 };
