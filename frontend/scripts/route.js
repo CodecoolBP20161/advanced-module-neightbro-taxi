@@ -11,6 +11,9 @@ angular.module('neighbroTaxi')
         .when('/profile', {
             templateUrl: 'home.html'
         })
+        .when('/routes', {
+            templateUrl: 'home.html'
+        })
         .when('/login', {
             templateUrl: 'loginFrame.html'
         })
