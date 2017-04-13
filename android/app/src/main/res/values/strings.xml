@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">NeighbroTaxi</string>
     <string name="version">VERSION: 0.4 (ALPHA)</string>
-    <string name="url">http://192.168.161.219:9000/</string>
+    <string name="url">http://neighbro-dev.herokuapp.com/</string>
     <string name="title">%1$s</string>
     <string name="hint_name">What\'s your full name?</string>
     <string name="hint_email">Email address?</string>
