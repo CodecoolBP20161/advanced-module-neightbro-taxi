@@ -1,5 +1,5 @@
 language: java
-install: cd backend/NeighBrotaxi && mvn clean test -Dmaven.javadoc.skip=true -Dspring.profiles.active=trevis -B -V
+script: cd backend/NeighBroTaxiAPI && mvn clean test -Dmaven.javadoc.skip=true -Dspring.profiles.active=test -B -V
 sudo: false
 addons:
   apt:

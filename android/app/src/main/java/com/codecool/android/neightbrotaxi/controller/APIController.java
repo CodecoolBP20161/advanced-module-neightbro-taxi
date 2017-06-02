@@ -28,7 +28,7 @@ public class APIController {
     /**
      * Initialize TAG, HTTP_CLIENT, JSON convert type and URL.
      */
-    private static String TAG = APIController.class.getSimpleName();
+    private static String TAG = APIController.class.getSimpleName() + " >>> ¤#¤ >>> ";
     private static final OkHttpClient HTTP_CLIENT = new OkHttpClient();
     private static final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
 
@@ -52,7 +52,6 @@ public class APIController {
             mActivity = activity;
             serverRequest = request;
             json = UserDataJson(strings);
-            TAG = TAG + mActivity.getString(R.string.tag);
         }
 
         /**
@@ -120,7 +119,6 @@ public class APIController {
         GetTask(Activity activity, String request) {
             mActivity = activity;
             serverRequest = request;
-            TAG = TAG + mActivity.getString(R.string.tag);
         }
 
         /**

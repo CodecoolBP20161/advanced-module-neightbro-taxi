@@ -29,7 +29,7 @@ public class FormActivity extends AppCompatActivity {
     /**
      * Create TAG for logging and views for the inputs and their layouts.
      */
-    private static String TAG = FormActivity.class.getSimpleName();
+    private static String TAG = FormActivity.class.getSimpleName() + " >>> ¤#¤ >>> ";
     private EditText inputName, inputEmail, inputPassword1, inputPassword2;
     private TextInputLayout inputLayoutName, inputLayoutEmail,
             inputLayoutPassword1, inputLayoutPassword2;
@@ -44,8 +44,7 @@ public class FormActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_authenticator);
-        TAG = TAG + getResources().getString(R.string.tag);
+        setContentView(R.layout.activity_form);
 
         Log.i(TAG, "ACTIVITY CREATED!");
 
@@ -82,6 +81,13 @@ public class FormActivity extends AppCompatActivity {
                 formToggle();
             }
         });
+
+        // Receive an intent (about profile edit) and handle it.
+        Intent intent = getIntent();
+        String res = intent.getStringExtra("PROFILE_SETTING");
+        if (!(res==null)) {
+            profileEditing();
+        }
     }
 
     /**
@@ -308,6 +314,26 @@ public class FormActivity extends AppCompatActivity {
                     break;
             }
         }
+    }
+
+    public void profileEditing() {
+        inputLayoutPassword1.setVisibility(View.INVISIBLE);
+        inputLayoutName.setVisibility(View.VISIBLE);
+        btnOption.setVisibility(View.INVISIBLE);
+
+
+        btnSubmit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                StorageController controller = new StorageController(getApplicationContext());
+                User user = controller.getStoredUser();
+                user.setName(inputName.getText().toString());
+                user.setEmail(inputEmail.getText().toString());
+                Log.d(TAG, user.toString());
+                controller.setStoredUser(user);
+                finish();
+            }
+        });
     }
 
     /**

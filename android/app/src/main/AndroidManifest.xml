@@ -25,7 +25,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".view.FormActivity">
+            android:name=".view.FormActivity"
+            android:screenOrientation="portrait">
     </activity>
     </application>
 
