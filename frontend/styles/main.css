@@ -210,3 +210,75 @@ input[type=email] {
     margin-left: 0px;
     padding: 0px;
 }
+
+@media screen and (max-width: 768px) {
+   #logo{
+       height: 150px;
+       width: auto;
+    }
+    .formbox {
+        background-color: transparent;
+    }
+
+    input[type=text] {
+        width: 98%;
+        height: 50px;
+        padding: 8px 20px;
+        margin: 0px 0;
+        box-sizing: border-box;
+        border: none;
+        background-color: #FAFAFA;
+        color: #37474F;
+        border-bottom: 1px solid gold;
+        outline: 0 !important;
+        text-align: center;
+    }
+
+    input[type=email] {
+        width: 98%;
+        height: 50px;
+        padding: 8px 20px;
+        margin: 5px auto;
+        box-sizing: border-box;
+        border: none;
+        background-color: #FAFAFA;
+        color: #37474F;
+        border-bottom: 1px solid gold;
+        outline: 0 !important;
+        text-align: center;
+    }
+
+    #regbutton {
+        float: none;
+        width: 90%;
+        height: 50px;
+        margin-top: 50px;
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+
+    .formbox button {
+        font-family: Helvetica;
+        font-weight: bold;
+        font-size: 16px;
+        background-color: #FFEB3B;
+        color: #37474F;
+        height: 40px;
+        width: 205px;
+        outline: 0 !important;
+        margin: 0 auto;
+        margin-top: 15px;
+        border: none;
+        text-shadow: -1px 2px gold;
+        border-radius: 2px;
+        margin-left: 5px;
+    }
+
+    .regformbox {
+        margin-top: 5px;
+        background-color: transparent;
+    }
+
+
+
+}

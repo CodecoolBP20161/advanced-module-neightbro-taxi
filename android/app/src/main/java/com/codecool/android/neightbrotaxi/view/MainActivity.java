@@ -56,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
             finish();
         }
         mMainLayout.setVisibility(View.INVISIBLE);
+        mVersion.setVisibility(View.VISIBLE);
         mTitle.setText(format(getResources().getString(R.string.title), "Home"));
     }
 
@@ -145,6 +146,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         Log.i(TAG, "ACTIVITY RESUMED!");
+        mVersion.setVisibility(View.VISIBLE);
     }
 
     @Override
